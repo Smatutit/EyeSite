@@ -1,0 +1,7 @@
+{
+  "name": "EyeSite - Construction Safety Intelligence",
+  "description": "Enterprise-grade safety intelligence landing page for the construction industry, focusing on the 2026 regulations.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
