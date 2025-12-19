@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Muse - Urban Intelligence Platform</title>
+    <title>AI Muse - עיר חכמה ובינה מלאכותית</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Heebo', sans-serif; }
         .city-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2070&auto=format&fit=crop');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -24,12 +24,15 @@
         <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <i class="fas fa-brain text-blue-400 text-2xl"></i>
-                <span class="text-2xl font-black tracking-tight text-white">AI Muse <span class="font-light text-blue-400">/ City</span></span>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black tracking-tight text-white leading-none">AI Muse</span>
+                    <span class="text-xs text-blue-400 font-bold tracking-widest uppercase">MUNICIPAL LABS</span>
+                </div>
             </div>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-                <span>Visual Anomaly Engine</span>
-                <span>Urban Safety</span>
-                <span>Infrastructure</span>
+                <span>זיהוי אנומליות ויזואלי</span>
+                <span>בטיחות במרחב הציבורי</span>
+                <span>תשתיות</span>
             </div>
         </div>
     </nav>
@@ -37,27 +40,33 @@
     <header class="city-bg min-h-screen flex items-center justify-center px-4">
         <div class="max-w-5xl mx-auto text-center pt-20">
             <div class="inline-block border border-blue-500/30 bg-blue-900/20 backdrop-blur rounded-full px-6 py-2 mb-8">
-                <span class="text-blue-400 font-bold text-xs tracking-[0.2em] uppercase">MUNICIPAL TECHNOLOGY STACK</span>
+                <span class="text-blue-400 font-bold text-sm tracking-widest">טכנולוגיה מוניציפלית מתקדמת</span>
             </div>
             
-            <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight">
-                The City That <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">Sees & Understands</span>
+            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-tight">
+                העיר שרואה <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-l from-blue-400 to-teal-400">ומבינה.</span>
             </h1>
             
-            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-                Transforming existing city camera feeds into actionable data.
-                <br>Detecting infrastructure decay, safety hazards, and environmental anomalies in real-time.
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                הפיכת מצלמות רחוב קיימות לחיישני דאטה בזמן אמת.
+                <br>זיהוי אוטומטי של מפגעים, עומסים וחריגות בטיחות במרחב האורבני.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <div class="text-left bg-white/5 backdrop-blur border border-white/10 p-6 rounded-xl min-w-[200px]">
-                    <div class="text-blue-400 text-3xl font-bold mb-1">Active</div>
-                    <div class="text-sm text-gray-400 uppercase tracking-wide">Vertical: Construction</div>
+                <div class="text-right bg-white/5 backdrop-blur border border-white/10 p-6 rounded-xl min-w-[220px]">
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                        <div class="text-blue-400 text-2xl font-bold">פעיל כעת</div>
+                    </div>
+                    <div class="text-sm text-gray-400 tracking-wide">ורטיקל: בטיחות בבנייה</div>
                 </div>
-                <div class="text-left bg-blue-600/20 backdrop-blur border border-blue-500 p-6 rounded-xl min-w-[200px]">
-                    <div class="text-white text-3xl font-bold mb-1">Next Gen</div>
-                    <div class="text-sm text-blue-200 uppercase tracking-wide">Vertical: Urban Space</div>
+                <div class="text-right bg-blue-600/20 backdrop-blur border border-blue-500 p-6 rounded-xl min-w-[220px]">
+                    <div class="flex items-center gap-2 mb-1">
+                        <i class="fas fa-rocket text-white"></i>
+                        <div class="text-white text-2xl font-bold">הדור הבא</div>
+                    </div>
+                    <div class="text-sm text-blue-200 tracking-wide">ורטיקל: העיר החכמה</div>
                 </div>
             </div>
         </div>
@@ -65,50 +74,50 @@
 
     <section class="py-24 bg-slate-900">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-20">
-                <h2 class="text-4xl font-bold mb-4">One Engine. Infinite Applications.</h2>
-                <p class="text-gray-400 max-w-2xl text-lg">
-                    The core AI Muse engine doesn't just "see" hard hats. It analyzes spatial relationships, textures, and anomalies. This same technology is ready to serve the Smart City ecosystem.
+            <div class="mb-20 text-center md:text-right">
+                <h2 class="text-4xl font-bold mb-4 text-white">מנוע אחד. אינסוף יישומים.</h2>
+                <p class="text-gray-400 max-w-2xl text-lg mr-0">
+                    טכנולוגיית הליבה של AI Muse לא רק "רואה" אובייקטים, אלא מבינה הקשרים מרחביים. אותה טכנולוגיה המצילה חיים באתרי בנייה, מוכנה כעת לשרת את המרחב הציבורי של תל אביב.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300">
-                    <div class="h-48 mb-6 overflow-hidden rounded-xl relative">
-                        <img src="https://images.unsplash.com/photo-1596525726224-b67277b21235?q=80&w=2070&auto=format&fit=crop" class="object-cover w-full h-full opacity-60">
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300 group">
+                    <div class="h-48 mb-6 overflow-hidden rounded-xl relative bg-black">
+                        <img src="https://images.unsplash.com/photo-1596525726224-b67277b21235?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-road text-4xl text-blue-400"></i>
+                            <i class="fas fa-road text-5xl text-blue-400 drop-shadow-lg"></i>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Infrastructure Health</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Automated detection of potholes, cracked sidewalks, and faded road markings using municipal fleet dashcams or static cameras. Predictive maintenance scoring.
+                    <h3 class="text-xl font-bold mb-3 text-white">ניטור תשתיות</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed pl-4">
+                        זיהוי אוטומטי של בורות בכביש, מדרכות שבורות, וסימוני כביש דהויים באמצעות מצלמות רכב עירוני או מצלמות נייחות.
                     </p>
                 </div>
 
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300">
-                    <div class="h-48 mb-6 overflow-hidden rounded-xl relative">
-                        <img src="https://images.unsplash.com/photo-1555699847-f2f216503c02?q=80&w=2072&auto=format&fit=crop" class="object-cover w-full h-full opacity-60">
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300 group">
+                    <div class="h-48 mb-6 overflow-hidden rounded-xl relative bg-black">
+                        <img src="https://images.unsplash.com/photo-1555699847-f2f216503c02?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-walking text-4xl text-teal-400"></i>
+                            <i class="fas fa-walking text-5xl text-teal-400 drop-shadow-lg"></i>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Pedestrian Flow & Safety</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Analyzing shadow/light patterns for street safety. Detecting blocked pathways, scooters on sidewalks, and hazardous pedestrian crossings in real-time.
+                    <h3 class="text-xl font-bold mb-3 text-white">בטיחות הולכי רגל</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed pl-4">
+                        זיהוי חסימות במדרכות (קורקינטים/רכבים), ניטור מעברי חצייה מסוכנים וניתוח דפוסי תנועה במרחב הציבורי.
                     </p>
                 </div>
 
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300">
-                    <div class="h-48 mb-6 overflow-hidden rounded-xl relative">
-                        <img src="https://images.unsplash.com/photo-1611288870280-4a39556c3c58?q=80&w=1974&auto=format&fit=crop" class="object-cover w-full h-full opacity-60">
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300 group">
+                    <div class="h-48 mb-6 overflow-hidden rounded-xl relative bg-black">
+                        <img src="https://images.unsplash.com/photo-1611288870280-4a39556c3c58?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-trash-alt text-4xl text-green-400"></i>
+                            <i class="fas fa-trash-alt text-5xl text-green-400 drop-shadow-lg"></i>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Sanitation & Environment</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Visual identification of overflowing bins, illegal dumping sites, and construction debris spilling into public zones.
+                    <h3 class="text-xl font-bold mb-3 text-white">שפ״ע וניקיון</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed pl-4">
+                        התראה מיידית על פחים גדושים, השלכת פסולת בניין בלתי חוקית, ומפגעים סביבתיים בזמן אמת.
                     </p>
                 </div>
             </div>
@@ -116,15 +125,19 @@
     </section>
 
     <section class="py-24 bg-gradient-to-b from-slate-900 to-black text-center px-6">
-        <h2 class="text-3xl font-bold mb-8">Ready for Tel Aviv</h2>
+        <h2 class="text-3xl font-bold mb-8 text-white">מוכנים לפיילוט בתל אביב</h2>
         <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
-            Our technology is already validated in the Construction sector ("EyeSite"). 
-            <br>We are ready to adapt the model for municipal challenges.
+            הטכנולוגיה שלנו כבר מבצעית בסקטור הבנייה ("EyeSite"). 
+            <br>אנחנו ערוכים להתאים את המודלים לאתגרים המוניציפליים של העיר.
         </p>
-        <a href="mailto:aimuseaimuseai@gmail.com" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full transition">
-            Contact Founder
+        <a href="mailto:aimuseaimuseai@gmail.com" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-blue-900/50">
+            צור קשר עם היזם
         </a>
     </section>
+
+    <footer class="border-t border-gray-800 py-8 text-center text-gray-600 text-xs">
+        <p>AI Muse Technologies © 2025. Developed in Tel Aviv.</p>
+    </footer>
 
 </body>
 </html>
