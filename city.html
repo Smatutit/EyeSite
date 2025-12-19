@@ -11,7 +11,7 @@
     <style>
         body { font-family: 'Heebo', sans-serif; }
         .city-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=2000&q=80');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -29,11 +29,10 @@
                     <span class="text-xs text-blue-400 font-bold tracking-widest uppercase">MUNICIPAL LABS</span>
                 </div>
             </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-                <span>זיהוי אנומליות ויזואלי</span>
-                <span>בטיחות במרחב הציבורי</span>
-                <span>תשתיות</span>
-            </div>
+            <a href="index.html" class="hidden md:flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition">
+                <i class="fas fa-hard-hat"></i>
+                <span>מעבר לאתר בטיחות בבנייה</span>
+            </a>
         </div>
     </nav>
 
@@ -54,19 +53,21 @@
             </p>
 
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <div class="text-right bg-white/5 backdrop-blur border border-white/10 p-6 rounded-xl min-w-[220px]">
+                <a href="index.html" class="text-right bg-white/5 hover:bg-white/10 backdrop-blur border border-white/10 hover:border-orange-500 p-6 rounded-xl min-w-[220px] cursor-pointer transition group">
                     <div class="flex items-center gap-2 mb-1">
                         <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                        <div class="text-blue-400 text-2xl font-bold">פעיל כעת</div>
+                        <div class="text-blue-400 group-hover:text-orange-400 text-2xl font-bold transition">פעיל כעת</div>
+                        <i class="fas fa-external-link-alt text-xs text-gray-500 ml-auto group-hover:text-white"></i>
                     </div>
-                    <div class="text-sm text-gray-400 tracking-wide">ורטיקל: בטיחות בבנייה</div>
-                </div>
-                <div class="text-right bg-blue-600/20 backdrop-blur border border-blue-500 p-6 rounded-xl min-w-[220px]">
+                    <div class="text-sm text-gray-400 tracking-wide group-hover:text-gray-200">לחץ למעבר: EyeSite בטיחות</div>
+                </a>
+
+                <div class="text-right bg-blue-600/20 backdrop-blur border border-blue-500 p-6 rounded-xl min-w-[220px] ring-2 ring-blue-500/50">
                     <div class="flex items-center gap-2 mb-1">
                         <i class="fas fa-rocket text-white"></i>
                         <div class="text-white text-2xl font-bold">הדור הבא</div>
                     </div>
-                    <div class="text-sm text-blue-200 tracking-wide">ורטיקל: העיר החכמה</div>
+                    <div class="text-sm text-blue-200 tracking-wide">אתה נמצא כאן: העיר החכמה</div>
                 </div>
             </div>
         </div>
@@ -77,62 +78,51 @@
             <div class="mb-20 text-center md:text-right">
                 <h2 class="text-4xl font-bold mb-4 text-white">מנוע אחד. אינסוף יישומים.</h2>
                 <p class="text-gray-400 max-w-2xl text-lg mr-0">
-                    טכנולוגיית הליבה של AI Muse לא רק "רואה" אובייקטים, אלא מבינה הקשרים מרחביים. אותה טכנולוגיה המצילה חיים באתרי בנייה, מוכנה כעת לשרת את המרחב הציבורי של תל אביב.
+                    טכנולוגיית הליבה של AI Muse מוכנה לשרת את המרחב הציבורי של תל אביב.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300 group">
                     <div class="h-48 mb-6 overflow-hidden rounded-xl relative bg-black">
-                        <img src="https://images.unsplash.com/photo-1596525726224-b67277b21235?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <i class="fas fa-road text-5xl text-blue-400 drop-shadow-lg"></i>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">ניטור תשתיות</h3>
                     <p class="text-gray-400 text-sm leading-relaxed pl-4">
-                        זיהוי אוטומטי של בורות בכביש, מדרכות שבורות, וסימוני כביש דהויים באמצעות מצלמות רכב עירוני או מצלמות נייחות.
+                        זיהוי אוטומטי של בורות בכביש, מדרכות שבורות וסימונים דהויים.
                     </p>
                 </div>
 
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300 group">
                     <div class="h-48 mb-6 overflow-hidden rounded-xl relative bg-black">
-                        <img src="https://images.unsplash.com/photo-1555699847-f2f216503c02?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <i class="fas fa-walking text-5xl text-teal-400 drop-shadow-lg"></i>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">בטיחות הולכי רגל</h3>
                     <p class="text-gray-400 text-sm leading-relaxed pl-4">
-                        זיהוי חסימות במדרכות (קורקינטים/רכבים), ניטור מעברי חצייה מסוכנים וניתוח דפוסי תנועה במרחב הציבורי.
+                        זיהוי חסימות (קורקינטים), מעברי חצייה מסוכנים וניתוח תנועה.
                     </p>
                 </div>
 
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300 group">
                     <div class="h-48 mb-6 overflow-hidden rounded-xl relative bg-black">
-                        <img src="https://images.unsplash.com/photo-1611288870280-4a39556c3c58?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
                         <div class="absolute inset-0 flex items-center justify-center">
                             <i class="fas fa-trash-alt text-5xl text-green-400 drop-shadow-lg"></i>
                         </div>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white">שפ״ע וניקיון</h3>
                     <p class="text-gray-400 text-sm leading-relaxed pl-4">
-                        התראה מיידית על פחים גדושים, השלכת פסולת בניין בלתי חוקית, ומפגעים סביבתיים בזמן אמת.
+                        התראה מיידית על פחים גדושים והשלכת פסולת בלתי חוקית.
                     </p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="py-24 bg-gradient-to-b from-slate-900 to-black text-center px-6">
-        <h2 class="text-3xl font-bold mb-8 text-white">מוכנים לפיילוט בתל אביב</h2>
-        <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
-            הטכנולוגיה שלנו כבר מבצעית בסקטור הבנייה ("EyeSite"). 
-            <br>אנחנו ערוכים להתאים את המודלים לאתגרים המוניציפליים של העיר.
-        </p>
-        <a href="mailto:aimuseaimuseai@gmail.com" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-blue-900/50">
-            צור קשר עם היזם
-        </a>
     </section>
 
     <footer class="border-t border-gray-800 py-8 text-center text-gray-600 text-xs">
