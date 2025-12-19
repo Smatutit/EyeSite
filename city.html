@@ -18,7 +18,7 @@
         }
     </style>
 </head>
-<body class="bg-slate-950 text-white">
+<body class="bg-slate-950 text-white leading-relaxed">
 
     <nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -49,16 +49,20 @@
             </h1>
             
             <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-                פלטפורמת AI המאפשרת לפקחים עירוניים לאסוף מודיעין חזותי על תשתיות ומפגעים באמצעות הסמארטפון – ללא צורך באינטגרציה למצלמות נייחות.
+                פלטפורמת AI המאפשרת לפקחים עירוניים לאסוף מודיעין חזותי על תשתיות ומפגעים באמצעות הסמארטפון – ללא צורך באינטגרציה למצלמות נייחות או הקמת חמ"ל יקר.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <div class="text-right bg-blue-900/40 backdrop-blur border border-blue-500/50 p-6 rounded-xl min-w-[250px]">
-                    <div class="flex items-center gap-3 mb-2">
+                <div class="text-right bg-blue-900/40 backdrop-blur border border-blue-500/50 p-8 rounded-2xl min-w-[280px]">
+                    <div class="flex items-center gap-3 mb-3">
                         <i class="fas fa-mobile-screen-button text-blue-300 text-2xl"></i>
                         <div class="text-white text-xl font-bold">מודל הפעלה נייד</div>
                     </div>
-                    <div class="text-sm text-blue-200 leading-relaxed">צילום וידאו קצר מהשטח, ניתוח בענן, והפקת תמונת מצב גיאוגרפית.</div>
+                    <div class="text-sm text-blue-100 leading-relaxed">
+                        1. הפקח מצלם וידאו קצר מהנייד.<br>
+                        2. ה-AI מנתח את הסרטון בענן.<br>
+                        3. הפקת מפת חום (Heatmap) של ליקויים.
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,8 +71,10 @@
     <section class="py-24 bg-slate-900">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-black text-white">יישומים מוניציפליים</h2>
-                <p class="text-gray-400 mt-4">מנוע אחד – שלוש שכבות של דאטה.</p>
+                <h2 class="text-3xl font-black text-white">יישומים מוניציפליים (Municipal Use Cases)</h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
+                    מנוע הראייה הממוחשבת שלנו מסוגל לזהות מאות סוגי אובייקטים ולסווג את מצבם הפיזי.
+                </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
@@ -76,9 +82,9 @@
                     <div class="h-24 mb-6 flex items-center justify-center">
                         <i class="fas fa-road text-6xl text-blue-500 group-hover:scale-110 transition duration-300"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white text-center">אחזקת כבישים</h3>
+                    <h3 class="text-2xl font-bold mb-4 text-white text-center">אחזקת כבישים ותשתיות</h3>
                     <p class="text-gray-400 text-sm leading-relaxed text-center">
-                        מיפוי אוטומטי של בורות, שקעים וסימוני כביש דהויים מתוך דשבורד הרכב.
+                        <strong>מיפוי אוטומטי:</strong> זיהוי בורות, שקעים וסימוני כביש דהויים מתוך סרטוני דשבורד של רכבי עירייה. המערכת מסווגת את חומרת הבור ומאפשרת תעדוף משימות לצוותי התיקון.
                     </p>
                 </div>
 
@@ -86,9 +92,9 @@
                     <div class="h-24 mb-6 flex items-center justify-center">
                         <i class="fas fa-walking text-6xl text-teal-400 group-hover:scale-110 transition duration-300"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white text-center">הולכי רגל ונגישות</h3>
+                    <h3 class="text-2xl font-bold mb-4 text-white text-center">הולכי רגל ונגישות</h3>
                     <p class="text-gray-400 text-sm leading-relaxed text-center">
-                        זיהוי חסימות במרחב הציבורי: קורקינטים נטושים ומכשולים על מדרכות נגישות.
+                        <strong>בטיחות במרחב:</strong> זיהוי חסימות במדרכות (קורקינטים נטושים, גזם, רכבים חוסמים) וניתוח מעברי חצייה מסוכנים. הבטחת נגישות מלאה לבעלי מוגבלויות.
                     </p>
                 </div>
 
@@ -96,17 +102,34 @@
                     <div class="h-24 mb-6 flex items-center justify-center">
                         <i class="fas fa-recycle text-6xl text-green-500 group-hover:scale-110 transition duration-300"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3 text-white text-center">שפ״ע ותברואה</h3>
+                    <h3 class="text-2xl font-bold mb-4 text-white text-center">שפ״ע ותברואה</h3>
                     <p class="text-gray-400 text-sm leading-relaxed text-center">
-                        ניטור נקודות איסוף אשפה, זיהוי גלישות פסולת והשלכות פיראטיות.
+                        <strong>עיר נקייה:</strong> ניטור נקודות איסוף אשפה, זיהוי גלישות פסולת, והשלכות פיראטיות של פסולת בניין בשטחים פתוחים. אופטימיזציה של מסלולי פינוי האשפה.
                     </p>
                 </div>
             </div>
         </div>
     </section>
+    
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-black border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+             <h2 class="text-3xl font-bold text-white mb-6">יצירת התאום הדיגיטלי (Digital Twin)</h2>
+             <p class="text-gray-400 leading-relaxed text-lg">
+                 המטרה שלנו היא להעניק למקבלי ההחלטות בעירייה תמונת מצב עדכנית ומדויקת של המרחב הציבורי. 
+                 במקום להסתמך על תלונות תושבים בדיעבד (מוקד 106), המערכת מאפשרת לעירייה להיות פרואקטיבית ולתקן ליקויים לפני שהם הופכים למפגע.
+             </p>
+             <div class="mt-12">
+                 <a href="mailto:aimuseaimuseai@gmail.com" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-blue-900/50">
+                    צור קשר לתיאום הדגמה
+                </a>
+             </div>
+        </div>
+    </section>
 
-    <footer class="border-t border-gray-800 py-8 text-center text-gray-500 text-xs bg-slate-950">
-        <p>AI Muse Technologies © 2025. Dual-Use AI Platform.</p>
+    <footer class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
+        <p class="mb-2">AI Muse Technologies © 2025.</p>
+        <p>Advanced Urban Intelligence Platform developed in Tel Aviv.</p>
+        <p class="mt-4">Contact: aimuseaimuseai@gmail.com</p>
     </footer>
 
 </body>
