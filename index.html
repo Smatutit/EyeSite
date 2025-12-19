@@ -26,8 +26,8 @@
                 <span class="text-2xl font-black tracking-tighter">EyeSite</span>
             </div>
             <div class="hidden md:flex items-center gap-6 text-sm text-gray-400 font-medium">
-                <a href="#about" class="hover:text-white transition">אודות המערכת</a>
-                <a href="#tech" class="hover:text-white transition">טכנולוגיה</a>
+                <a href="#process" class="text-white font-bold">איך זה עובד?</a>
+                <a href="#about" class="hover:text-white transition">הטכנולוגיה</a>
                 <a href="city.html" class="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition border border-blue-900 bg-blue-900/20 px-3 py-1 rounded-full text-xs">
                     <i class="fas fa-city"></i>
                     פתרונות מוניציפליים
@@ -60,131 +60,111 @@
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://wa.me/972503040523" class="bg-orange-600 hover:bg-orange-700 text-white text-lg font-bold py-4 px-10 rounded-xl shadow-lg shadow-orange-900/30 transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
                     <i class="fab fa-whatsapp"></i>
-                    התחלת פיילוט מיידי
+                    התחלת פיילוט (וואטסאפ)
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-24 bg-white">
+    <section id="process" class="py-24 bg-white relative z-10 -mt-20 rounded-t-[3rem]">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl font-black mb-6 text-gray-900">הפער הבלתי אפשרי בבטיחות</h2>
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    לקראת החמרת הרגולציה באוקטובר 2026, מנהלים נדרשים ל"שליטה מלאה" באתר. בפועל, מנהלי עבודה עמוסים לא יכולים לראות הכל, ומצלמות CCTV מייצרות שעות של וידאו שאף אחד לא מנתח.
-                </p>
+            <div class="text-center mb-16">
+                <span class="text-orange-600 font-bold uppercase tracking-widest text-sm">הפעלה מיידית</span>
+                <h2 class="text-4xl font-black mt-2 text-gray-900">בלי הטמעות. בלי חומרה. פשוט וואטסאפ.</h2>
+                <p class="text-gray-500 mt-4 text-xl">תהליך שלוקח למנהל העבודה פחות מ-3 דקות.</p>
             </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <div class="hidden md:block absolute top-12 right-1/6 left-1/6 h-1 bg-gray-100 z-0"></div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center bg-gray-50 p-8 rounded-3xl border border-gray-100">
-                <div>
-                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-3">
-                        <i class="fas fa-brain text-orange-600"></i>
-                        הפתרון: EyeSite Core
-                    </h3>
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                        פיתחנו מנוע בינה מלאכותית ייעודי לשוק הבנייה הישראלי. המערכת אינה רק "מקליטה" – היא מבינה הקשרים, מזהה סטיות מתקן, ומכמתת סיכונים בזמן אמת.
+                <div class="bg-white p-8 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100 relative z-10 hover:-translate-y-2 transition duration-300">
+                    <div class="w-20 h-20 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-4xl mb-6 mx-auto shadow-inner">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="text-xl font-black mb-3 text-center">1. מצלמים ושולחים</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        מנהל העבודה מצלם סרטון קצר (1-3 דקות) תוך כדי סיור הבוקר, ושולח אותו למספר המערכת בוואטסאפ.
                     </p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-check-circle text-orange-600 mt-1"></i>
-                            <div>
-                                <strong>זיהוי חריגות דינמי:</strong> לא רק קסדות, אלא זיהוי התנהגות מסוכנת (עבודה ללא ריתמה, קרבה לכלים כבדים).
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-check-circle text-orange-600 mt-1"></i>
-                            <div>
-                                <strong>הצלבה רגולטורית:</strong> כל ממצא מוצלב אוטומטית מול מאגר תקנות הבטיחות בעבודה (תשמ"ד).
-                            </div>
-                        </li>
-                    </ul>
                 </div>
-                <div class="relative h-64 md:h-full min-h-[300px] rounded-2xl overflow-hidden shadow-xl">
-                     <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=800&q=80" alt="AI Analysis Visualization" class="absolute inset-0 w-full h-full object-cover">
-                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-                         <span class="text-white font-bold flex items-center gap-2">
-                             <i class="fas fa-database"></i>
-                             עיבוד נתונים ויזואלי בזמן אמת
-                         </span>
-                     </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100 relative z-10 hover:-translate-y-2 transition duration-300">
+                    <div class="w-20 h-20 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-4xl mb-6 mx-auto shadow-inner">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-black mb-3 text-center">2. ניתוח בענן</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        הבינה המלאכותית מפרקת את הוידאו, מזהה סיכונים, ומצליבה אותם מול 1,200 תקנות בטיחות.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-xl shadow-gray-200/50 border border-gray-100 relative z-10 hover:-translate-y-2 transition duration-300">
+                    <div class="w-20 h-20 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-4xl mb-6 mx-auto shadow-inner">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-xl font-black mb-3 text-center">3. קבלת הדו״ח</h3>
+                    <p class="text-gray-600 text-center leading-relaxed">
+                        תוך שעות בודדות: המנכ"ל והיזם מקבלים לוואטסאפ דו"ח PDF משפטי, מוכן לתיוק והגנה.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="tech" class="py-20 bg-gray-900 text-white">
+    <section id="about" class="py-24 bg-gray-900 text-white">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-black">טכנולוגיית הליבה</h2>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">שילוב של מודלים מתקדמים לראייה ממוחשבת ועיבוד שפה טבעית.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
-                    <i class="fas fa-project-diagram text-4xl text-orange-500 mb-6"></i>
-                    <h3 class="text-xl font-bold mb-2">Computer Vision</h3>
-                    <p class="text-gray-400 text-sm">מודלים של Object Detection ו-Semantic Segmentation לזיהוי אלמנטים במרחב (עובדים, ציוד, סכנות).</p>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block bg-orange-900/30 border border-orange-500/30 rounded-lg px-3 py-1 mb-4 text-orange-400 text-sm font-bold">CORE TECHNOLOGY</div>
+                    <h2 class="text-3xl font-black mb-6">מנוע חכם שמבין בטיחות</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed text-lg">
+                        EyeSite אינה סתם מצלמה. זהו מנוע משולב של ראייה ממוחשבת ומודל שפה רגולטורי.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0 text-orange-500">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Computer Vision</h4>
+                                <p class="text-gray-400 text-sm">סגמנטציה סמנטית לזיהוי ציוד מגן, גובה, וכלים כבדים בתנועה.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0 text-orange-500">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Regulatory LLM</h4>
+                                <p class="text-gray-400 text-sm">תרגום הממצאים הויזואליים לשפה משפטית (תקנות הבטיחות בעבודה).</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
-                    <i class="fas fa-scroll text-4xl text-orange-500 mb-6"></i>
-                    <h3 class="text-xl font-bold mb-2">Regulatory LLM</h3>
-                    <p class="text-gray-400 text-sm">מודל שפה שאומן על ספרות החוק הישראלי, המתרגם ממצאים ויזואליים לסעיפי אישום משפטיים.</p>
-                </div>
-                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
-                    <i class="fas fa-bolt text-4xl text-orange-500 mb-6"></i>
-                    <h3 class="text-xl font-bold mb-2">Rapid Processing Pipeline</h3>
-                    <p class="text-gray-400 text-sm">ארכיטקטורת ענן המאפשרת קליטת וידאו, ניתוח והפקת דו"ח PDF בתוך שעות בודדות.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-black text-gray-900">מודל הפעלה היברידי</h2>
-                <p class="text-gray-600 mt-4">אין צורך בהטמעה יקרה. משתמשים בציוד הקיים בשטח.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
-                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xl mb-4">1</div>
-                    <h3 class="font-bold mb-2">צילום שטח (Capture)</h3>
-                    <p class="text-gray-600 text-sm">מנהל העבודה מצלם סיור קצר (1-3 דקות) בנייד ושולח בוואטסאפ.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
-                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xl mb-4">2</div>
-                    <h3 class="font-bold mb-2">עיבוד בענן (Analyze)</h3>
-                    <p class="text-gray-600 text-sm">הוידאו מנותח ע"י מנוע ה-AI שלנו לזיהוי חריגות ותיעודן.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200 flex flex-col items-center text-center">
-                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xl mb-4">3</div>
-                    <h3 class="font-bold mb-2">קבלת תובנות (Act)</h3>
-                    <p class="text-gray-600 text-sm">באותו היום: קבלת דו"ח PDF מפורט עם ציון סיכון ופעולות לתיקון.</p>
+                <div class="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
+                     <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&w=800&q=80" alt="AI Analysis Visualization" class="absolute inset-0 w-full h-full object-cover opacity-80 hover:scale-105 transition duration-700">
+                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-black text-center px-4 relative overflow-hidden">
-        <div class="relative z-10 max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-black text-white mb-6">מוכנים לנסות?</h2>
-            <p class="text-xl text-gray-400 mb-8">
-                אנו פותחים מספר מצומצם של מקומות לפיילוט (שבוע חינם).
+    <section id="contact" class="py-20 bg-gray-50 text-center px-4">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-6">הצטרפו לפיילוט</h2>
+            <p class="text-xl text-gray-500 mb-8">
+                אנחנו מחפשים שותפים לדרך. קבלו שבוע התנסות חינם – ללא התחייבות.
             </p>
             <div class="flex flex-col gap-4 max-w-md mx-auto">
-                <a href="https://wa.me/972503040523" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-xl text-lg flex items-center justify-center gap-3 transition">
+                <a href="https://wa.me/972503040523" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-xl text-lg flex items-center justify-center gap-3 transition shadow-lg shadow-orange-200">
                     <i class="fab fa-whatsapp text-2xl"></i>
-                    תיאום פיילוט בוואטסאפ
+                    שליחת הודעה לתיאום
                 </a>
-                <div class="text-gray-500 mt-2 text-sm">
-                    פניות עסקיות: aimuseaimuseai@gmail.com
-                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-950 border-t border-gray-800 py-8 text-center text-gray-500 text-sm">
+    <footer class="bg-white border-t border-gray-200 py-8 text-center text-gray-500 text-sm">
         <p>© 2025 EyeSite Technologies. Built for the Israeli Construction Industry.</p>
     </footer>
 
