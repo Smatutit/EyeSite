@@ -3,72 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Muse - עיר חכמה ובינה מלאכותית</title>
+    <title>AI Muse - פלטפורמת דאטה אורבנית</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
     
     <style>
         body { font-family: 'Heebo', sans-serif; }
+        /* New, darker, more "data" feeling background image of a city */
         .city-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=2000&q=80');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
         }
     </style>
 </head>
-<body class="bg-slate-900 text-white">
+<body class="bg-slate-950 text-white">
 
-    <nav class="absolute top-0 w-full z-50 border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <i class="fas fa-brain text-blue-400 text-2xl"></i>
+    <nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-brain text-blue-500 text-2xl"></i>
                 <div class="flex flex-col">
-                    <span class="text-2xl font-black tracking-tight text-white leading-none">AI Muse</span>
-                    <span class="text-xs text-blue-400 font-bold tracking-widest uppercase">MUNICIPAL LABS</span>
+                    <span class="text-xl font-black tracking-tight text-white leading-none">AI Muse</span>
+                    <span class="text-[0.65rem] text-blue-400 font-bold tracking-widest uppercase">URBAN DATA LABS</span>
                 </div>
             </div>
-            <a href="index.html" class="hidden md:flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition">
-                <i class="fas fa-hard-hat"></i>
-                <span>מעבר לאתר בטיחות בבנייה</span>
+            <a href="index.html" class="hidden md:flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:border-orange-500/50">
+                <i class="fas fa-hard-hat text-orange-500"></i>
+                <span>למעבר לורטיקל בנייה (EyeSite)</span>
             </a>
         </div>
     </nav>
 
-    <header class="city-bg min-h-screen flex items-center justify-center px-4">
-        <div class="max-w-5xl mx-auto text-center pt-20">
-            <div class="inline-block border border-blue-500/30 bg-blue-900/20 backdrop-blur rounded-full px-6 py-2 mb-8">
-                <span class="text-blue-400 font-bold text-sm tracking-widest">טכנולוגיה מוניציפלית ניידת</span>
+    <header class="city-bg min-h-[80vh] flex items-center justify-center text-center relative px-4">
+        <div class="max-w-5xl mx-auto pt-16">
+            <div class="inline-flex items-center gap-2 border border-blue-500/30 bg-blue-900/30 backdrop-blur rounded-full pr-2 pl-4 py-1 mb-8">
+                <i class="fas fa-satellite-dish text-blue-400 text-xs"></i>
+                <span class="text-blue-400 font-bold text-xs tracking-widest">טכנולוגיה דו-שימושית (Dual-Use)</span>
             </div>
             
-            <h1 class="text-5xl md:text-8xl font-black mb-8 leading-tight">
-                העיר שרואה <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-l from-blue-400 to-teal-400">ומבינה.</span>
+            <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight">
+                הפיכת סיורי שטח<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-l from-blue-400 to-teal-300">לשכבת דאטה אורבנית</span>
             </h1>
             
             <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-                ללא צורך בחיבור למצלמות 24/7. ללא חמ"ל יקר.
-                <br>הופכים את הסמארטפון של הפקח לכלי ניתוח מפגעים בזמן אמת.
-                <br><span class="text-blue-400 font-bold">מצלמים 2 דקות. שולחים. מקבלים דו״ח ביצוע.</span>
+                פלטפורמת AI המאפשרת לפקחים עירוניים לאסוף מודיעין חזותי על תשתיות ומפגעים באמצעות הסמארטפון – ללא צורך באינטגרציה למצלמות נייחות.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="index.html" class="text-right bg-white/5 hover:bg-white/10 backdrop-blur border border-white/10 hover:border-orange-500 p-6 rounded-xl min-w-[220px] cursor-pointer transition group">
-                    <div class="flex items-center gap-2 mb-1">
-                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                        <div class="text-blue-400 group-hover:text-orange-400 text-2xl font-bold transition">פעיל כעת</div>
-                        <i class="fas fa-external-link-alt text-xs text-gray-500 ml-auto group-hover:text-white"></i>
+                <div class="text-right bg-blue-900/40 backdrop-blur border border-blue-500/50 p-6 rounded-xl min-w-[250px]">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fas fa-mobile-screen-button text-blue-300 text-2xl"></i>
+                        <div class="text-white text-xl font-bold">מודל הפעלה נייד</div>
                     </div>
-                    <div class="text-sm text-gray-400 tracking-wide group-hover:text-gray-200">לחץ למעבר: EyeSite בטיחות</div>
-                </a>
-
-                <div class="text-right bg-blue-600/20 backdrop-blur border border-blue-500 p-6 rounded-xl min-w-[220px] ring-2 ring-blue-500/50">
-                    <div class="flex items-center gap-2 mb-1">
-                        <i class="fas fa-mobile-alt text-white"></i>
-                        <div class="text-white text-2xl font-bold">הדור הבא</div>
-                    </div>
-                    <div class="text-sm text-blue-200 tracking-wide">אתה נמצא כאן: העיר החכמה</div>
+                    <div class="text-sm text-blue-200 leading-relaxed">צילום וידאו קצר מהשטח, ניתוח בענן, והפקת תמונת מצב גיאוגרפית.</div>
                 </div>
             </div>
         </div>
@@ -76,58 +66,86 @@
 
     <section class="py-24 bg-slate-900">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-20 text-center md:text-right">
-                <h2 class="text-4xl font-bold mb-4 text-white">לא עוד מסכים בחמ"ל. כלי עזר בשטח.</h2>
-                <p class="text-gray-400 max-w-2xl text-lg mr-0">
-                    מוקדנים לא יכולים לראות הכל. הפתרון שלנו מאפשר לפקחי שפ״ע, תנועה ותשתיות לצלם וידאו קצר מהנייד ולקבל ניתוח AI מיידי על מצב הרחוב, הניקיון והבטיחות.
-                </p>
+            <div class="grid md:grid-cols-2 gap-16 items-center mb-24">
+                <div>
+                    <h2 class="text-3xl font-black mb-6 text-white">מערכת הפעלה למרחב הציבורי</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        ערים חכמות נכשלות בגלל "עיוורון דאטה". המידע קיים בשטח, אבל אין מי שיאסוף וינתח אותו בזמן אמת.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        <strong>AI Muse</strong> משתמשת בטכנולוגיית ראייה ממוחשבת (שכבר הוכחה מבצעית באתרי בנייה) כדי למפות את המרחב העירוני. המערכת שלנו מזהה אובייקטים, מנתחת את מצבם הפיזי, ומספקת לעירייה "תאום דיגיטלי" (Digital Twin) של סטטוס התשתיות.
+                    </p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-3xl border border-slate-700">
+                    <h3 class="text-xl font-bold mb-4 text-blue-300 flex items-center gap-2">
+                        <i class="fas fa-layer-group"></i>
+                        יכולות ליבה טכנולוגיות
+                    </h3>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-center gap-3 p-3 bg-slate-800/50 rounded-lg border border-slate-700/50">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span><strong>מיפוי גיאוספטי:</strong> עיגון כל ממצא ויזואלי לקואורדינטת GPS מדויקת.</span>
+                        </li>
+                        <li class="flex items-center gap-3 p-3 bg-slate-800/50 rounded-lg border border-slate-700/50">
+                            <i class="fas fa-chart-line text-teal-400"></i>
+                            <span><strong>דירוג חומרת תשתית:</strong> סיווג אוטומטי של בורות/סדקים לפי רמת דחיפות לטיפול.</span>
+                        </li>
+                        <li class="flex items-center gap-3 p-3 bg-slate-800/50 rounded-lg border border-slate-700/50">
+                            <i class="fas fa-users text-purple-400"></i>
+                            <span><strong>ניתוח זרימת קהל:</strong> זיהוי צווארי בקבוק וחסימות במדרכות (קורקינטים/עבודות).</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white">יישומים מוניציפליים</h2>
+            </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300 group">
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition duration-300 group">
                     <div class="h-48 mb-6 overflow-hidden rounded-xl relative bg-black">
-                        <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-50 group-hover:opacity-80 transition duration-500 grayscale group-hover:grayscale-0">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-road text-5xl text-blue-400 drop-shadow-lg"></i>
+                            <i class="fas fa-road text-5xl text-blue-400/80"></i>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">ניטור תשתיות</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed pl-4">
-                        הפקח מצלם את הרחוב תוך כדי נסיעה/הליכה. המערכת ממפה בורות, סדקים וסימונים דהויים לטיפול מיידי.
+                    <h3 class="text-xl font-bold mb-3 text-white">אחזקת כבישים ומדרכות</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        מיפוי אוטומטי של בורות, שקעים, וסימוני כביש דהויים מתוך סרטוני דשבורד של רכבי עירייה.
                     </p>
                 </div>
 
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300 group">
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition duration-300 group">
                     <div class="h-48 mb-6 overflow-hidden rounded-xl relative bg-black">
-                        <img src="https://images.unsplash.com/photo-1572089476203-9df61c57171e?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1542318977-694e1339849d?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-50 group-hover:opacity-80 transition duration-500 grayscale group-hover:grayscale-0">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-walking text-5xl text-teal-400 drop-shadow-lg"></i>
+                            <i class="fas fa-walking text-5xl text-teal-400/80"></i>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">בטיחות הולכי רגל</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed pl-4">
-                        זיהוי חסימות על מדרכות (קורקינטים/רכבים), מיפוי מעברי חצייה מסוכנים וניתוח נגישות מהיר.
+                    <h3 class="text-xl font-bold mb-3 text-white">נגישות ובטיחות הולכי רגל</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        זיהוי חסימות במרחב הציבורי: קורקינטים נטושים, גזם, ומכשולים על מדרכות נגישות.
                     </p>
                 </div>
 
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition duration-300 group">
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition duration-300 group">
                     <div class="h-48 mb-6 overflow-hidden rounded-xl relative bg-black">
-                        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-60 group-hover:opacity-80 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1605600659908-0ef719419d56?auto=format&fit=crop&w=800&q=80" class="object-cover w-full h-full opacity-50 group-hover:opacity-80 transition duration-500 grayscale group-hover:grayscale-0">
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-trash-alt text-5xl text-green-400 drop-shadow-lg"></i>
+                            <i class="fas fa-recycle text-5xl text-green-400/80"></i>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">שפ״ע וניקיון</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed pl-4">
-                        צילום קצר של אזור המיחזור או הפחים, והמערכת מתריעה על גלישת פסולת ומפגעים תברואתיים.
+                    <h3 class="text-xl font-bold mb-3 text-white">שפ״ע ותברואה</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        ניטור נקודות איסוף אשפה, זיהוי גלישות פסולת והשלכות פיראטיות בשטחים פתוחים.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="border-t border-gray-800 py-8 text-center text-gray-600 text-xs">
-        <p>AI Muse Technologies © 2025. Developed in Tel Aviv.</p>
+    <footer class="border-t border-gray-800 py-8 text-center text-gray-500 text-xs bg-slate-950">
+        <p>AI Muse Technologies © 2025. Dual-Use AI Platform.</p>
     </footer>
 
 </body>
