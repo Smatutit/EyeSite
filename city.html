@@ -29,9 +29,34 @@
                     <span class="text-[0.65rem] text-blue-400 font-bold tracking-widest uppercase">URBAN DATA LABS</span>
                 </div>
             </div>
-            <a href="index.html" class="hidden md:flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-white transition bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:border-orange-500/50">
-                <i class="fas fa-hard-hat text-orange-500"></i>
-                <span>למעבר לורטיקל בנייה (EyeSite)</span>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-4 text-sm">
+                <a href="index.html" class="text-gray-400 hover:text-white">דף הבית</a>
+                <a href="why-ai-muse.html" class="text-gray-400 hover:text-white">למה AI Muse</a>
+                <a href="how-it-works.html" class="text-gray-400 hover:text-white">איך זה עובד</a>
+                <a href="city.html" class="text-blue-400 border-b-2 border-blue-400 pb-1">פלטפורמה עירונית</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
+            <a href="index.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+                <i class="fas fa-hard-hat text-orange-400 mr-3"></i>דף הבית (בנייה)
+            </a>
+            <a href="why-ai-muse.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+                <i class="fas fa-star text-orange-400 mr-3"></i>למה AI Muse
+            </a>
+            <a href="how-it-works.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+                <i class="fas fa-cogs text-orange-400 mr-3"></i>איך זה עובד
+            </a>
+            <a href="city.html" class="block py-3 text-blue-400">
+                <i class="fas fa-city text-blue-400 mr-3"></i>פלטפורמה עירונית
             </a>
         </div>
     </nav>
@@ -131,6 +156,14 @@
         <p>Advanced Urban Intelligence Platform developed in Tel Aviv.</p>
         <p class="mt-4">Contact: aimuseaimuseai@gmail.com</p>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 </html>
