@@ -1,257 +1,266 @@
-<!DOCTYPE html><html lang="he" dir="rtl"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>AI Muse - EyeSite Construction Safety</title> <script src="https://cdn.tailwindcss.com"></script> <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
-text
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Muse - EyeSite Construction Safety</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Heebo', sans-serif; }
+        .construction-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-white leading-relaxed">
 
-<style>
-    body { font-family: 'Heebo', sans-serif; }
-    .construction-bg {
-        background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('hero.jpg');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }
-</style>
-
-</head> <body class="bg-slate-950 text-white leading-relaxed">
-text
-
-<nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <!-- Logo section (LEFT side) -->
-    <div class="flex items-center gap-3">
-        <img src="logo.jpg" alt="EyeSite Logo" class="h-10 w-auto rounded-md bg-slate-900/50 border border-white/10">
-        <div class="flex flex-col">
-            <span class="text-xl font-black tracking-tight text-white leading-none">Ai Muse</span>
-            <span class="text-[0.65rem] text-orange-400 font-bold tracking-widest uppercase">PROTOCOL 2026 KERNEL</span>
+    <nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo section (LEFT side) -->
+        <div class="flex items-center gap-3">
+            <img src="logo.jpg" alt="EyeSite Logo" class="h-10 w-auto rounded-md bg-slate-900/50 border border-white/10">
+            <div class="flex flex-col">
+                <span class="text-xl font-black tracking-tight text-white leading-none">Ai Muse</span>
+                <span class="text-[0.65rem] text-orange-400 font-bold tracking-widest uppercase">PROTOCOL 2026 KERNEL</span>
+            </div>
         </div>
+        
+        <!-- Desktop Navigation (RIGHT side) -->
+        <div class="hidden md:flex items-center gap-4 text-sm">
+            <a href="index.html" class="text-orange-400 border-b-2 border-orange-400 pb-1">דף הבית</a>
+            <a href="why-ai-muse.html" class="text-orange-400 hover:text-orange-300 hover:border-b-2 hover:border-orange-300 hover:pb-1">למה EyeSite</a>
+            <a href="how-it-works.html" class="text-gray-400 hover:text-white">איך זה עובד</a>
+            <a href="city.html" class="text-blue-400 hover:text-blue-300 hover:border-b-2 hover:border-blue-300 hover:pb-1">פלטפורמה עירונית</a>
+            <a href="checkin-sheriff.html" class="text-purple-400 hover:text-purple-300 hover:border-b-2 hover:border-purple-300 hover:pb-1">Check-in Sheriff</a>
+            <a href="car-sheriff.html" class="text-green-400 hover:text-green-300 hover:border-b-2 hover:border-green-300 hover:pb-1">Car-Sheriff</a>
+            <a href="disclaimer.html" class="text-gray-400 hover:text-white">מדיניות פרטיות ונגישות</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
     </div>
     
-    <!-- Desktop Navigation (RIGHT side) -->
-    <div class="hidden md:flex items-center gap-4 text-sm">
-        <a href="index.html" class="text-orange-400 border-b-2 border-orange-400 pb-1">דף הבית</a>
-        <a href="why-ai-muse.html" class="text-orange-400 hover:text-orange-300 hover:border-b-2 hover:border-orange-300 hover:pb-1">למה EyeSite</a>
-        <a href="how-it-works.html" class="text-gray-400 hover:text-white">איך זה עובד</a>
-        <a href="city.html" class="text-blue-400 hover:text-blue-300 hover:border-b-2 hover:border-blue-300 hover:pb-1">פלטפורמה עירונית</a>
-        <a href="checkin-sheriff.html" class="text-purple-400 hover:text-purple-300 hover:border-b-2 hover:border-purple-300 hover:pb-1">Check-in Sheriff</a>
-        <a href="car-sheriff.html" class="text-green-400 hover:text-green-300 hover:border-b-2 hover:border-green-300 hover:pb-1">Car-Sheriff</a>
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
+        <a href="index.html" class="block py-3 text-orange-400 border-b border-slate-800">
+            <i class="fas fa-home text-orange-400 mr-3"></i>דף הבית
+        </a>
+        <a href="why-ai-muse.html" class="block py-3 text-orange-400 hover:text-orange-300 border-b border-slate-800">
+            <i class="fas fa-star text-orange-400 mr-3"></i>למה EyeSite
+        </a>
+        <a href="how-it-works.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+            <i class="fas fa-cogs text-orange-400 mr-3"></i>איך זה עובד
+        </a>
+        <a href="city.html" class="block py-3 text-blue-400 hover:text-blue-300 border-b border-slate-800">
+            <i class="fas fa-city text-blue-400 mr-3"></i>פלטפורמה עירונית
+        </a>
+        <a href="checkin-sheriff.html" class="block py-3 text-purple-400 hover:text-purple-300 border-b border-slate-800">
+            <i class="fas fa-file-contract text-purple-400 mr-3"></i>Check-in Sheriff
+        </a>
+        <a href="car-sheriff.html" class="block py-3 text-green-400 hover:text-green-300 border-b border-slate-800">
+            <i class="fas fa-car text-green-400 mr-3"></i>Car-Sheriff
+        </a>
+        <a href="disclaimer.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+            <i class="fas fa-shield-alt mr-3"></i>מדיניות פרטיות ונגישות
+        </a>
     </div>
-    
-    <!-- Mobile Menu Button -->
-    <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
-        <i class="fas fa-bars text-xl"></i>
-    </button>
-</div>
-
-<!-- Mobile Menu (Hidden by default) -->
-<div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
-    <a href="index.html" class="block py-3 text-orange-400 border-b border-slate-800">
-        <i class="fas fa-home text-orange-400 mr-3"></i>דף הבית
-    </a>
-    <a href="why-ai-muse.html" class="block py-3 text-orange-400 hover:text-orange-300 border-b border-slate-800">
-        <i class="fas fa-star text-orange-400 mr-3"></i>למה EyeSite
-    </a>
-    <a href="how-it-works.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-        <i class="fas fa-cogs text-orange-400 mr-3"></i>איך זה עובד
-    </a>
-    <a href="city.html" class="block py-3 text-blue-400 hover:text-blue-300 border-b border-slate-800">
-        <i class="fas fa-city text-blue-400 mr-3"></i>פלטפורמה עירונית
-    </a>
-    <a href="checkin-sheriff.html" class="block py-3 text-purple-400 hover:text-purple-300 border-b border-slate-800">
-        <i class="fas fa-file-contract text-purple-400 mr-3"></i>Check-in Sheriff</a>
-    <a href="car-sheriff.html" class="block py-3 text-green-400 hover:text-green-300">
-        <i class="fas fa-car text-green-400 mr-3"></i>Car-Sheriff</a>
-    </a>
-</div>
-
 </nav>
-text
 
-<header class="construction-bg min-h-[80vh] flex items-center justify-center text-center relative px-4">
-    <div class="max-w-5xl mx-auto pt-16">
-        <div class="inline-flex items-center gap-2 border border-orange-500/30 bg-orange-900/30 backdrop-blur rounded-full pr-2 pl-4 py-1 mb-8">
-            <i class="fas fa-shield-alt text-orange-400 text-xs"></i>
-            <span class="text-orange-400 font-bold text-xs tracking-widest">תואם רגולציית אוקטובר 2026</span>
-        </div>
-        
-        <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight">
-            בקרת סיכונים יומית<br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-l from-orange-400 to-yellow-200">למנהלים ויזמים</span>
-        </h1>
-        
-        <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-            מערכת ניתוח חזותי וזיהוי מגמות לאתרי בנייה. הופכים וידאו שטח פשוט לדו"ח ניהולי המגן על נושאי משרה, ללא צורך בהטמעת חומרה או מצלמות.
-        </p>
-    </div>
-</header>
-
-<section class="py-24 bg-slate-900">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-black text-white">תהליך העבודה (The Workflow)</h2>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
+    <header class="construction-bg min-h-[80vh] flex items-center justify-center text-center relative px-4">
+        <div class="max-w-5xl mx-auto pt-16">
+            <div class="inline-flex items-center gap-2 border border-orange-500/30 bg-orange-900/30 backdrop-blur rounded-full pr-2 pl-4 py-1 mb-8">
+                <i class="fas fa-shield-alt text-orange-400 text-xs"></i>
+                <span class="text-orange-400 font-bold text-xs tracking-widest">תואם רגולציית אוקטובר 2026</span>
+            </div>
             
-            <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/50 hover:border-green-500 hover:bg-slate-800 transition duration-300 group">
-                <div class="h-24 mb-6 flex items-center justify-center">
-                    <i class="fab fa-whatsapp text-6xl text-green-500 group-hover:scale-110 transition duration-300"></i>
+            <h1 class="text-4xl md:text-7xl font-black mb-6 leading-tight">
+                בקרת סיכונים יומית<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-l from-orange-400 to-yellow-200">למנהלים ויזמים</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                מערכת ניתוח חזותי וזיהוי מגמות לאתרי בנייה. הופכים וידאו שטח פשוט לדו"ח ניהולי המגן על נושאי משרה, ללא צורך בהטמעת חומרה או מצלמות.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-24 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-white">תהליך העבודה (The Workflow)</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/50 hover:border-green-500 hover:bg-slate-800 transition duration-300 group">
+                    <div class="h-24 mb-6 flex items-center justify-center">
+                        <i class="fab fa-whatsapp text-6xl text-green-500 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white text-center">1. תיעוד שטח (Data Capture)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed text-center">
+                        מנהל העבודה מבצע סיור וידאו רציף (60-180 שניות) במוקדי הסיכון באתר. הסרטון נשלח ישירות למספר המערכת בוואטסאפ.
+                        <br><br>
+                        <strong>דיוק לפני הכל:</strong> המערכת קולטת את הדיווח, כאשר המיקום והזמן מוזנים ידנית ע״י המשתמש למניעת טעויות והבטחת תיעוד אמין.
+                    </p>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 text-white text-center">1. תיעוד שטח (Data Capture)</h3>
-                <p class="text-gray-400 text-sm leading-relaxed text-center">
-                    מנהל העבודה מבצע סיור וידאו רציף (60-180 שניות) במוקדי הסיכון באתר. הסרטון נשלח ישירות למספר המערכת בוואטסאפ.
-                    <br><br>
-                    <strong>דיוק לפני הכל:</strong> המערכת קולטת את הדיווח, כאשר המיקום והזמן מוזנים ידנית ע״י המשתמש למניעת טעויות והבטחת תיעוד אמין.
-                </p>
-            </div>
 
-            <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/50 hover:border-blue-500 hover:bg-slate-800 transition duration-300 group">
-                <div class="h-24 mb-6 flex items-center justify-center">
-                    <i class="fas fa-server text-6xl text-blue-400 group-hover:scale-110 transition duration-300"></i>
+                <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/50 hover:border-blue-500 hover:bg-slate-800 transition duration-300 group">
+                    <div class="h-24 mb-6 flex items-center justify-center">
+                        <i class="fas fa-server text-6xl text-blue-400 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white text-center">2. ניתוח רגולטורי (AI Analysis)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed text-center">
+                        מנוע ה-Computer Vision סורק כל פריים בנפרד, מזהה אובייקטים (קסדות, גדרות, פיגומים) ומצליב את המצב בשטח מול <strong>התקנות החדשות שנכנסו לתוקף באוקטובר 2026</strong>.
+                        <br><br>
+                        המערכת מסווגת את הליקויים לפי רמת חומרה ודחיפות לטיפול.
+                    </p>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 text-white text-center">2. ניתוח רגולטורי (AI Analysis)</h3>
-                <p class="text-gray-400 text-sm leading-relaxed text-center">
-                    מנוע ה-Computer Vision סורק כל פריים בנפרד, מזהה אובייקטים (קסדות, גדרות, פיגומים) ומצליב את המצב בשטח מול <strong>התקנות החדשות שנכנסו לתוקף באוקטובר 2026</strong>.
-                    <br><br>
-                    המערכת מסווגת את הליקויים לפי רמת חומרה ודחיפות לטיפול.
-                </p>
-            </div>
 
-            <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/50 hover:border-orange-500 hover:bg-slate-800 transition duration-300 group">
-                <div class="h-24 mb-6 flex items-center justify-center">
-                    <i class="fas fa-file-pdf text-6xl text-orange-500 group-hover:scale-110 transition duration-300"></i>
+                <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/50 hover:border-orange-500 hover:bg-slate-800 transition duration-300 group">
+                    <div class="h-24 mb-6 flex items-center justify-center">
+                        <i class="fas fa-file-pdf text-6xl text-orange-500 group-hover:scale-110 transition duration-300"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white text-center">3. תוצר אפקטיבי (Actionable Report)</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed text-center">
+                        בתוך שעות בודדות, המנכ"ל והיזם מקבלים לוואטסאפ דו"ח PDF מובנה המאפשר פעולה מיידית ומעקב ביצוע, המציג את הליקויים, הקשר האחריות (Liability Context) וציון "מדד בטיחות" יומי לאתר.
+                        <br><br>
+                        המסמך משמש ככלי ניהולי מתקדם לתיעוד "חובת הזהירות" ושיפור נהלי הבטיחות בחברה.
+                    </p>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 text-white text-center">3. תוצר אפקטיבי (Actionable Report)</h3>
-                <p class="text-gray-400 text-sm leading-relaxed text-center">
-                    בתוך שעות בודדות, המנכ"ל והיזם מקבלים לוואטסאפ דו"ח PDF מובנה המאפשר פעולה מיידית ומעקב ביצוע, המציג את הליקויים, הקשר האחריות (Liability Context) וציון "מדד בטיחות" יומי לאתר.
-                    <br><br>
-                    המסמך משמש ככלי ניהולי מתקדם לתיעוד "חובת הזהירות" ושיפור נהלי הבטיחות בחברה.
-                </p>
-            </div>
 
-        </div>
-    </div>
-</section>
-
-<section class="py-24 bg-slate-950 border-t border-slate-800 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-black text-white mb-4">ככל שמשתמשים יותר, ההגנה חזקה יותר</h2>
-            <p class="text-gray-400 max-w-2xl mx-auto">המערכת לא רק מתעדת אירוע בודד, אלא בונה שכבת הגנה ניהולית ותיעודית שמתחזקת עם הזמן.</p>
-        </div>
-
-        <div class="grid md:grid-cols-4 gap-6">
-            <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
-                <div class="bg-blue-900/30 text-blue-400 font-bold inline-block px-3 py-1 rounded-full text-sm mb-4">שבוע 1</div>
-                <h3 class="text-xl font-bold text-white mb-2">דוחות תאימות נקודתיים</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    תיעוד מיידי של המצב בשטח ומתן מענה לבעיות אקוטיות ("כיבוי שריפות").
-                </p>
-            </div>
-
-            <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
-                <div class="bg-blue-900/30 text-blue-400 font-bold inline-block px-3 py-1 rounded-full text-sm mb-4">חודש 3</div>
-                <h3 class="text-xl font-bold text-white mb-2">זיהוי דפוסים ומגמות</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    המערכת מזהה כשלים חוזרים וצווארי בקבוק מערכתיים שלא ניתן לראות בביקור בודד.
-                </p>
-            </div>
-
-            <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
-                <div class="bg-blue-900/30 text-blue-400 font-bold inline-block px-3 py-1 rounded-full text-sm mb-4">שנה 1</div>
-                <h3 class="text-xl font-bold text-white mb-2">היסטוריית בטיחות סמכותית</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    בניית מאגר ("תיק אתר") המוכיח התנהלות אחראית ורציפה לאורך זמן מול הרגולטור.
-                </p>
-            </div>
-
-            <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
-                <div class="bg-blue-900/30 text-blue-400 font-bold inline-block px-3 py-1 rounded-full text-sm mb-4">רב-שנתי</div>
-                <h3 class="text-xl font-bold text-white mb-2">בינה צופה סיכונים</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    מודלים מתקדמים לחיזוי אזורי סיכון לפני התרחשות אירוע על בסיס דאטה היסטורי.
-                </p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="py-16 bg-slate-900 border-t border-slate-800">
-    <div class="max-w-5xl mx-auto px-6">
-        <div class="bg-slate-950/50 p-8 md:p-12 rounded-3xl border border-slate-800">
-            <div class="space-y-6 text-gray-300 leading-8 font-light">
-                <p>
-                    <span class="text-orange-400 font-bold">מערכת EyeSite</span> מציעה פתרון מתקדם לניתוח חזותי שמבוסס על טכנולוגיות מתקדמות להבנת וידאו והסקה מריבוי פריימים. המערכת מתמקדת ביצירת שכבת תיעוד נוספת שתומכת בהחלטות ניהוליות, תוך שהיא מבוססת אך ורק על מידע חזותי מצולם.
-                </p>
-                <p>
-                    בעוד המערכת אינה מחליפה בדיקות הנדסיות או ביקורות בטיחות מוסמכות, היא מספקת דו"חות ממוקדי-פעולה הכוללים ממצאים אופרטיביים ברורים עם חותמת זמן, מיקום, תיאור ודרגת חומרה. דו"חות אלו מתאימים <span class="text-white font-medium">לשימוש ניהולי ולהוכחת קיום מנגנוני בקרה מתמשכים</span>, אשר מעידים על אימוץ טכנולוגיות ואמצעי בטיחות נוספים וחדשים.
-                </p>
-                <p class="border-r-4 border-orange-500 pr-4 bg-orange-900/10 py-2 rounded-r-sm">
-                    עם <span class="text-orange-400 font-bold">ההתרחבות הצפויה של האחריות הפלילית</span> והמנהלית כלפי יזמים ובעלי פרויקטים, המערכת מספקת כלי תומך בהחלטה שמאפשר <span class="text-white font-medium">ניהול סיכונים סביר וממומן</span>. בכך, היא תורמת לאסטרטגיות ניהוליות בהקשר של בטיחות ומעקב, תוך שהיא מחזקת את תפקידם של מומחי הבטיחות והמהנדסים באתרי העבודה.
-                </p>
+    <section class="py-24 bg-slate-950 border-t border-slate-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4">ככל שמשתמשים יותר, ההגנה חזקה יותר</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">המערכת לא רק מתעדת אירוע בודד, אלא בונה שכבת הגנה ניהולית ותיעודית שמתחזקת עם הזמן.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
+                    <div class="bg-blue-900/30 text-blue-400 font-bold inline-block px-3 py-1 rounded-full text-sm mb-4">שבוע 1</div>
+                    <h3 class="text-xl font-bold text-white mb-2">דוחות תאימות נקודתיים</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        תיעוד מיידי של המצב בשטח ומתן מענה לבעיות אקוטיות ("כיבוי שריפות").
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
+                    <div class="bg-blue-900/30 text-blue-400 font-bold inline-block px-3 py-1 rounded-full text-sm mb-4">חודש 3</div>
+                    <h3 class="text-xl font-bold text-white mb-2">זיהוי דפוסים ומגמות</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        המערכת מזהה כשלים חוזרים וצווארי בקבוק מערכתיים שלא ניתן לראות בביקור בודד.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
+                    <div class="bg-blue-900/30 text-blue-400 font-bold inline-block px-3 py-1 rounded-full text-sm mb-4">שנה 1</div>
+                    <h3 class="text-xl font-bold text-white mb-2">היסטוריית בטיחות סמכותית</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        בניית מאגר ("תיק אתר") המוכיח התנהלות אחראית ורציפה לאורך זמן מול הרגולטור.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition duration-300">
+                    <div class="bg-blue-900/30 text-blue-400 font-bold inline-block px-3 py-1 rounded-full text-sm mb-4">רב-שנתי</div>
+                    <h3 class="text-xl font-bold text-white mb-2">בינה צופה סיכונים</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        מודלים מתקדמים לחיזוי אזורי סיכון לפני התרחשות אירוע על בסיס דאטה היסטורי.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="py-12 bg-slate-900 border-t border-slate-800">
-    <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-8">
-            <h3 class="text-2xl font-bold text-white mb-2">צפו במערכת בפעולה</h3>
-            <p class="text-gray-400 text-sm">סיור, זיהוי ודיווח - ב-40 שניות</p>
+    <section class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-slate-950/50 p-8 md:p-12 rounded-3xl border border-slate-800">
+                <div class="space-y-6 text-gray-300 leading-8 font-light">
+                    <p>
+                        <span class="text-orange-400 font-bold">מערכת EyeSite</span> מציעה פתרון מתקדם לניתוח חזותי שמבוסס על טכנולוגיות מתקדמות להבנת וידאו והסקה מריבוי פריימים. המערכת מתמקדת ביצירת שכבת תיעוד נוספת שתומכת בהחלטות ניהוליות, תוך שהיא מבוססת אך ורק על מידע חזותי מצולם.
+                    </p>
+                    <p>
+                        בעוד המערכת אינה מחליפה בדיקות הנדסיות או ביקורות בטיחות מוסמכות, היא מספקת דו"חות ממוקדי-פעולה הכוללים ממצאים אופרטיביים ברורים עם חותמת זמן, מיקום, תיאור ודרגת חומרה. דו"חות אלו מתאימים <span class="text-white font-medium">לשימוש ניהולי ולהוכחת קיום מנגנוני בקרה מתמשכים</span>, אשר מעידים על אימוץ טכנולוגיות ואמצעי בטיחות נוספים וחדשים.
+                    </p>
+                    <p class="border-r-4 border-orange-500 pr-4 bg-orange-900/10 py-2 rounded-r-sm">
+                        עם <span class="text-orange-400 font-bold">ההתרחבות הצפויה של האחריות הפלילית</span> והמנהלית כלפי יזמים ובעלי פרויקטים, המערכת מספקת כלי תומך בהחלטה שמאפשר <span class="text-white font-medium">ניהול סיכונים סביר וממומן</span>. בכך, היא תורמת לאסטרטגיות ניהוליות בהקשר של בטיחות ומעקב, תוך שהיא מחזקת את תפקידם של מומחי הבטיחות והמהנדסים באתרי העבודה.
+                    </p>
+                </div>
+            </div>
         </div>
-        
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-orange-900/20 border border-slate-700">
-            <video width="100%" height="auto" controls autoplay muted playsinline preload="metadata" class="block">
-                <source src="eyesite_demo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    </section>
+
+    <section class="py-12 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-white mb-2">צפו במערכת בפעולה</h3>
+                <p class="text-gray-400 text-sm">סיור, זיהוי ודיווח - ב-40 שניות</p>
+            </div>
+            
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-orange-900/20 border border-slate-700">
+                <video width="100%" height="auto" controls autoplay muted playsinline preload="metadata" class="block">
+                    <source src="eyesite_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
         </div>
-    </div>
-</section>
-
-<section class="py-24 bg-gradient-to-b from-slate-900 to-black border-t border-slate-800">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-         <h2 class="text-3xl font-bold text-white mb-6">מוכנים לפרוטוקול 2026?</h2>
-         <p class="text-gray-400 leading-relaxed text-lg">
-             אל תחכו לביקורת הבאה. קבלו שליטה מלאה על אתר הבנייה שלכם כבר מחר בבוקר.
-         </p>
-         <div class="mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
-             <a href="https://wa.me/972503040523" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-green-900/50">
-                <i class="fab fa-whatsapp text-2xl ml-3"></i>
-                דבר איתנו בוואטסאפ
-            </a>
-             <a href="tel:0503040523" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-orange-900/50">
-                <i class="fas fa-phone text-xl ml-3"></i>
-                050-3040523
-            </a>
-         </div>
-    </div>
-</section>
-
-<footer class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
-    <p class="mb-2">EyeSite Technologies © 2025.</p>
-    <p>Developed by AI Muse Urban Data Labs.</p>
-    <div class="mt-6 flex flex-col gap-3">
-        <a href="https://wa.me/972503040523" class="hover:text-white transition text-base font-bold"><i class="fab fa-whatsapp ml-2"></i>WhatsApp: 050-3040523</a>
-        <a href="mailto:aimuseaimuseai@gmail.com" class="hover:text-white transition">Email: aimuseaimuseai@gmail.com</a>
-    </div>
-    <div class="mt-8 max-w-4xl mx-auto px-4 text-gray-400 text-[10px] leading-5 text-justify border-t border-gray-800 pt-6">
-        <p class="mb-2"><strong>מדיניות פרטיות:</strong> האתר מופעל על ידי יורם כהן ומכבד את פרטיות המשתמשים בהתאם לחוק הגנת הפרטיות, התשמ"א-1981 ותיקון 13 לחוק.</p>
-        <p class="mb-2"><strong>איסוף מידע ומטרתו:</strong> האתר אינו אוסף מידע באופן אוטומטי ואינו כולל טפסי הרשמה. המידע היחיד שמתקבל הוא מידע שאתם בוחרים למסור מרצונכם החופשי בעת פנייה יזומה דרך לחצני הוואטסאפ או המייל באתר (למשל מספר טלפון או כתובת דוא"ל). מידע זה משמש אך ורק לצורך מתן מענה לפנייתכם ומתן השירות המבוקש.</p>
-        <p class="mb-2"><strong>שמירת מידע והעברתו:</strong> המידע אינו נשמר במאגר נתונים קבוע של האתר, אינו משמש למטרות דיוור שיווקי ואינו מועבר לצדדים שלישיים. לידיעתכם, השימוש בוואטסאפ כפוף למדיניות הפרטיות של חברת Meta.</p>
-        <p><strong>זכויות המשתמש:</strong> על פי חוק, אתם זכאים לעיין במידע שמסרתם, לבקש את תיקונו או לדרוש את מחיקתו המלאה בכל עת. למימוש זכויות אלו ניתן לפנות אלינו דרך פרטי הקשר המופיעים באתר.</p>
-    </div>
-</footer>
-
-<script>
-    // Mobile menu toggle - SIMPLE WORKING VERSION
-    const menuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+    </section>
     
-    if (menuButton && mobileMenu) {
-        menuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-</script>
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-black border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+             <h2 class="text-3xl font-bold text-white mb-6">מוכנים לפרוטוקול 2026?</h2>
+             <p class="text-gray-400 leading-relaxed text-lg">
+                 אל תחכו לביקורת הבאה. קבלו שליטה מלאה על אתר הבנייה שלכם כבר מחר בבוקר.
+             </p>
+             <div class="mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
+                 <a href="https://wa.me/972503040523" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-green-900/50">
+                    <i class="fab fa-whatsapp text-2xl ml-3"></i>
+                    דבר איתנו בוואטסאפ
+                </a>
+                 <a href="tel:0503040523" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-orange-900/50">
+                    <i class="fas fa-phone text-xl ml-3"></i>
+                    050-3040523
+                </a>
+             </div>
+        </div>
+    </section>
 
-</body> </html
+    <footer class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
+        <p class="mb-2">EyeSite Technologies © 2025.</p>
+        <p>Developed by AI Muse Urban Data Labs.</p>
+        <div class="mt-6 flex flex-col gap-3">
+            <a href="https://wa.me/972503040523" class="hover:text-white transition text-base font-bold"><i class="fab fa-whatsapp ml-2"></i>WhatsApp: 050-3040523</a>
+            <a href="mailto:aimuseaimuseai@gmail.com" class="hover:text-white transition">Email: aimuseaimuseai@gmail.com</a>
+        </div>
+        <div class="mt-6">
+            <a href="disclaimer.html" class="text-orange-400 hover:text-orange-300 transition font-medium">
+                מדיניות פרטיות והצהרת נגישות
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle - SIMPLE WORKING VERSION
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>
