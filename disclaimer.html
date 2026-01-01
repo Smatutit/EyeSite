@@ -16,11 +16,28 @@
             background-position: center;
             background-attachment: fixed;
         }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-white leading-relaxed">
 
-    <nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+    <!-- Skip to content link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[9999] focus:bg-orange-600 focus:text-white focus:p-4 focus:rounded-lg">
+        דלג לתוכן הראשי
+    </a>
+
+    <!-- Landmark: Banner -->
+    <header role="banner" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <!-- Logo section (LEFT side) -->
         <div class="flex items-center gap-3">
@@ -32,56 +49,56 @@
         </div>
         
         <!-- Desktop Navigation (RIGHT side) -->
-        <div class="hidden md:flex items-center gap-4 text-sm">
+        <nav class="hidden md:flex items-center gap-4 text-sm" aria-label="ניווט ראשי">
             <a href="index.html" class="text-gray-400 hover:text-white">דף הבית</a>
             <a href="why-ai-muse.html" class="text-gray-400 hover:text-white">למה Ai Muse</a>
             <a href="how-it-works.html" class="text-gray-400 hover:text-white">איך זה עובד</a>
             <a href="city.html" class="text-gray-400 hover:text-white">פלטפורמה עירונית</a>
-            <a href="checkin-sheriff.html" class="text-gray-400 hover:text-white">Check-in Sheriff</a>
-            <a href="car-sheriff.html" class="text-gray-400 hover:text-white">Car-Sheriff</a>
+            <a href="checkin-sheriff.html" class="text-gray-400 hover:text-white"><span lang="en">Check-in Sheriff</span></a>
+            <a href="car-sheriff.html" class="text-gray-400 hover:text-white"><span lang="en">Car-Sheriff</span></a>
             <a href="disclaimer.html" class="text-orange-400 border-b-2 border-orange-400 pb-1">מדיניות פרטיות ונגישות</a>
-        </div>
+        </nav>
         
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
-            <i class="fas fa-bars text-xl"></i>
+        <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white" aria-label="תפריט ניווט" aria-expanded="false" aria-controls="mobile-menu">
+            <i class="fas fa-bars text-xl" aria-hidden="true"></i>
         </button>
     </div>
     
     <!-- Mobile Menu (Hidden by default) -->
-    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
+    <nav id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4" aria-label="ניווט לנייד">
         <a href="index.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-home mr-3"></i>דף הבית
+            <i class="fas fa-home mr-3" aria-hidden="true"></i>דף הבית
         </a>
         <a href="why-ai-muse.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-star mr-3"></i>למה Ai Muse
+            <i class="fas fa-star mr-3" aria-hidden="true"></i>למה Ai Muse
         </a>
         <a href="how-it-works.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-cogs mr-3"></i>איך זה עובד
+            <i class="fas fa-cogs mr-3" aria-hidden="true"></i>איך זה עובד
         </a>
         <a href="city.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-city mr-3"></i>פלטפורמה עירונית
+            <i class="fas fa-city mr-3" aria-hidden="true"></i>פלטפורמה עירונית
         </a>
         <a href="checkin-sheriff.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-file-contract mr-3"></i>Check-in Sheriff
+            <i class="fas fa-file-contract mr-3" aria-hidden="true"></i><span lang="en">Check-in Sheriff</span>
         </a>
         <a href="car-sheriff.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-car mr-3"></i>Car-Sheriff
+            <i class="fas fa-car mr-3" aria-hidden="true"></i><span lang="en">Car-Sheriff</span>
         </a>
         <a href="disclaimer.html" class="block py-3 text-orange-400 border-b border-slate-800">
-            <i class="fas fa-shield-alt mr-3"></i>מדיניות פרטיות ונגישות
+            <i class="fas fa-shield-alt mr-3" aria-hidden="true"></i>מדיניות פרטיות ונגישות
         </a>
-    </div>
-</nav>
+    </nav>
+</header>
 
-    <header class="construction-bg py-20">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-black mb-6">מדיניות פרטיות והצהרת נגישות</h1>
-            <p class="text-xl text-gray-300">Ai Muse - הגנה על פרטיותך ונגישות לכולם</p>
-        </div>
-    </header>
+    <main id="main-content" class="max-w-4xl mx-auto px-6 py-16">
+        <header class="construction-bg py-20 mb-12 rounded-2xl">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black mb-6">מדיניות פרטיות והצהרת נגישות</h1>
+                <p class="text-xl text-gray-300">Ai Muse - הגנה על פרטיותך ונגישות לכולם</p>
+            </div>
+        </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-16">
         <div class="space-y-12">
             <!-- Hebrew Section -->
             <section class="bg-slate-900/50 p-8 rounded-2xl border border-slate-700">
@@ -154,7 +171,7 @@
     </p>
     
     <p class="text-gray-300 leading-relaxed">
-        אתר <strong>aimuseai.com</strong> הונגש ברמת נגישות גבוהה של 100% על פי עקרונות הנגישות של תקן ישראלי ת"י 5568 ודרישות WCAG 2.1 הבינלאומיות ברמת AA. 
+        אתר <strong>aimuseai.com</strong> הונגש ברמת נגישות גבוהה של 95% על פי עקרונות הנגישות של תקן ישראלי ת"י 5568 ודרישות WCAG 2.1 הבינלאומיות ברמת AA. 
         האתר עבר תהליך הנגשה מקיף ומוקפד לאורך כל שלבי הפיתוח, לרבות התאמות למשתמשים עם מוגבלויות שונות.
     </p>
     
@@ -173,8 +190,7 @@
         <p class="text-gray-300">
             <strong>רכז נגישות:</strong> יורם כהן<br>
             <strong>טלפון:</strong> 050-3040523<br>
-            <strong>דוא"ל:</strong> aimuseaimuseai@gmail.com<br>
-            <strong>תאריך עדכון ההצהרה:</strong> ינואר 2026
+            <strong>דוא"ל:</strong> aimuseaimuseai@gmail.com
         </p>
     </div>
     
@@ -182,6 +198,7 @@
         הערה: הצהרה זו מתייחסת לנגישות אתר האינטרנט בלבד ואינה חלה על מוצרים או שירותים אחרים של החברה.
     </p>
 </div>
+                </div>
             </section>
 
             <!-- English Section -->
@@ -262,24 +279,29 @@
     
     <p class="text-gray-300 leading-relaxed">
         If you encounter any accessibility difficulties, we welcome your feedback and assistance requests.<br>
-        <strong>Accessibility Coordinator:</strong> Yoram Cohen | 050-3040523 | aimuseaimuseai@gmail.com<br>
-        <strong>Last Updated:</strong> January 2026
+        <strong>Accessibility Coordinator:</strong> Yoram Cohen<br>
+        <strong>Phone:</strong> 050-3040523<br>
+        <strong>Email:</strong> aimuseaimuseai@gmail.com
     </p>
 </div>
-        
+                </div>
+            </section>
+        </div>
+
         <div class="mt-12 text-center">
             <a href="index.html" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full transition">
-                <i class="fas fa-arrow-right ml-3"></i>
+                <i class="fas fa-arrow-right ml-3" aria-hidden="true"></i>
                 חזרה לדף הבית
             </a>
         </div>
     </main>
 
-    <footer class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
-        <p class="mb-2">Ai Muse © 2025.</p>
+    <!-- Landmark: Contentinfo -->
+    <footer role="contentinfo" class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
+        <p class="mb-2"><span lang="en">EyeSite Technologies</span> © 2025.</p>
         <p>Developed by AI Muse Urban Data Labs.</p>
         <div class="mt-6 flex flex-col gap-3">
-            <a href="https://wa.me/972503040523" class="hover:text-white transition text-base font-bold"><i class="fab fa-whatsapp ml-2"></i>WhatsApp: 050-3040523</a>
+            <a href="https://wa.me/972503040523" class="hover:text-white transition text-base font-bold"><i class="fab fa-whatsapp ml-2" aria-hidden="true"></i><span lang="en">WhatsApp</span>: 050-3040523</a>
             <a href="mailto:aimuseaimuseai@gmail.com" class="hover:text-white transition">Email: aimuseaimuseai@gmail.com</a>
         </div>
         <div class="mt-6">
@@ -290,12 +312,13 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         
         if (menuButton && mobileMenu) {
             menuButton.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
                 mobileMenu.classList.toggle('hidden');
             });
         }
