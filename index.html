@@ -16,11 +16,23 @@
             background-position: center;
             background-attachment: fixed;
         }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-white leading-relaxed">
 
-    <nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+    <!-- Landmark: Banner -->
+    <header role="banner" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <!-- Logo section (LEFT side) -->
         <div class="flex items-center gap-3">
@@ -32,7 +44,7 @@
         </div>
         
         <!-- Desktop Navigation (RIGHT side) -->
-        <div class="hidden md:flex items-center gap-4 text-sm">
+        <nav class="hidden md:flex items-center gap-4 text-sm" aria-label="ניווט ראשי">
             <a href="index.html" class="text-orange-400 border-b-2 border-orange-400 pb-1">דף הבית</a>
             <a href="why-ai-muse.html" class="text-orange-400 hover:text-orange-300 hover:border-b-2 hover:border-orange-300 hover:pb-1">למה EyeSite</a>
             <a href="how-it-works.html" class="text-gray-400 hover:text-white">איך זה עובד</a>
@@ -40,44 +52,46 @@
             <a href="checkin-sheriff.html" class="text-purple-400 hover:text-purple-300 hover:border-b-2 hover:border-purple-300 hover:pb-1">Check-in Sheriff</a>
             <a href="car-sheriff.html" class="text-green-400 hover:text-green-300 hover:border-b-2 hover:border-green-300 hover:pb-1">Car-Sheriff</a>
             <a href="disclaimer.html" class="text-gray-400 hover:text-white">מדיניות פרטיות ונגישות</a>
-        </div>
+        </nav>
         
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
-            <i class="fas fa-bars text-xl"></i>
+        <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white" aria-label="תפריט ניווט" aria-expanded="false">
+            <i class="fas fa-bars text-xl" aria-hidden="true"></i>
         </button>
     </div>
     
     <!-- Mobile Menu (Hidden by default) -->
-    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
+    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4" role="navigation" aria-label="ניווט לנייד">
         <a href="index.html" class="block py-3 text-orange-400 border-b border-slate-800">
-            <i class="fas fa-home text-orange-400 mr-3"></i>דף הבית
+            <i class="fas fa-home text-orange-400 mr-3" aria-hidden="true"></i>דף הבית
         </a>
         <a href="why-ai-muse.html" class="block py-3 text-orange-400 hover:text-orange-300 border-b border-slate-800">
-            <i class="fas fa-star text-orange-400 mr-3"></i>למה EyeSite
+            <i class="fas fa-star text-orange-400 mr-3" aria-hidden="true"></i>למה EyeSite
         </a>
         <a href="how-it-works.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-cogs text-orange-400 mr-3"></i>איך זה עובד
+            <i class="fas fa-cogs text-orange-400 mr-3" aria-hidden="true"></i>איך זה עובד
         </a>
         <a href="city.html" class="block py-3 text-blue-400 hover:text-blue-300 border-b border-slate-800">
-            <i class="fas fa-city text-blue-400 mr-3"></i>פלטפורמה עירונית
+            <i class="fas fa-city text-blue-400 mr-3" aria-hidden="true"></i>פלטפורמה עירונית
         </a>
         <a href="checkin-sheriff.html" class="block py-3 text-purple-400 hover:text-purple-300 border-b border-slate-800">
-            <i class="fas fa-file-contract text-purple-400 mr-3"></i>Check-in Sheriff
+            <i class="fas fa-file-contract text-purple-400 mr-3" aria-hidden="true"></i>Check-in Sheriff
         </a>
         <a href="car-sheriff.html" class="block py-3 text-green-400 hover:text-green-300 border-b border-slate-800">
-            <i class="fas fa-car text-green-400 mr-3"></i>Car-Sheriff
+            <i class="fas fa-car text-green-400 mr-3" aria-hidden="true"></i>Car-Sheriff
         </a>
         <a href="disclaimer.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-shield-alt mr-3"></i>מדיניות פרטיות ונגישות
+            <i class="fas fa-shield-alt mr-3" aria-hidden="true"></i>מדיניות פרטיות ונגישות
         </a>
     </div>
-</nav>
+</header>
 
-    <header class="construction-bg min-h-[80vh] flex items-center justify-center text-center relative px-4">
+    <!-- Landmark: Main Content -->
+    <main>
+    <header class="construction-bg min-h-[80vh] flex items-center justify-center text-center relative px-4" aria-label="כותרת ראשית">
         <div class="max-w-5xl mx-auto pt-16">
             <div class="inline-flex items-center gap-2 border border-orange-500/30 bg-orange-900/30 backdrop-blur rounded-full pr-2 pl-4 py-1 mb-8">
-                <i class="fas fa-shield-alt text-orange-400 text-xs"></i>
+                <i class="fas fa-shield-alt text-orange-400 text-xs" aria-hidden="true"></i>
                 <span class="text-orange-400 font-bold text-xs tracking-widest">תואם רגולציית אוקטובר 2026</span>
             </div>
             
@@ -102,7 +116,7 @@
                 
                 <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/50 hover:border-green-500 hover:bg-slate-800 transition duration-300 group">
                     <div class="h-24 mb-6 flex items-center justify-center">
-                        <i class="fab fa-whatsapp text-6xl text-green-500 group-hover:scale-110 transition duration-300"></i>
+                        <i class="fab fa-whatsapp text-6xl text-green-500 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 text-white text-center">1. תיעוד שטח (Data Capture)</h3>
                     <p class="text-gray-400 text-sm leading-relaxed text-center">
@@ -114,7 +128,7 @@
 
                 <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/50 hover:border-blue-500 hover:bg-slate-800 transition duration-300 group">
                     <div class="h-24 mb-6 flex items-center justify-center">
-                        <i class="fas fa-server text-6xl text-blue-400 group-hover:scale-110 transition duration-300"></i>
+                        <i class="fas fa-server text-6xl text-blue-400 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 text-white text-center">2. ניתוח רגולטורי (AI Analysis)</h3>
                     <p class="text-gray-400 text-sm leading-relaxed text-center">
@@ -126,7 +140,7 @@
 
                 <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700/50 hover:border-orange-500 hover:bg-slate-800 transition duration-300 group">
                     <div class="h-24 mb-6 flex items-center justify-center">
-                        <i class="fas fa-file-pdf text-6xl text-orange-500 group-hover:scale-110 transition duration-300"></i>
+                        <i class="fas fa-file-pdf text-6xl text-orange-500 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 text-white text-center">3. תוצר אפקטיבי (Actionable Report)</h3>
                     <p class="text-gray-400 text-sm leading-relaxed text-center">
@@ -209,9 +223,9 @@
             </div>
             
             <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-orange-900/20 border border-slate-700">
-                <video width="100%" height="auto" controls autoplay muted playsinline preload="metadata" class="block">
+                <video width="100%" height="auto" controls autoplay muted playsinline preload="metadata" class="block" aria-label="סרטון הדגמה של EyeSite - סיור באתר בנייה">
                     <source src="eyesite_demo.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+                    הדפדפן שלך אינו תומך בצפייה בסרטון. ניתן <a href="eyesite_demo.mp4">להוריד את הסרטון כאן</a>.
                 </video>
             </div>
         </div>
@@ -224,23 +238,25 @@
                  אל תחכו לביקורת הבאה. קבלו שליטה מלאה על אתר הבנייה שלכם כבר מחר בבוקר.
              </p>
              <div class="mt-12 flex flex-col md:flex-row gap-6 justify-center items-center">
-                 <a href="https://wa.me/972503040523" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-green-900/50">
-                    <i class="fab fa-whatsapp text-2xl ml-3"></i>
+                 <a href="https://wa.me/972503040523" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-green-900/50" aria-label="שלח הודעה בוואטסאפ">
+                    <i class="fab fa-whatsapp text-2xl ml-3" aria-hidden="true"></i>
                     דבר איתנו בוואטסאפ
                 </a>
-                 <a href="tel:0503040523" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-orange-900/50">
-                    <i class="fas fa-phone text-xl ml-3"></i>
+                 <a href="tel:0503040523" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-orange-900/50" aria-label="התקשר אלינו">
+                    <i class="fas fa-phone text-xl ml-3" aria-hidden="true"></i>
                     050-3040523
                 </a>
              </div>
         </div>
     </section>
+</main>
 
-    <footer class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
+    <!-- Landmark: Contentinfo -->
+    <footer role="contentinfo" class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
         <p class="mb-2">EyeSite Technologies © 2025.</p>
         <p>Developed by AI Muse Urban Data Labs.</p>
         <div class="mt-6 flex flex-col gap-3">
-            <a href="https://wa.me/972503040523" class="hover:text-white transition text-base font-bold"><i class="fab fa-whatsapp ml-2"></i>WhatsApp: 050-3040523</a>
+            <a href="https://wa.me/972503040523" class="hover:text-white transition text-base font-bold"><i class="fab fa-whatsapp ml-2" aria-hidden="true"></i>WhatsApp: 050-3040523</a>
             <a href="mailto:aimuseaimuseai@gmail.com" class="hover:text-white transition">Email: aimuseaimuseai@gmail.com</a>
         </div>
         <div class="mt-6">
@@ -251,12 +267,13 @@
     </footer>
 
     <script>
-        // Mobile menu toggle - SIMPLE WORKING VERSION
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         
         if (menuButton && mobileMenu) {
             menuButton.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
                 mobileMenu.classList.toggle('hidden');
             });
         }
