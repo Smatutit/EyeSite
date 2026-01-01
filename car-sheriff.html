@@ -21,13 +21,15 @@
         
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-4 text-sm">
-            <a href="index.html" class="text-gray-400 hover:text-white">דף הבית</a>
-            <a href="why-ai-muse.html" class="text-gray-400 hover:text-white">למה EyeSite</a>
-            <a href="how-it-works.html" class="text-gray-400 hover:text-white">איך זה עובד</a>
-            <a href="city.html" class="text-gray-400 hover:text-white">פלטפורמה עירונית</a>
-            <a href="checkin-sheriff.html" class="text-purple-400 hover:text-purple-300 hover:border-b-2 hover:border-purple-300 hover:pb-1">Check-in Sheriff</a>
-            <a href="car-sheriff.html" class="text-green-400 border-b-2 border-green-400 pb-1">Car-Sheriff</a>
-        </div>
+    <a href="index.html" class="text-gray-400 hover:text-white">דף הבית</a>
+    <a href="why-ai-muse.html" class="text-gray-400 hover:text-white">למה EyeSite</a>
+    <a href="how-it-works.html" class="text-gray-400 hover:text-white">איך זה עובד</a>
+    <a href="city.html" class="text-gray-400 hover:text-white">פלטפורמה עירונית</a>
+    <a href="checkin-sheriff.html" class="text-gray-400 hover:text-white">Check-in Sheriff</a>
+    <a href="car-sheriff.html" class="text-green-400 border-b-2 border-green-400 pb-1">Car-Sheriff</a>
+    <!-- Add this line below: -->
+    <a href="disclaimer.html" class="text-gray-400 hover:text-white">מדיניות פרטיות ונגישות</a>
+</div>
         
         <!-- Mobile Menu Button -->
         <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
@@ -37,25 +39,15 @@
     
     <!-- Mobile Menu (Hidden by default) -->
     <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
-        <a href="index.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-home text-orange-400 mr-3"></i>דף הבית
-        </a>
-        <a href="why-ai-muse.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-star text-orange-400 mr-3"></i>למה EyeSite
-        </a>
-        <a href="how-it-works.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-cogs text-orange-400 mr-3"></i>איך זה עובד
-        </a>
-        <a href="city.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-city text-blue-400 mr-3"></i>פלטפורמה עירונית
-        </a>
-        <a href="checkin-sheriff.html" class="block py-3 text-purple-400 hover:text-purple-300 border-b border-slate-800">
-            <i class="fas fa-file-contract text-purple-400 mr-3"></i>Check-in Sheriff
-        </a>
-        <a href="car-sheriff.html" class="block py-3 text-green-400">
-            <i class="fas fa-car text-green-400 mr-3"></i>Car-Sheriff
-        </a>
-    </div>
+    <!-- ... all the other links ... -->
+    <a href="car-sheriff.html" class="block py-3 text-green-400">
+        <i class="fas fa-car text-green-400 mr-3"></i>Car-Sheriff
+    </a>
+    <!-- Add this line below: -->
+    <a href="disclaimer.html" class="block py-3 text-gray-400 hover:text-white">
+        <i class="fas fa-shield-alt mr-3"></i>מדיניות פרטיות ונגישות
+    </a>
+</div>
 </nav>
 
 <div class="bg-gradient-to-b from-slate-900 to-slate-950 py-24">
@@ -329,9 +321,14 @@
     </div>
 </div>
 
-<footer class="border-t border-gray-800 py-12 text-center text-gray-500 text-sm bg-slate-950">
-    <p class="mb-2">Car-Sheriff MVP © 2025 | פיתוח: AI Muse Urban Data Labs</p>
-    <p>שלב ניסוי | טכנולוגיות EyeSite | No Facebook compatibility</p>
+<footer class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
+    <p class="mb-2">Car Sheriff © 2025 | פיתוח: AI Muse Urban Data Labs</p>
+    <p>Zero-Data Architecture | No tracking | No storage</p>
+    <div class="mt-6">
+        <a href="disclaimer.html" class="text-orange-400 hover:text-orange-300 transition font-medium">
+            מדיניות פרטיות והצהרת נגישות
+        </a>
+    </div>
 </footer>
 
 <script>
