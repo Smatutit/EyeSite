@@ -245,6 +245,25 @@
             background: linear-gradient(135deg, #c2410c 0%, #9a3412 50%, #7c2d12 100%);
         }
         
+        /* App title styling */
+        .app-title-container {
+            margin-bottom: 0.5rem;
+        }
+        
+        .app-title-english {
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+        
+        .app-title-hebrew {
+            font-size: 1.1rem;
+            font-weight: 700;
+            opacity: 0.9;
+        }
+        
         /* Mobile Styles */
         @media (max-width: 768px) {
             #eyesite-assistant {
@@ -281,6 +300,14 @@
             
             .product-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .app-title-english {
+                font-size: 1.35rem;
+            }
+            
+            .app-title-hebrew {
+                font-size: 1rem;
             }
         }
         
@@ -429,7 +456,10 @@
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-shield-alt text-5xl text-orange-500 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-white text-center">EyeSite</h3>
+                        <div class="app-title-container text-center">
+                            <h3 class="app-title-english">EyeSite</h3>
+                            <div class="app-title-hebrew text-orange-400">ניהול סיכונים לאתרי בנייה</div>
+                        </div>
                         <p class="text-gray-400 text-sm leading-relaxed text-center mb-6">
                             מערכת ניהול סיכונים מבוססת וידאו לאתרי בנייה. הופך 60 שניות של סיור לאתר לדוח בטיחות מקצועי בהתאם לתקנות 2026. הגנה על נושאי משרה.
                         </p>
@@ -446,7 +476,10 @@
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-car text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-white text-center">Car Sheriff</h3>
+                        <div class="app-title-container text-center">
+                            <h3 class="app-title-english">Car Sheriff</h3>
+                            <div class="app-title-hebrew text-green-300">שריף לבדיקת רכב למכירה</div>
+                        </div>
                         <p class="text-gray-400 text-sm leading-relaxed text-center mb-6">
                             מגן הקונה: ניתוח AI של גוף הרכב, זיהוי תקלות ממונע, בדיקת טפסי בדיקה והצלבות מול מאגרים. מגן על קונים יד שנייה.
                         </p>
@@ -463,7 +496,10 @@
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-file-contract text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-white text-center">Check-in Sheriff</h3>
+                        <div class="app-title-container text-center">
+                            <h3 class="app-title-english">Check-in Sheriff</h3>
+                            <div class="app-title-hebrew text-purple-300">צ׳ק-אין שריף</div>
+                        </div>
                         <p class="text-gray-400 text-sm leading-relaxed text-center mb-6">
                             המגן להשכרות: צילום דירה בכניסה/יציאה, קבלת דוח PDF בוואטסאפ. Zero-Data - אין הרשמה, אין אחסון נתונים.
                         </p>
@@ -480,7 +516,10 @@
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-calculator text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-white text-center">Tax Sheriff</h3>
+                        <div class="app-title-container text-center">
+                            <h3 class="app-title-english">Tax Sheriff</h3>
+                            <div class="app-title-hebrew text-yellow-300">שריף לעצמאים</div>
+                        </div>
                         <p class="text-gray-400 text-sm leading-relaxed text-center mb-6">
                             ניווט בבירוקרטיית המס: החזרי מס הכנסה, טופס 101, 867, ניכויים ופטורים. רואה חשבון קטן בכיס.
                         </p>
@@ -497,7 +536,10 @@
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-universal-access text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-white text-center">Accessibility Sheriff</h3>
+                        <div class="app-title-container text-center">
+                            <h3 class="app-title-english">Accessibility Sheriff</h3>
+                            <div class="app-title-hebrew text-red-300">שריף נגישות</div>
+                        </div>
                         <p class="text-gray-400 text-sm leading-relaxed text-center mb-6">
                             בדיקת תאימות לתקן SI 5568 ו-WCAG. כלי לבעלי עסקים ומנהלי אתרים לוודא נגישות פיזית ודיגיטלית.
                         </p>
@@ -514,7 +556,10 @@
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-city text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-white text-center">פלטפורמה עירונית</h3>
+                        <div class="app-title-container text-center">
+                            <h3 class="app-title-english">City Platform</h3>
+                            <div class="app-title-hebrew text-cyan-300">פלטפורמה עירונית</div>
+                        </div>
                         <p class="text-gray-400 text-sm leading-relaxed text-center mb-6">
                             ניהול ובקרה עירונית מבוססת AI. ניתוח נתונים עירוניים, זיהוי מגמות וקבלת החלטות מבוססת מידע.
                         </p>
