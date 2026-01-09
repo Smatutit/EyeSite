@@ -110,12 +110,12 @@
             z-index: 10;
         }
         
-        /* Voice Assistant Styles */
+        /* Voice Assistant Styles - UPDATED */
         #eyesite-assistant {
             position: fixed;
-            bottom: 30px;
-            left: 30px;
-            z-index: 1000;
+            bottom: 20px;
+            left: 20px;
+            z-index: 10000;
             direction: rtl;
             font-family: 'Heebo', sans-serif;
         }
@@ -123,27 +123,30 @@
         #talk-label {
             background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
             color: white;
-            padding: 12px 20px;
-            border-radius: 50px 50px 5px 50px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            padding: 8px 12px;
+            border-radius: 25px 25px 5px 25px;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             font-weight: bold;
             border: 2px solid white;
             text-align: center;
-            max-width: 200px;
+            max-width: 160px;
             display: none;
+            font-size: 14px;
         }
         
         .assistant-btn {
-            width: 85px;
-            height: 85px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
-            border: 5px solid white;
+            border: 4px solid white;
             cursor: pointer;
             box-shadow: 0 0 20px rgba(255,152,0,0.6);
             animation: eyesite-pulse 2s infinite;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin: 0 auto;
             transition: all 0.3s ease;
         }
@@ -158,15 +161,20 @@
             background: linear-gradient(135deg, #FF5722 0%, #FF9800 100%);
         }
         
+        .assistant-icon {
+            font-size: 32px;
+            line-height: 1;
+        }
+        
         #eyesite-window {
             position: absolute;
-            bottom: 110px;
+            bottom: 90px;
             left: 0;
-            width: 380px;
-            height: 600px;
+            width: 360px;
+            height: 550px;
             background: white;
-            border-radius: 25px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
             overflow: hidden;
             border: 3px solid #FF9800;
             display: none;
@@ -175,18 +183,19 @@
         .window-header {
             background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
             color: white;
-            padding: 15px;
+            padding: 12px 15px;
             font-weight: bold;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 16px;
         }
         
         .close-btn {
             cursor: pointer;
-            font-size: 20px;
-            width: 30px;
-            height: 30px;
+            font-size: 18px;
+            width: 28px;
+            height: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -206,7 +215,7 @@
             }
             70% { 
                 transform: scale(1.05); 
-                box-shadow: 0 0 0 20px rgba(255, 152, 0, 0); 
+                box-shadow: 0 0 0 15px rgba(255, 152, 0, 0); 
             }
             100% { 
                 transform: scale(1); 
@@ -236,36 +245,38 @@
             background: linear-gradient(135deg, #c2410c 0%, #9a3412 50%, #7c2d12 100%);
         }
         
-        /* Mobile Styles */
+        /* Mobile Styles - UPDATED */
         @media (max-width: 768px) {
             #eyesite-assistant {
-                bottom: 20px;
-                left: 20px;
-                right: 20px;
+                bottom: 15px;
+                left: 15px;
             }
             
             .assistant-btn {
-                width: 70px;
-                height: 70px;
-                border-width: 4px;
+                width: 60px;
+                height: 60px;
+                border-width: 3px;
             }
             
-            .assistant-btn span {
-                font-size: 35px;
+            .assistant-icon {
+                font-size: 28px;
             }
             
             #eyesite-window {
-                width: calc(100vw - 40px);
-                height: 500px;
-                bottom: 100px;
-                left: 20px;
-                right: 20px;
+                width: calc(100vw - 30px);
+                height: 450px;
+                bottom: 80px;
+                left: 15px;
+                right: 15px;
             }
             
             #talk-label {
-                max-width: 180px;
-                padding: 10px 16px;
+                display: none !important;
+            }
+            
+            .window-header {
                 font-size: 14px;
+                padding: 10px 12px;
             }
             
             .product-grid {
@@ -274,17 +285,23 @@
         }
         
         @media (max-width: 480px) {
-            #eyesite-window {
-                height: 450px;
+            #eyesite-assistant {
+                bottom: 10px;
+                left: 10px;
             }
             
             .assistant-btn {
-                width: 60px;
-                height: 60px;
+                width: 50px;
+                height: 50px;
             }
             
-            .assistant-btn span {
-                font-size: 30px;
+            .assistant-icon {
+                font-size: 22px;
+            }
+            
+            #eyesite-window {
+                height: 400px;
+                bottom: 70px;
             }
         }
         
@@ -526,7 +543,7 @@
                     <div>
                         <h3 class="text-2xl font-bold text-orange-400 mb-6">AI Muse Urban Data Labs</h3>
                         <p class="text-gray-300 leading-relaxed mb-6 text-lg">
-                            AI Muse היא חברת טכנולוגיה המתמחה בפיתוח כלים מבוססי בינה מלאכותית וראייה ממוחשבת 
+                            AI Muse היא HUB טכנולוגי המתמחה בפיתוח כלים מבוססי בינה מלאכותית וראייה ממוחשבת 
                             לפתרון אתגרים אורבניים, בטיחותיים ופיננסיים. אנחנו מאמינים בטכנולוגיה ככלי לשיפור 
                             איכות החיים בעיר ולמתן מענה אמיתי לצרכים יומיומיים.
                         </p>
@@ -592,7 +609,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-bold text-white text-lg">טכנולוגיה לא כבדה</h4>
-                                    <p class="text-gray-400">פתוחים בכמה קליקים. עובדים בכל מכשיר. אין צורך בהתקנה או הרשאות מיוחדות.</p>
+                                    <p class="text-gray-400">פותחים בכמה קליקים. עובדים בכל מכשיר. אין צורך בהתקנה או הרשאות מיוחדות.</p>
                                 </div>
                             </div>
                         </div>
@@ -668,20 +685,19 @@
         </div>
     </footer>
 
-    <!-- EyeSite Voice Assistant Widget -->
+    <!-- EyeSite Voice Assistant Widget - UPDATED -->
     <div id="eyesite-assistant" aria-label="עוזר קולי EyeSite">
         <div id="talk-label">
-            Talk to me <br> 
-            <span style="font-size: 0.9em;">לחץ עליי ושאל כל שאלה</span>
+            <span style="font-size: 0.9em;">לחצו כאן - ונענה מיד</span>
         </div>
 
         <button id="assistant-button" class="assistant-btn" aria-label="פתח עוזר קולי EyeSite">
-            <span style="font-size: 45px;">🎤</span>
+            <span class="assistant-icon">🎤</span>
         </button>
 
         <div id="eyesite-window">
             <div class="window-header">
-                <span>EyeSite Safety Assistant</span>
+                <span>EyeSite Assistant</span>
                 <span id="close-assistant" class="close-btn" aria-label="סגור עוזר קולי">✕</span>
             </div>
             <iframe 
@@ -691,7 +707,8 @@
                 style="border:none;" 
                 allow="microphone"
                 title="EyeSite Safety Assistant - עוזר קולי לבטיחות"
-                loading="lazy">
+                loading="lazy"
+                id="assistant-iframe">
             </iframe>
         </div>
     </div>
@@ -722,11 +739,32 @@
             });
         }
         
-        // Voice Assistant functionality
+        // Voice Assistant functionality - UPDATED WITH AUTO-CLOSE
         const assistantButton = document.getElementById('assistant-button');
         const closeButton = document.getElementById('close-assistant');
         const assistantWindow = document.getElementById('eyesite-window');
         const talkLabel = document.getElementById('talk-label');
+        let assistantTimeout = null;
+        
+        function clearAssistantTimer() {
+            if (assistantTimeout) {
+                clearTimeout(assistantTimeout);
+                assistantTimeout = null;
+            }
+        }
+        
+        function startAssistantTimer() {
+            clearAssistantTimer();
+            
+            // Auto-close after 3 minutes (180,000 ms = 3 minutes)
+            assistantTimeout = setTimeout(() => {
+                if (assistantWindow.style.display === 'block') {
+                    toggleEyeSite();
+                    // Optional subtle notification
+                    console.log('Assistant auto-closed after 3 minutes');
+                }
+            }, 180000);
+        }
         
         function toggleEyeSite() {
             const isOpen = assistantWindow.style.display === 'block';
@@ -736,11 +774,13 @@
                 assistantWindow.style.display = 'none';
                 talkLabel.style.display = 'block';
                 assistantButton.classList.remove('active');
+                clearAssistantTimer();
             } else {
                 // Open the window
                 assistantWindow.style.display = 'block';
                 talkLabel.style.display = 'none';
                 assistantButton.classList.add('active');
+                startAssistantTimer();
             }
         }
         
@@ -750,7 +790,10 @@
         }
         
         if (closeButton) {
-            closeButton.addEventListener('click', toggleEyeSite);
+            closeButton.addEventListener('click', function() {
+                toggleEyeSite();
+                clearAssistantTimer();
+            });
         }
         
         // Close assistant when clicking outside
@@ -760,6 +803,7 @@
             
             if (!isClickInside && assistantWindow.style.display === 'block') {
                 toggleEyeSite();
+                clearAssistantTimer();
             }
         });
         
@@ -767,12 +811,15 @@
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape' && assistantWindow.style.display === 'block') {
                 toggleEyeSite();
+                clearAssistantTimer();
             }
         });
         
-        // Show talk label initially
+        // Show talk label initially (only on desktop)
         window.addEventListener('DOMContentLoaded', function() {
-            talkLabel.style.display = 'block';
+            if (window.innerWidth > 768) {
+                talkLabel.style.display = 'block';
+            }
             
             // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -796,6 +843,15 @@
                     }
                 });
             });
+        });
+        
+        // Handle window resize for talk label visibility
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && assistantWindow.style.display !== 'block') {
+                talkLabel.style.display = 'block';
+            } else {
+                talkLabel.style.display = 'none';
+            }
         });
     </script>
 
