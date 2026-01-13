@@ -728,186 +728,7 @@
         }
         
         // Voice Assistant functionality - IMMEDIATE VOICE RECOGNITION
-        const assistantButton = document.getElementById('assistant-button');
-        const talkLabel = document.getElementById('talk-label');
-        
-        // Check if browser supports speech recognition
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        let recognition = null;
-        
-        if (SpeechRecognition) {
-            recognition = new SpeechRecognition();
-            recognition.lang = 'he-IL'; // Hebrew
-            recognition.continuous = false;
-            recognition.interimResults = false;
-            
-            recognition.onstart = function() {
-                console.log('Voice recognition started');
-                assistantButton.classList.add('active');
-                talkLabel.innerHTML = '<span style="font-size: 0.9em;">🎤 מאזין... דברו עכשיו</span>';
-            };
-            
-            recognition.onresult = function(event) {
-                const transcript = event.results[0][0].transcript;
-                console.log('You said: ', transcript);
-                
-                // Display what was said
-                talkLabel.innerHTML = `<span style="font-size: 0.9em;">שאלתם: "${transtext}"</span>`;
-                
-                // Send to EyeSite API
-                sendToEyeSiteAssistant(transcript);
-            };
-            
-            recognition.onerror = function(event) {
-                console.error('Speech recognition error', event.error);
-                assistantButton.classList.remove('active');
-                talkLabel.innerHTML = '<span style="font-size: 0.9em;">⚠️ שגיאה בהאזנה. נסו שוב</span>';
-                
-                // Reset after 3 seconds
-                setTimeout(() => {
-                    talkLabel.innerHTML = '<span style="font-size: 0.9em;">לחצו כאן - ושאל כל שאלה</span>';
-                }, 3000);
-            };
-            
-            recognition.onend = function() {
-                console.log('Voice recognition ended');
-                assistantButton.classList.remove('active');
-                
-                // Reset label after a delay
-                setTimeout(() => {
-                    if (talkLabel.innerHTML.includes('מאזין')) {
-                        talkLabel.innerHTML = '<span style="font-size: 0.9em;">לחצו כאן - ושאל כל שאלה</span>';
-                    }
-                }, 2000);
-            };
-        } else {
-            // Browser doesn't support speech recognition
-            console.warn('Speech recognition not supported in this browser');
-            talkLabel.innerHTML = '<span style="font-size: 0.9em;">⚠️ הדפדפן לא תומך בהקלטה</span>';
-            assistantButton.style.opacity = '0.5';
-            assistantButton.style.cursor = 'not-allowed';
-        }
-        
-        // Function to send transcript to EyeSite API
-        function sendToEyeSiteAssistant(transcript) {
-            talkLabel.innerHTML = '<span style="font-size: 0.9em;">🤔 מעבד את השאלה...</span>';
-            
-            // Replace this URL with your actual EyeSite API endpoint
-            const apiUrl = 'https://eyesite-executive-assistant-57495460810.us-west1.run.app/api/voice-query';
-            
-            fetch(apiUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    query: transcript,
-                    language: 'he',
-                    timestamp: new Date().toISOString()
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Display response
-                if (data.answer) {
-                    // Speak the response using speech synthesis
-                    speakResponse(data.answer);
-                    
-                    // Show response in label (truncated if too long)
-                    const shortAnswer = data.answer.length > 50 
-                        ? data.answer.substring(0, 50) + '...' 
-                        : data.answer;
-                    talkLabel.innerHTML = `<span style="font-size: 0.9em;">🔊 ${shortAnswer}</span>`;
-                } else {
-                    talkLabel.innerHTML = '<span style="font-size: 0.9em;">✅ נשמע! תקבלו תשובה בוואטסאפ</span>';
-                }
-            })
-            .catch(error => {
-                console.error('Error sending to EyeSite:', error);
-                talkLabel.innerHTML = '<span style="font-size: 0.9em;">✅ נשמע! צוות EyeSite יחזור אליכם</span>';
-                
-                // Fallback: Open WhatsApp with the question
-                setTimeout(() => {
-                    const whatsappUrl = `https://wa.me/972503040523?text=${encodeURIComponent('שאלה מ-EyeSite: ' + transcript)}`;
-                    window.open(whatsappUrl, '_blank');
-                }, 2000);
-            });
-        }
-        
-        // Function to speak response
-        function speakResponse(text) {
-            if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = 'he-IL';
-                utterance.rate = 1;
-                utterance.pitch = 1;
-                window.speechSynthesis.speak(utterance);
-            }
-        }
-        
-        // Event listener for assistant button
-        if (assistantButton && recognition) {
-            assistantButton.addEventListener('click', function() {
-                if (recognition) {
-                    try {
-                        recognition.start();
-                    } catch (error) {
-                        console.error('Error starting recognition:', error);
-                        talkLabel.innerHTML = '<span style="font-size: 0.9em;">⚠️ נא לאפשר מיקרופון בדפדפן</span>';
-                    }
-                }
-            });
-        }
-        
-        // Show talk label initially (only on desktop)
-        window.addEventListener('DOMContentLoaded', function() {
-            if (window.innerWidth > 768) {
-                talkLabel.style.display = 'block';
-            }
-            
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        e.preventDefault();
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                        
-                        // Close mobile menu if open
-                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                            mobileMenu.classList.add('hidden');
-                            menuButton.setAttribute('aria-expanded', 'false');
-                        }
-                    }
-                });
-            });
-        });
-        
-        // Handle window resize for talk label visibility
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                talkLabel.style.display = 'block';
-            } else {
-                talkLabel.style.display = 'none';
-            }
-        });
-    </script>
-
-</body>
-</html>
-Also update the CSS in the style section - remove the chatbox styles and adjust mobile:
-
-Replace the existing voice assistant CSS (lines ~65-135 in the style section) with this:
-
-css
-        /* Voice Assistant Styles - SIMPLIFIED */
-        #eyesite-assistant {
+      #eyesite-assistant {
             position: fixed;
             bottom: 20px;
             left: 20px;
@@ -929,12 +750,6 @@ css
             max-width: 160px;
             display: none;
             font-size: 14px;
-            animation: label-pulse 3s infinite;
-        }
-        
-        @keyframes label-pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
         }
         
         .assistant-btn {
@@ -945,7 +760,7 @@ css
             border: 4px solid white;
             cursor: pointer;
             box-shadow: 0 0 20px rgba(255,152,0,0.6);
-            animation: assistant-pulse 2s infinite;
+            animation: eyesite-pulse 2s infinite;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -961,7 +776,6 @@ css
         .assistant-btn.active {
             animation: none;
             background: linear-gradient(135deg, #FF5722 0%, #FF9800 100%);
-            box-shadow: 0 0 40px rgba(255,152,0,0.9);
         }
         
         .assistant-icon {
@@ -969,7 +783,7 @@ css
             line-height: 1;
         }
         
-        @keyframes assistant-pulse {
+        @keyframes eyesite-pulse {
             0% { 
                 transform: scale(1); 
                 box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7); 
@@ -984,7 +798,7 @@ css
             }
         }
         
-        /* Mobile Styles - SIMPLIFIED */
+        /* Mobile Styles */
         @media (max-width: 768px) {
             #eyesite-assistant {
                 bottom: 15px;
