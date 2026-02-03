@@ -733,12 +733,12 @@
                 var widget = document.querySelector('#userwayIframe, .userway_icon');
                 if (widget) {
                     // Force it to be lower
-                    widget.style.cssText = 'position: fixed !important; top: 150px !important; right: 20px !important; left: auto !important; z-index: 1000 !important;';
+                    widget.style.cssText = 'position: fixed !important; top: 350px !important; right: 20px !important; left: auto !important; z-index: 1000 !important;';
                     
                     // Also move the iframe if it exists
                     var iframe = document.querySelector('#userwayIframe');
                     if (iframe) {
-                        iframe.style.cssText = 'position: fixed !important; top: 150px !important; right: 20px !important; left: auto !important; z-index: 1000 !important;';
+                        iframe.style.cssText = 'position: fixed !important; top: 350px !important; right: 20px !important; left: auto !important; z-index: 1000 !important;';
                     }
                 }
             }, 2000); // Wait 2 seconds for widget to load
@@ -750,9 +750,9 @@
                 var widget = document.querySelector('#userwayIframe, .userway_icon');
                 if (widget) {
                     if (window.innerWidth <= 768) {
-                        widget.style.cssText = 'position: fixed !important; top: 200px !important; right: 15px !important; left: auto !important; z-index: 1000 !important;';
+                        widget.style.cssText = 'position: fixed !important; top: 350px !important; right: 15px !important; left: auto !important; z-index: 1000 !important;';
                     } else {
-                        widget.style.cssText = 'position: fixed !important; top: 150px !important; right: 20px !important; left: auto !important; z-index: 1000 !important;';
+                        widget.style.cssText = 'position: fixed !important; top: 350px !important; right: 20px !important; left: auto !important; z-index: 1000 !important;';
                     }
                 }
             }, 100);
