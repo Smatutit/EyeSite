@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Open Graph / Social Media Preview -->
     <meta property="og:title" content="AI Muse AI - Urban Data Labs" />
     <meta property="og:description" content="Building smarter cities through AI & Computer Vision" />
     <meta property="og:image" content="https://www.aimuseai.com/ai-muse-logo.png" />
@@ -12,13 +11,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="he_IL" />
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="AI Muse AI - Urban Data Labs" />
     <meta name="twitter:description" content="Building smarter cities through AI & Computer Vision" />
     <meta name="twitter:image" content="https://www.aimuseai.com/ai-muse-logo.png" />
     
-    <!-- Site Identity -->
     <title>AI Muse AI - Urban Data Labs</title>
     <link rel="icon" type="image/png" href="ai-muse-logo.png">
     
@@ -308,19 +305,181 @@
                 width: calc(100vw - 20px);
             }
         }
+
+        /* --- ACCESSIBILITY WIDGET STYLES --- */
+        #acc-widget-container {
+            position: fixed;
+            z-index: 100000;
+            font-family: 'Heebo', sans-serif;
+            direction: rtl;
+        }
+
+        /* Desktop: Top Right (Below header) */
+        @media (min-width: 769px) {
+            #acc-widget-container {
+                top: 120px;
+                right: 20px;
+            }
+            #acc-panel {
+                top: 0;
+                right: 60px;
+                transform-origin: top right;
+            }
+        }
+
+        /* Mobile: Bottom Left (Above Voice Assistant) */
+        @media (max-width: 768px) {
+            #acc-widget-container {
+                bottom: 100px;
+                left: 15px;
+            }
+            #acc-panel {
+                bottom: 60px;
+                left: 0;
+                transform-origin: bottom left;
+            }
+        }
+
+        .acc-toggle-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #2563eb;
+            color: white;
+            border: 2px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .acc-toggle-btn:hover, .acc-toggle-btn:focus {
+            transform: scale(1.1);
+            background: #1d4ed8;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.4);
+        }
+
+        #acc-panel {
+            position: absolute;
+            width: 300px;
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            display: none; /* Hidden by default */
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+        }
+
+        #acc-panel.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .acc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .acc-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #0f172a;
+        }
+
+        .acc-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #64748b;
+        }
+
+        .acc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .acc-option {
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            color: #334155;
+        }
+
+        .acc-option i {
+            font-size: 1.2rem;
+            margin-bottom: 2px;
+        }
+
+        .acc-option:hover {
+            background: #e2e8f0;
+            border-color: #94a3b8;
+        }
+
+        .acc-option.active-opt {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+
+        .acc-reset {
+            width: 100%;
+            margin-top: 15px;
+            padding: 10px;
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .acc-reset:hover {
+            background: #dc2626;
+        }
+
+        /* Accessibility Modes CSS Classes */
+        html.acc-grayscale { filter: grayscale(100%); }
+        html.acc-high-contrast { filter: contrast(150%); }
+        html.acc-negative { filter: invert(100%); }
+        html.acc-large-text { font-size: 125%; }
+        html.acc-readable-font body { font-family: Arial, Helvetica, sans-serif !important; }
+        html.acc-highlight-links a { text-decoration: underline !important; background: yellow !important; color: black !important; }
     </style>
 </head>
 <body class="text-white leading-relaxed">
 
-    <!-- Skip to content link -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[9999] focus:bg-orange-600 focus:text-white focus:p-4 focus:rounded-lg">
         דלג לתוכן הראשי
     </a>
 
-    <!-- Landmark: Banner -->
     <header role="banner" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo section (LEFT side) -->
             <div class="flex items-center gap-3">
                 <img src="ai-muse-logo.png" alt="AI Muse Logo" class="h-12 w-auto rounded-md bg-slate-900/50 border border-white/10 p-1">
                 <div class="flex flex-col">
@@ -329,7 +488,6 @@
                 </div>
             </div>
             
-            <!-- Desktop Navigation (RIGHT side) -->
             <div class="hidden md:flex items-center gap-4 text-sm">
                 <a href="index.html" class="text-blue-400 border-b-2 border-blue-400 pb-1">דף הבית</a>
                 <a href="eyesite.html" class="text-orange-400 hover:text-orange-300 hover:border-b-2 hover:border-orange-300 hover:pb-1">EyeSite</a>
@@ -341,13 +499,11 @@
                 <a href="disclaimer.html" class="text-gray-400 hover:text-white">מדיניות פרטיות ונגישות</a>
             </div>
         
-        <!-- Mobile Menu Button -->
         <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
             <i class="fas fa-bars text-xl"></i>
         </button>
     </div>
     
-    <!-- Mobile Menu (Hidden by default) -->
     <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
         <a href="index.html" class="block py-3 text-blue-400 border-b border-slate-800">
             <i class="fas fa-home text-blue-400 mr-3"></i>דף הבית
@@ -377,9 +533,7 @@
 </nav>
     </header>
 
-    <!-- Landmark: Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
         <section class="hero-gradient min-h-[70vh] flex items-center justify-center text-center relative px-4" aria-label="כותרת ראשית">
             <div class="max-w-6xl mx-auto pt-16">
                 <div class="inline-flex items-center gap-2 border border-orange-500/30 bg-orange-900/30 backdrop-blur rounded-full pr-2 pl-4 py-1 mb-8">
@@ -410,7 +564,6 @@
             </div>
         </section>
 
-        <!-- Products Gallery -->
         <section id="products" class="py-24 section-warm">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -421,8 +574,7 @@
 
                 <div class="product-grid">
                     
-                  <!-- EyeSite - FLAGSHIP SaaS -->
-<a href="eyesite.html" class="flagship-card product-card p-8 rounded-2xl group block">
+                  <a href="eyesite.html" class="flagship-card product-card p-8 rounded-2xl group block">
     <div class="flagship-badge">
         <i class="fas fa-crown mr-2" aria-hidden="true"></i>
         מוצר הדגל
@@ -442,7 +594,6 @@
     </div>
 </a>
 
-                    <!-- Car Sheriff -->
                     <a href="car-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-green-500 hover:border-green-400 hover:bg-slate-800/50 transition-all duration-300 group text-green-500">
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-car text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
@@ -459,7 +610,6 @@
                         </div>
                     </a>
 
-                    <!-- Check-in Sheriff -->
                     <a href="checkin-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-purple-500 hover:border-purple-400 hover:bg-slate-800/50 transition-all duration-300 group text-purple-500">
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-file-contract text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
@@ -476,7 +626,6 @@
                         </div>
                     </a>
 
-                    <!-- Logistics Sheriff -->
                     <a href="logistics-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-yellow-500 hover:border-yellow-400 hover:bg-slate-800/50 transition-all duration-300 group text-yellow-500">
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-truck-loading text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
@@ -493,7 +642,6 @@
                         </div>
                     </a>
 
-                    <!-- Accessibility Sheriff -->
                     <a href="accessibility-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-red-500 hover:border-red-400 hover:bg-slate-800/50 transition-all duration-300 group text-red-500">
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-universal-access text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
@@ -510,7 +658,6 @@
                         </div>
                     </a>
 
-                    <!-- City Platform -->
                     <a href="city.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-cyan-500 hover:border-cyan-400 hover:bg-slate-800/50 transition-all duration-300 group text-cyan-500">
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-city text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
@@ -531,7 +678,6 @@
             </div>
         </section>
 
-        <!-- About AI Muse Ai -->
         <section id="about" class="py-24 section-dark border-t border-slate-800">
             <div class="max-w-5xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -620,7 +766,6 @@
             </div>
         </section>
 
-        <!-- Contact CTA -->
         <section class="py-24 bg-gradient-to-b from-slate-900 to-black border-t border-slate-800">
             <div class="max-w-4xl mx-auto px-6 text-center">
                  <h2 class="text-3xl font-bold text-white mb-6">רוצים לדעת יותר? שואלים שאלה?</h2>
@@ -648,7 +793,6 @@
         </section>
     </main>
 
-    <!-- Landmark: Contentinfo -->
     <footer role="contentinfo" class="border-t border-gray-800 py-12 text-center text-gray-500 text-sm bg-slate-950">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
@@ -690,7 +834,53 @@
         </div>
     </footer>
 
-    <!-- EyeSite Voice Assistant Widget - FIXED -->
+    <div id="acc-widget-container">
+        <button class="acc-toggle-btn" id="acc-toggle" aria-label="אפשרויות נגישות">
+            <i class="fas fa-wheelchair"></i>
+        </button>
+        
+        <div id="acc-panel" aria-modal="true" role="dialog" aria-labelledby="acc-title">
+            <div class="acc-header">
+                <span id="acc-title" class="acc-title">כלי נגישות</span>
+                <button class="acc-close" id="acc-close" aria-label="סגור תפריט נגישות">✖</button>
+            </div>
+            
+            <div class="acc-grid">
+                <button class="acc-option" onclick="toggleAccessClass('acc-large-text', this)">
+                    <i class="fas fa-text-height"></i>
+                    <span>הגדל טקסט</span>
+                </button>
+                
+                <button class="acc-option" onclick="toggleAccessClass('acc-grayscale', this)">
+                    <i class="fas fa-adjust"></i>
+                    <span>גווני אפור</span>
+                </button>
+                
+                <button class="acc-option" onclick="toggleAccessClass('acc-high-contrast', this)">
+                    <i class="fas fa-sun"></i>
+                    <span>ניגודיות גבוהה</span>
+                </button>
+                
+                <button class="acc-option" onclick="toggleAccessClass('acc-negative', this)">
+                    <i class="fas fa-moon"></i>
+                    <span>צבעים הפוכים</span>
+                </button>
+                
+                <button class="acc-option" onclick="toggleAccessClass('acc-readable-font', this)">
+                    <i class="fas fa-font"></i>
+                    <span>גופן קריא</span>
+                </button>
+                
+                <button class="acc-option" onclick="toggleAccessClass('acc-highlight-links', this)">
+                    <i class="fas fa-link"></i>
+                    <span>הדגשת קישורים</span>
+                </button>
+            </div>
+            
+            <button class="acc-reset" onclick="resetAccess()">איפוס הגדרות</button>
+        </div>
+    </div>
+
     <div id="eyesite-assistant" aria-label="עוזר קולי EyeSite">
         <div id="talk-label">
             <span style="font-size: 0.9em;">לחצו כאן - ושאלו כל שאלה</span>
@@ -700,7 +890,6 @@
             <span class="assistant-icon">🎤</span>
         </button>
 
-        <!-- EMBEDDED AI ASSISTANT WINDOW -->
         <div id="eyesite-window">
             <div class="window-header">
                 <span>EyeSite Voice Assistant</span>
@@ -714,53 +903,6 @@
             ></iframe>
         </div>
     </div>
-
-    <!-- Accessibility Widget - UserWay -->
-<script>
-    (function() {
-        var script = document.createElement('script');
-        script.src = 'https://cdn.userway.org/widget.js';
-        script.setAttribute('data-account', 'A2dxJXvVik');
-        script.setAttribute('data-position', 'top-right');
-        script.setAttribute('data-language', 'he');
-        script.setAttribute('data-color', '#f97316');
-        script.setAttribute('data-placement', 'left');
-        script.async = true;
-        document.head.appendChild(script);
-        
-        // Function to position widget below logo
-        function positionWidget() {
-            var widget = document.querySelector('#userwayIframe, .userway_icon, [id*="userway"]');
-            if (widget) {
-                // On mobile, move it much lower to avoid logo
-                if (window.innerWidth <= 768) {
-                    widget.style.cssText = 'position: fixed !important; top: 120px !important; right: 10px !important; left: auto !important; z-index: 1000 !important;';
-                } else {
-                    widget.style.cssText = 'position: fixed !important; top: 300px !important; right: 20px !important; left: auto !important; z-index: 1000 !important;';
-                }
-            }
-        }
-        
-        // Initial positioning after widget loads
-        setTimeout(positionWidget, 2000);
-        setTimeout(positionWidget, 3000);
-        setTimeout(positionWidget, 5000);
-        
-        // Reposition on window resize
-        window.addEventListener('resize', function() {
-            setTimeout(positionWidget, 100);
-        });
-        
-        // Observe DOM changes for the widget
-        var observer = new MutationObserver(function() {
-            positionWidget();
-        });
-        
-        setTimeout(function() {
-            observer.observe(document.body, { childList: true, subtree: true });
-        }, 1000);
-    })();
-</script>
 
     <script>
         // Mobile menu functionality
@@ -840,6 +982,75 @@
                 }
             });
         });
+
+        // --- ACCESSIBILITY WIDGET SCRIPT ---
+        const accToggle = document.getElementById('acc-toggle');
+        const accPanel = document.getElementById('acc-panel');
+        const accClose = document.getElementById('acc-close');
+
+        if (accToggle && accPanel) {
+            accToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                accPanel.classList.toggle('active');
+            });
+
+            if (accClose) {
+                accClose.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    accPanel.classList.remove('active');
+                });
+            }
+
+            // Close when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInside = accPanel.contains(event.target);
+                const isClickOnToggle = accToggle.contains(event.target);
+                
+                if (!isClickInside && !isClickOnToggle && accPanel.classList.contains('active')) {
+                    accPanel.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle helper function
+        function toggleAccessClass(className, btnElement) {
+            const html = document.documentElement;
+            
+            // Logic for mutually exclusive contrast modes
+            if (className === 'acc-grayscale' || className === 'acc-high-contrast' || className === 'acc-negative') {
+                const contrastModes = ['acc-grayscale', 'acc-high-contrast', 'acc-negative'];
+                contrastModes.forEach(mode => {
+                    if (mode !== className) {
+                        html.classList.remove(mode);
+                        // Find button associated with other modes and remove active state
+                        const otherBtn = document.querySelector(`button[onclick="toggleAccessClass('${mode}', this)"]`);
+                        if(otherBtn) otherBtn.classList.remove('active-opt');
+                    }
+                });
+            }
+
+            html.classList.toggle(className);
+            btnElement.classList.toggle('active-opt');
+        }
+
+        function resetAccess() {
+            const html = document.documentElement;
+            const classes = [
+                'acc-grayscale', 
+                'acc-high-contrast', 
+                'acc-negative', 
+                'acc-large-text', 
+                'acc-readable-font', 
+                'acc-highlight-links'
+            ];
+            
+            classes.forEach(c => html.classList.remove(c));
+            
+            // Remove active state from all buttons
+            document.querySelectorAll('.acc-option').forEach(btn => {
+                btn.classList.remove('active-opt');
+            });
+        }
     </script>
 </body>
 </html>
