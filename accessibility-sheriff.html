@@ -8,7 +8,169 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Heebo', sans-serif; }
+        body { 
+            font-family: 'Heebo', sans-serif; 
+            transition: filter 0.3s ease, background 0.3s ease;
+        }
+
+        /* --- ACCESSIBILITY WIDGET STYLES --- */
+        #acc-widget-container {
+            position: fixed;
+            z-index: 10000;
+            font-family: 'Heebo', sans-serif;
+            direction: rtl;
+        }
+
+        /* Mobile Default: Bottom Right */
+        #acc-widget-container {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Desktop Override: Top Right (Below Header) */
+        @media (min-width: 1024px) {
+            #acc-widget-container {
+                bottom: auto;
+                top: 110px; /* Offset to not cover logo in sticky header */
+                right: 20px;
+            }
+        }
+
+        .acc-toggle-btn {
+            width: 50px;
+            height: 50px;
+            background: #2563eb; /* Accessible Blue */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .acc-toggle-btn:hover, .acc-toggle-btn.active {
+            transform: scale(1.1);
+            background: #1d4ed8;
+        }
+
+        .acc-panel {
+            position: absolute;
+            background: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: none; /* Hidden by default */
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Mobile Panel Positioning */
+        @media (max-width: 1023px) {
+            .acc-panel {
+                bottom: 70px;
+                right: 0;
+            }
+        }
+
+        /* Desktop Panel Positioning */
+        @media (min-width: 1024px) {
+            .acc-panel {
+                top: 0;
+                right: 65px; /* Slides out to the left of the button */
+            }
+        }
+
+        .acc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .acc-option-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            color: #334155;
+            transition: all 0.2s;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .acc-option-btn:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .acc-option-btn.active-opt {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+
+        .acc-option-btn i {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        /* Accessibility Override Classes */
+        .acc-grayscale {
+            filter: grayscale(100%) !important;
+        }
+        
+        .acc-high-contrast * {
+            background-color: #000 !important;
+            color: #fff !important;
+            border-color: #fff !important;
+            background-image: none !important;
+            box-shadow: none !important;
+        }
+
+        .acc-invert {
+            filter: invert(100%);
+        }
+        
+        /* Re-invert media so they look normal */
+        .acc-invert img, .acc-invert video, .acc-invert .acc-toggle-btn {
+            filter: invert(100%);
+        }
+
+        .acc-light-bg body {
+            background: #f8fafc !important;
+        }
+        
+        .acc-light-bg *:not(.acc-toggle-btn):not(.acc-option-btn):not(i) {
+            color: #000 !important;
+            background-color: #fff !important;
+        }
+
+        .acc-underline-links a {
+            text-decoration: underline !important;
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 4px !important;
+        }
+
+        .acc-readable-font * {
+            font-family: Arial, Helvetica, sans-serif !important;
+            letter-spacing: 0.05em !important;
+        }
+
+        .acc-text-large {
+            font-size: 120% !important;
+        }
+
+        .acc-text-xlarge {
+            font-size: 140% !important;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-white">
@@ -269,12 +431,148 @@
     </div>
 </footer>
 
+<!-- ACCESSIBILITY WIDGET -->
+<div id="acc-widget-container">
+    <!-- Toggle Button -->
+    <div id="acc-toggle" class="acc-toggle-btn" role="button" aria-label="תפריט נגישות" tabindex="0">
+        <i class="fas fa-universal-access text-2xl"></i>
+    </div>
+
+    <!-- Detailed Panel -->
+    <div id="acc-panel" class="acc-panel">
+        <div class="flex justify-between items-center mb-4 border-b border-gray-200 pb-2">
+            <h3 class="font-bold text-slate-800 text-lg">כלי נגישות</h3>
+            <button id="acc-reset" class="text-xs text-red-500 hover:text-red-700 font-bold">אפס הכל</button>
+        </div>
+        
+        <div class="acc-grid">
+            <!-- Text Size -->
+            <button class="acc-option-btn" onclick="toggleAccessibility('text-large')">
+                <i class="fas fa-font"></i>
+                <span>הגדל טקסט</span>
+            </button>
+            <button class="acc-option-btn" onclick="toggleAccessibility('text-xlarge')">
+                <i class="fas fa-text-height"></i>
+                <span>טקסט ענק</span>
+            </button>
+
+            <!-- Contrast -->
+            <button class="acc-option-btn" onclick="toggleAccessibility('grayscale')">
+                <i class="fas fa-adjust"></i>
+                <span>גווני אפור</span>
+            </button>
+            <button class="acc-option-btn" onclick="toggleAccessibility('high-contrast')">
+                <i class="fas fa-low-vision"></i>
+                <span>ניגודיות גבוהה</span>
+            </button>
+
+            <!-- Colors -->
+            <button class="acc-option-btn" onclick="toggleAccessibility('invert')">
+                <i class="fas fa-moon"></i>
+                <span>ניגודיות הפוכה</span>
+            </button>
+            <button class="acc-option-btn" onclick="toggleAccessibility('light-bg')">
+                <i class="fas fa-sun"></i>
+                <span>רקע בהיר</span>
+            </button>
+
+            <!-- Elements -->
+            <button class="acc-option-btn" onclick="toggleAccessibility('underline-links')">
+                <i class="fas fa-link"></i>
+                <span>הדגשת קישורים</span>
+            </button>
+            <button class="acc-option-btn" onclick="toggleAccessibility('readable-font')">
+                <i class="fas fa-paragraph"></i>
+                <span>גופן קריא</span>
+            </button>
+        </div>
+    </div>
+</div>
+
 <script>
     // Mobile menu toggle
     document.getElementById('mobile-menu-button').addEventListener('click', function() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
     });
+
+    // --- ACCESSIBILITY WIDGET LOGIC ---
+    const accToggle = document.getElementById('acc-toggle');
+    const accPanel = document.getElementById('acc-panel');
+    const accReset = document.getElementById('acc-reset');
+    const html = document.documentElement;
+
+    // Open/Close Panel
+    accToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = accPanel.style.display === 'block';
+        accPanel.style.display = isOpen ? 'none' : 'block';
+        accToggle.classList.toggle('active', !isOpen);
+    });
+
+    // Close Panel when clicking outside
+    document.addEventListener('click', (e) => {
+        if (accPanel.style.display === 'block' && !accPanel.contains(e.target) && !accToggle.contains(e.target)) {
+            accPanel.style.display = 'none';
+            accToggle.classList.remove('active');
+        }
+    });
+
+    // Toggle Feature Function
+    function toggleAccessibility(featureClass) {
+        const className = 'acc-' + featureClass;
+        
+        // Handle exclusive groups (Text Size)
+        if (featureClass === 'text-large' || featureClass === 'text-xlarge') {
+            if (html.classList.contains(className)) {
+                html.classList.remove(className); // Toggle off
+            } else {
+                html.classList.remove('acc-text-large', 'acc-text-xlarge'); // Clear others
+                html.classList.add(className); // Set new
+            }
+        }
+        // Handle exclusive groups (Contrast/Color)
+        else if (['grayscale', 'high-contrast', 'invert', 'light-bg'].includes(featureClass)) {
+            if (html.classList.contains(className)) {
+                html.classList.remove(className);
+            } else {
+                html.classList.remove('acc-grayscale', 'acc-high-contrast', 'acc-invert', 'acc-light-bg');
+                html.classList.add(className);
+            }
+        }
+        // Toggle others normally
+        else {
+            html.classList.toggle(className);
+        }
+        
+        updateButtonStates();
+    }
+
+    // Reset All
+    accReset.addEventListener('click', () => {
+        html.classList.remove(
+            'acc-text-large', 'acc-text-xlarge',
+            'acc-grayscale', 'acc-high-contrast', 'acc-invert', 'acc-light-bg',
+            'acc-underline-links', 'acc-readable-font'
+        );
+        updateButtonStates();
+    });
+
+    // Update Visual State of Buttons in Panel
+    function updateButtonStates() {
+        const buttons = accPanel.querySelectorAll('.acc-option-btn');
+        buttons.forEach(btn => {
+            const onclickText = btn.getAttribute('onclick');
+            const feature = onclickText.match(/'([^']+)'/)[1];
+            const className = 'acc-' + feature;
+            
+            if (html.classList.contains(className)) {
+                btn.classList.add('active-opt');
+            } else {
+                btn.classList.remove('active-opt');
+            }
+        });
+    }
 </script>
 
 </body>
