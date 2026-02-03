@@ -308,6 +308,28 @@
                 width: calc(100vw - 20px);
             }
         }
+        
+        /* Accessibility Widget Override Styles */
+        .userway_icon {
+            position: fixed !important;
+            left: 20px !important;
+            right: auto !important;
+            bottom: 100px !important;
+        }
+        
+        @media (max-width: 768px) {
+            .userway_icon {
+                left: 15px !important;
+                bottom: 85px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .userway_icon {
+                left: 10px !important;
+                bottom: 75px !important;
+            }
+        }
     </style>
 </head>
 <body class="text-white leading-relaxed">
@@ -714,6 +736,21 @@
             ></iframe>
         </div>
     </div>
+
+    <!-- Accessibility Widget - UserWay -->
+    <script>
+        (function() {
+            var script = document.createElement('script');
+            script.src = 'https://cdn.userway.org/widget.js';
+            script.setAttribute('data-account', 'A2dxJXvVik');
+            script.setAttribute('data-position', 'bottom-left');
+            script.setAttribute('data-language', 'he');
+            script.setAttribute('data-color', '#f97316');
+            script.setAttribute('data-placement', 'left');
+            script.async = true;
+            document.head.appendChild(script);
+        })();
+    </script>
 
     <script>
         // Mobile menu functionality
