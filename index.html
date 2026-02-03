@@ -310,26 +310,27 @@
         }
         
         /* Accessibility Widget Override Styles */
-        .userway_icon {
-            position: fixed !important;
-            left: 20px !important;
-            right: auto !important;
-            bottom: 100px !important;
-        }
-        
-        @media (max-width: 768px) {
-            .userway_icon {
-                left: 15px !important;
-                bottom: 85px !important;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .userway_icon {
-                left: 10px !important;
-                bottom: 75px !important;
-            }
-        }
+.userway_icon {
+    position: fixed !important;
+    right: 20px !important;
+    left: auto !important;
+    bottom: 40px !important;
+    z-index: 1000 !important;
+}
+
+@media (max-width: 768px) {
+    .userway_icon {
+        right: 15px !important;
+        bottom: 35px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .userway_icon {
+        right: 10px !important;
+        bottom: 30px !important;
+    }
+}
     </style>
 </head>
 <body class="text-white leading-relaxed">
