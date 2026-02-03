@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Open Graph / Social Media Preview -->
     <meta property="og:title" content="AI Muse AI - Urban Data Labs" />
     <meta property="og:description" content="Building smarter cities through AI & Computer Vision" />
     <meta property="og:image" content="https://www.aimuseai.com/ai-muse-logo.png" />
@@ -11,11 +12,13 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="he_IL" />
     
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="AI Muse AI - Urban Data Labs" />
     <meta name="twitter:description" content="Building smarter cities through AI & Computer Vision" />
     <meta name="twitter:image" content="https://www.aimuseai.com/ai-muse-logo.png" />
     
+    <!-- Site Identity -->
     <title>AI Muse AI - Urban Data Labs</title>
     <link rel="icon" type="image/png" href="ai-muse-logo.png">
     
@@ -27,6 +30,7 @@
         body { 
             font-family: 'Heebo', sans-serif; 
             background: #0f172a;
+            transition: filter 0.3s ease, background 0.3s ease;
         }
         
         .hero-gradient {
@@ -107,7 +111,7 @@
             z-index: 10;
         }
         
-        /* Voice Assistant Styles - FIXED */
+        /* Voice Assistant Styles */
         #eyesite-assistant {
             position: fixed;
             bottom: 20px;
@@ -243,7 +247,7 @@
             background: linear-gradient(135deg, #c2410c 0%, #9a3412 50%, #7c2d12 100%);
         }
         
-        /* Mobile Styles - FIXED */
+        /* Mobile Styles */
         @media (max-width: 768px) {
             #eyesite-assistant {
                 bottom: 15px;
@@ -306,106 +310,74 @@
             }
         }
 
-        /* --- ACCESSIBILITY WIDGET STYLES --- */
+        /* --- NEW ACCESSIBILITY WIDGET STYLES --- */
         #acc-widget-container {
             position: fixed;
-            z-index: 100000;
+            z-index: 10000;
             font-family: 'Heebo', sans-serif;
             direction: rtl;
         }
 
-        /* Desktop: Top Right (Below header) */
-        @media (min-width: 769px) {
-            #acc-widget-container {
-                top: 120px;
-                right: 20px;
-            }
-            #acc-panel {
-                top: 0;
-                right: 60px;
-                transform-origin: top right;
-            }
+        /* Mobile Default: Bottom Right */
+        #acc-widget-container {
+            bottom: 20px;
+            right: 20px;
         }
 
-        /* Mobile: Bottom Left (Above Voice Assistant) */
-        @media (max-width: 768px) {
+        /* Desktop Override: Top Right (Below Header) */
+        @media (min-width: 1024px) {
             #acc-widget-container {
-                bottom: 100px;
-                left: 15px;
-            }
-            #acc-panel {
-                bottom: 60px;
-                left: 0;
-                transform-origin: bottom left;
+                bottom: auto;
+                top: 110px; /* Offset to not cover logo in sticky header */
+                right: 20px;
             }
         }
 
         .acc-toggle-btn {
             width: 50px;
             height: 50px;
-            border-radius: 50%;
-            background: #2563eb;
+            background: #2563eb; /* Accessible Blue */
             color: white;
-            border: 2px solid white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            cursor: pointer;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            border: 2px solid white;
             transition: all 0.3s ease;
         }
 
-        .acc-toggle-btn:hover, .acc-toggle-btn:focus {
+        .acc-toggle-btn:hover, .acc-toggle-btn.active {
             transform: scale(1.1);
             background: #1d4ed8;
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.4);
         }
 
-        #acc-panel {
+        .acc-panel {
             position: absolute;
-            width: 300px;
             background: white;
-            border-radius: 12px;
+            width: 300px;
             padding: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             display: none; /* Hidden by default */
-            color: #1e293b;
             border: 1px solid #e2e8f0;
         }
 
-        #acc-panel.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
+        /* Mobile Panel Positioning */
+        @media (max-width: 1023px) {
+            .acc-panel {
+                bottom: 70px;
+                right: 0;
+            }
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .acc-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-
-        .acc-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #0f172a;
-        }
-
-        .acc-close {
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2rem;
-            color: #64748b;
+        /* Desktop Panel Positioning */
+        @media (min-width: 1024px) {
+            .acc-panel {
+                top: 0;
+                right: 65px; /* Slides out to the left of the button */
+            }
         }
 
         .acc-grid {
@@ -414,72 +386,101 @@
             gap: 10px;
         }
 
-        .acc-option {
-            background: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.2s;
+        .acc-option-btn {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 5px;
-            font-size: 0.9rem;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
             color: #334155;
+            transition: all 0.2s;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
-        .acc-option i {
-            font-size: 1.2rem;
-            margin-bottom: 2px;
-        }
-
-        .acc-option:hover {
+        .acc-option-btn:hover {
             background: #e2e8f0;
-            border-color: #94a3b8;
+            color: #0f172a;
         }
 
-        .acc-option.active-opt {
+        .acc-option-btn.active-opt {
             background: #2563eb;
             color: white;
             border-color: #2563eb;
         }
 
-        .acc-reset {
-            width: 100%;
-            margin-top: 15px;
-            padding: 10px;
-            background: #ef4444;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        
-        .acc-reset:hover {
-            background: #dc2626;
+        .acc-option-btn i {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
         }
 
-        /* Accessibility Modes CSS Classes */
-        html.acc-grayscale { filter: grayscale(100%); }
-        html.acc-high-contrast { filter: contrast(150%); }
-        html.acc-negative { filter: invert(100%); }
-        html.acc-large-text { font-size: 125%; }
-        html.acc-readable-font body { font-family: Arial, Helvetica, sans-serif !important; }
-        html.acc-highlight-links a { text-decoration: underline !important; background: yellow !important; color: black !important; }
+        /* Accessibility Override Classes */
+        .acc-grayscale {
+            filter: grayscale(100%) !important;
+        }
+        
+        .acc-high-contrast * {
+            background-color: #000 !important;
+            color: #fff !important;
+            border-color: #fff !important;
+            background-image: none !important;
+            box-shadow: none !important;
+        }
+
+        .acc-invert {
+            filter: invert(100%);
+        }
+        
+        /* Re-invert media so they look normal */
+        .acc-invert img, .acc-invert video, .acc-invert .acc-toggle-btn {
+            filter: invert(100%);
+        }
+
+        .acc-light-bg body {
+            background: #f8fafc !important;
+        }
+        
+        .acc-light-bg *:not(.acc-toggle-btn):not(.acc-option-btn):not(i) {
+            color: #000 !important;
+            background-color: #fff !important;
+        }
+
+        .acc-underline-links a {
+            text-decoration: underline !important;
+            text-decoration-thickness: 2px !important;
+            text-underline-offset: 4px !important;
+        }
+
+        .acc-readable-font * {
+            font-family: Arial, Helvetica, sans-serif !important;
+            letter-spacing: 0.05em !important;
+        }
+
+        .acc-text-large {
+            font-size: 120% !important;
+        }
+
+        .acc-text-xlarge {
+            font-size: 140% !important;
+        }
     </style>
 </head>
 <body class="text-white leading-relaxed">
 
+    <!-- Skip to content link -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[9999] focus:bg-orange-600 focus:text-white focus:p-4 focus:rounded-lg">
         דלג לתוכן הראשי
     </a>
 
+    <!-- Landmark: Banner -->
     <header role="banner" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo section (LEFT side) -->
             <div class="flex items-center gap-3">
                 <img src="ai-muse-logo.png" alt="AI Muse Logo" class="h-12 w-auto rounded-md bg-slate-900/50 border border-white/10 p-1">
                 <div class="flex flex-col">
@@ -488,6 +489,7 @@
                 </div>
             </div>
             
+            <!-- Desktop Navigation (RIGHT side) -->
             <div class="hidden md:flex items-center gap-4 text-sm">
                 <a href="index.html" class="text-blue-400 border-b-2 border-blue-400 pb-1">דף הבית</a>
                 <a href="eyesite.html" class="text-orange-400 hover:text-orange-300 hover:border-b-2 hover:border-orange-300 hover:pb-1">EyeSite</a>
@@ -499,11 +501,13 @@
                 <a href="disclaimer.html" class="text-gray-400 hover:text-white">מדיניות פרטיות ונגישות</a>
             </div>
         
+        <!-- Mobile Menu Button -->
         <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
             <i class="fas fa-bars text-xl"></i>
         </button>
     </div>
     
+    <!-- Mobile Menu (Hidden by default) -->
     <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
         <a href="index.html" class="block py-3 text-blue-400 border-b border-slate-800">
             <i class="fas fa-home text-blue-400 mr-3"></i>דף הבית
@@ -533,7 +537,9 @@
 </nav>
     </header>
 
+    <!-- Landmark: Main Content -->
     <main id="main-content">
+        <!-- Hero Section -->
         <section class="hero-gradient min-h-[70vh] flex items-center justify-center text-center relative px-4" aria-label="כותרת ראשית">
             <div class="max-w-6xl mx-auto pt-16">
                 <div class="inline-flex items-center gap-2 border border-orange-500/30 bg-orange-900/30 backdrop-blur rounded-full pr-2 pl-4 py-1 mb-8">
@@ -564,6 +570,7 @@
             </div>
         </section>
 
+        <!-- Products Gallery -->
         <section id="products" class="py-24 section-warm">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -574,7 +581,8 @@
 
                 <div class="product-grid">
                     
-                  <a href="eyesite.html" class="flagship-card product-card p-8 rounded-2xl group block">
+                  <!-- EyeSite - FLAGSHIP SaaS -->
+<a href="eyesite.html" class="flagship-card product-card p-8 rounded-2xl group block">
     <div class="flagship-badge">
         <i class="fas fa-crown mr-2" aria-hidden="true"></i>
         מוצר הדגל
@@ -594,6 +602,7 @@
     </div>
 </a>
 
+                    <!-- Car Sheriff -->
                     <a href="car-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-green-500 hover:border-green-400 hover:bg-slate-800/50 transition-all duration-300 group text-green-500">
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-car text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
@@ -610,6 +619,7 @@
                         </div>
                     </a>
 
+                    <!-- Check-in Sheriff -->
                     <a href="checkin-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-purple-500 hover:border-purple-400 hover:bg-slate-800/50 transition-all duration-300 group text-purple-500">
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-file-contract text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
@@ -626,6 +636,7 @@
                         </div>
                     </a>
 
+                    <!-- Logistics Sheriff -->
                     <a href="logistics-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-yellow-500 hover:border-yellow-400 hover:bg-slate-800/50 transition-all duration-300 group text-yellow-500">
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-truck-loading text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
@@ -642,6 +653,7 @@
                         </div>
                     </a>
 
+                    <!-- Accessibility Sheriff -->
                     <a href="accessibility-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-red-500 hover:border-red-400 hover:bg-slate-800/50 transition-all duration-300 group text-red-500">
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-universal-access text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
@@ -658,6 +670,7 @@
                         </div>
                     </a>
 
+                    <!-- City Platform -->
                     <a href="city.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-cyan-500 hover:border-cyan-400 hover:bg-slate-800/50 transition-all duration-300 group text-cyan-500">
                         <div class="h-20 mb-6 flex items-center justify-center">
                             <i class="fas fa-city text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
@@ -678,6 +691,7 @@
             </div>
         </section>
 
+        <!-- About AI Muse Ai -->
         <section id="about" class="py-24 section-dark border-t border-slate-800">
             <div class="max-w-5xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -766,6 +780,7 @@
             </div>
         </section>
 
+        <!-- Contact CTA -->
         <section class="py-24 bg-gradient-to-b from-slate-900 to-black border-t border-slate-800">
             <div class="max-w-4xl mx-auto px-6 text-center">
                  <h2 class="text-3xl font-bold text-white mb-6">רוצים לדעת יותר? שואלים שאלה?</h2>
@@ -793,6 +808,7 @@
         </section>
     </main>
 
+    <!-- Landmark: Contentinfo -->
     <footer role="contentinfo" class="border-t border-gray-800 py-12 text-center text-gray-500 text-sm bg-slate-950">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
@@ -834,53 +850,7 @@
         </div>
     </footer>
 
-    <div id="acc-widget-container">
-        <button class="acc-toggle-btn" id="acc-toggle" aria-label="אפשרויות נגישות">
-            <i class="fas fa-wheelchair"></i>
-        </button>
-        
-        <div id="acc-panel" aria-modal="true" role="dialog" aria-labelledby="acc-title">
-            <div class="acc-header">
-                <span id="acc-title" class="acc-title">כלי נגישות</span>
-                <button class="acc-close" id="acc-close" aria-label="סגור תפריט נגישות">✖</button>
-            </div>
-            
-            <div class="acc-grid">
-                <button class="acc-option" onclick="toggleAccessClass('acc-large-text', this)">
-                    <i class="fas fa-text-height"></i>
-                    <span>הגדל טקסט</span>
-                </button>
-                
-                <button class="acc-option" onclick="toggleAccessClass('acc-grayscale', this)">
-                    <i class="fas fa-adjust"></i>
-                    <span>גווני אפור</span>
-                </button>
-                
-                <button class="acc-option" onclick="toggleAccessClass('acc-high-contrast', this)">
-                    <i class="fas fa-sun"></i>
-                    <span>ניגודיות גבוהה</span>
-                </button>
-                
-                <button class="acc-option" onclick="toggleAccessClass('acc-negative', this)">
-                    <i class="fas fa-moon"></i>
-                    <span>צבעים הפוכים</span>
-                </button>
-                
-                <button class="acc-option" onclick="toggleAccessClass('acc-readable-font', this)">
-                    <i class="fas fa-font"></i>
-                    <span>גופן קריא</span>
-                </button>
-                
-                <button class="acc-option" onclick="toggleAccessClass('acc-highlight-links', this)">
-                    <i class="fas fa-link"></i>
-                    <span>הדגשת קישורים</span>
-                </button>
-            </div>
-            
-            <button class="acc-reset" onclick="resetAccess()">איפוס הגדרות</button>
-        </div>
-    </div>
-
+    <!-- EyeSite Voice Assistant Widget -->
     <div id="eyesite-assistant" aria-label="עוזר קולי EyeSite">
         <div id="talk-label">
             <span style="font-size: 0.9em;">לחצו כאן - ושאלו כל שאלה</span>
@@ -890,6 +860,7 @@
             <span class="assistant-icon">🎤</span>
         </button>
 
+        <!-- EMBEDDED AI ASSISTANT WINDOW -->
         <div id="eyesite-window">
             <div class="window-header">
                 <span>EyeSite Voice Assistant</span>
@@ -901,6 +872,64 @@
                 allow="microphone; clipboard-read; clipboard-write"
                 style="width:100%; height:calc(100% - 48px); border:0;"
             ></iframe>
+        </div>
+    </div>
+
+    <!-- NEW ELABORATED ACCESSIBILITY WIDGET -->
+    <div id="acc-widget-container">
+        <!-- Toggle Button -->
+        <div id="acc-toggle" class="acc-toggle-btn" role="button" aria-label="תפריט נגישות" tabindex="0">
+            <i class="fas fa-universal-access text-2xl"></i>
+        </div>
+
+        <!-- Detailed Panel -->
+        <div id="acc-panel" class="acc-panel">
+            <div class="flex justify-between items-center mb-4 border-b border-gray-200 pb-2">
+                <h3 class="font-bold text-slate-800 text-lg">כלי נגישות</h3>
+                <button id="acc-reset" class="text-xs text-red-500 hover:text-red-700 font-bold">אפס הכל</button>
+            </div>
+            
+            <div class="acc-grid">
+                <!-- Text Size -->
+                <button class="acc-option-btn" onclick="toggleAccessibility('text-large')">
+                    <i class="fas fa-font"></i>
+                    <span>הגדל טקסט</span>
+                </button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('text-xlarge')">
+                    <i class="fas fa-text-height"></i>
+                    <span>טקסט ענק</span>
+                </button>
+
+                <!-- Contrast -->
+                <button class="acc-option-btn" onclick="toggleAccessibility('grayscale')">
+                    <i class="fas fa-adjust"></i>
+                    <span>גווני אפור</span>
+                </button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('high-contrast')">
+                    <i class="fas fa-low-vision"></i>
+                    <span>ניגודיות גבוהה</span>
+                </button>
+
+                <!-- Colors -->
+                <button class="acc-option-btn" onclick="toggleAccessibility('invert')">
+                    <i class="fas fa-moon"></i>
+                    <span>ניגודיות הפוכה</span>
+                </button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('light-bg')">
+                    <i class="fas fa-sun"></i>
+                    <span>רקע בהיר</span>
+                </button>
+
+                <!-- Elements -->
+                <button class="acc-option-btn" onclick="toggleAccessibility('underline-links')">
+                    <i class="fas fa-link"></i>
+                    <span>הדגשת קישורים</span>
+                </button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('readable-font')">
+                    <i class="fas fa-paragraph"></i>
+                    <span>גופן קריא</span>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -930,7 +959,7 @@
             });
         }
         
-        // Voice Assistant functionality - FIXED
+        // Voice Assistant functionality
         document.addEventListener('DOMContentLoaded', function() {
             const btn = document.getElementById('assistant-button');
             const win = document.getElementById('eyesite-window');
@@ -983,72 +1012,84 @@
             });
         });
 
-        // --- ACCESSIBILITY WIDGET SCRIPT ---
+        // --- NEW ACCESSIBILITY WIDGET LOGIC ---
         const accToggle = document.getElementById('acc-toggle');
         const accPanel = document.getElementById('acc-panel');
-        const accClose = document.getElementById('acc-close');
+        const accReset = document.getElementById('acc-reset');
+        const body = document.body;
+        const html = document.documentElement;
 
-        if (accToggle && accPanel) {
-            accToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                accPanel.classList.toggle('active');
-            });
+        // Open/Close Panel
+        accToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = accPanel.style.display === 'block';
+            accPanel.style.display = isOpen ? 'none' : 'block';
+            accToggle.classList.toggle('active', !isOpen);
+        });
 
-            if (accClose) {
-                accClose.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    accPanel.classList.remove('active');
-                });
+        // Close Panel when clicking outside
+        document.addEventListener('click', (e) => {
+            if (accPanel.style.display === 'block' && !accPanel.contains(e.target) && !accToggle.contains(e.target)) {
+                accPanel.style.display = 'none';
+                accToggle.classList.remove('active');
             }
+        });
 
-            // Close when clicking outside
-            document.addEventListener('click', function(event) {
-                const isClickInside = accPanel.contains(event.target);
-                const isClickOnToggle = accToggle.contains(event.target);
-                
-                if (!isClickInside && !isClickOnToggle && accPanel.classList.contains('active')) {
-                    accPanel.classList.remove('active');
+        // Toggle Feature Function
+        function toggleAccessibility(featureClass) {
+            const className = 'acc-' + featureClass;
+            
+            // Handle exclusive groups (Text Size)
+            if (featureClass === 'text-large' || featureClass === 'text-xlarge') {
+                if (html.classList.contains(className)) {
+                    html.classList.remove(className); // Toggle off
+                } else {
+                    html.classList.remove('acc-text-large', 'acc-text-xlarge'); // Clear others
+                    html.classList.add(className); // Set new
                 }
-            });
-        }
-
-        // Toggle helper function
-        function toggleAccessClass(className, btnElement) {
-            const html = document.documentElement;
-            
-            // Logic for mutually exclusive contrast modes
-            if (className === 'acc-grayscale' || className === 'acc-high-contrast' || className === 'acc-negative') {
-                const contrastModes = ['acc-grayscale', 'acc-high-contrast', 'acc-negative'];
-                contrastModes.forEach(mode => {
-                    if (mode !== className) {
-                        html.classList.remove(mode);
-                        // Find button associated with other modes and remove active state
-                        const otherBtn = document.querySelector(`button[onclick="toggleAccessClass('${mode}', this)"]`);
-                        if(otherBtn) otherBtn.classList.remove('active-opt');
-                    }
-                });
             }
-
-            html.classList.toggle(className);
-            btnElement.classList.toggle('active-opt');
+            // Handle exclusive groups (Contrast/Color)
+            else if (['grayscale', 'high-contrast', 'invert', 'light-bg'].includes(featureClass)) {
+                if (html.classList.contains(className)) {
+                    html.classList.remove(className);
+                } else {
+                    // Optional: You can choose to clear other color modes or let them stack. 
+                    // Usually clearing conflicting modes is better.
+                    html.classList.remove('acc-grayscale', 'acc-high-contrast', 'acc-invert', 'acc-light-bg');
+                    html.classList.add(className);
+                }
+            }
+            // Toggle others normally
+            else {
+                html.classList.toggle(className);
+            }
+            
+            updateButtonStates();
         }
 
-        function resetAccess() {
-            const html = document.documentElement;
-            const classes = [
-                'acc-grayscale', 
-                'acc-high-contrast', 
-                'acc-negative', 
-                'acc-large-text', 
-                'acc-readable-font', 
-                'acc-highlight-links'
-            ];
-            
-            classes.forEach(c => html.classList.remove(c));
-            
-            // Remove active state from all buttons
-            document.querySelectorAll('.acc-option').forEach(btn => {
-                btn.classList.remove('active-opt');
+        // Reset All
+        accReset.addEventListener('click', () => {
+            html.classList.remove(
+                'acc-text-large', 'acc-text-xlarge',
+                'acc-grayscale', 'acc-high-contrast', 'acc-invert', 'acc-light-bg',
+                'acc-underline-links', 'acc-readable-font'
+            );
+            updateButtonStates();
+        });
+
+        // Update Visual State of Buttons in Panel
+        function updateButtonStates() {
+            const buttons = accPanel.querySelectorAll('.acc-option-btn');
+            buttons.forEach(btn => {
+                const onclickText = btn.getAttribute('onclick');
+                const feature = onclickText.match(/'([^']+)'/)[1];
+                const className = 'acc-' + feature;
+                
+                if (html.classList.contains(className)) {
+                    btn.classList.add('active-opt');
+                } else {
+                    btn.classList.remove('active-opt');
+                }
             });
         }
     </script>
