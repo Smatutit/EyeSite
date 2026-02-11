@@ -238,7 +238,6 @@
             }
         }
         
-        /* Warm color accents */
         .text-warm {
             color: #f97316;
         }
@@ -318,13 +317,11 @@
             direction: rtl;
         }
 
-        /* Mobile Default: Bottom Right */
         #acc-widget-container {
             bottom: 20px;
             right: 20px;
         }
 
-        /* Desktop Override: Top Right (Below Header) */
         @media (min-width: 1024px) {
             #acc-widget-container {
                 bottom: auto;
@@ -364,7 +361,6 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* Mobile Panel Positioning */
         @media (max-width: 1023px) {
             .acc-panel {
                 bottom: 70px;
@@ -372,7 +368,6 @@
             }
         }
 
-        /* Desktop Panel Positioning */
         @media (min-width: 1024px) {
             .acc-panel {
                 top: 0;
@@ -419,7 +414,6 @@
             margin-bottom: 5px;
         }
 
-        /* Accessibility Override Classes */
         .acc-grayscale {
             filter: grayscale(100%) !important;
         }
@@ -451,7 +445,7 @@
 
         .acc-underline-links a {
             text-decoration: underline !important;
-            text-decoration-thickness: 2px !important;
+            text-decoration-thickness: 2px !Important;
             text-underline-offset: 4px !important;
         }
 
@@ -856,7 +850,6 @@
             <span class="assistant-icon">🎤</span>
         </button>
 
-        <!-- EMBEDDED AI ASSISTANT WINDOW -->
         <div id="eyesite-window">
             <div class="window-header">
                 <span>EyeSite Voice Assistant</span>
@@ -873,12 +866,10 @@
 
     <!-- Accessibility Widget -->
     <div id="acc-widget-container">
-        <!-- Toggle Button -->
         <div id="acc-toggle" class="acc-toggle-btn" role="button" aria-label="תפריט נגישות" tabindex="0">
             <i class="fas fa-universal-access text-2xl"></i>
         </div>
 
-        <!-- Panel -->
         <div id="acc-panel" class="acc-panel">
             <div class="flex justify-between items-center mb-4 border-b border-gray-200 pb-2">
                 <h3 class="font-bold text-slate-800 text-lg">כלי נגישות</h3>
@@ -886,7 +877,6 @@
             </div>
             
             <div class="acc-grid">
-                <!-- Text Size -->
                 <button class="acc-option-btn" onclick="toggleAccessibility('text-large')">
                     <i class="fas fa-font"></i>
                     <span>הגדל טקסט</span>
@@ -896,7 +886,6 @@
                     <span>טקסט ענק</span>
                 </button>
 
-                <!-- Contrast -->
                 <button class="acc-option-btn" onclick="toggleAccessibility('grayscale')">
                     <i class="fas fa-adjust"></i>
                     <span>גווני אפור</span>
@@ -906,7 +895,6 @@
                     <span>ניגודיות גבוהה</span>
                 </button>
 
-                <!-- Colors -->
                 <button class="acc-option-btn" onclick="toggleAccessibility('invert')">
                     <i class="fas fa-moon"></i>
                     <span>ניגודיות הפוכה</span>
@@ -916,7 +904,6 @@
                     <span>רקע בהיר</span>
                 </button>
 
-                <!-- Elements -->
                 <button class="acc-option-btn" onclick="toggleAccessibility('underline-links')">
                     <i class="fas fa-link"></i>
                     <span>הדגשת קישורים</span>
@@ -930,8 +917,8 @@
     </div>
 
     <!-- GSAP (core + ScrollTrigger) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-JgXQvcLjSW1k3QvWgJA1RY/l4PnFLpEgsT2lRZ6X6ThRQfCjmqepxHyn6GgmWsvJIt4fMjUZKfYS8J0KxVv2Wg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-3YnO2bZ4R5mTISHQBrs3l6m2knffYTPOK+2zItIkXn8aYH5RhmTB6FiGE9326X8qug2KqN4bRgKZajmIZ1dA/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- Site Logic + GSAP Animations -->
     <script>
@@ -946,13 +933,10 @@
                 mobileMenu.classList.toggle('hidden');
             });
             
-            // Close mobile menu when clicking outside
             document.addEventListener('click', function(event) {
                 if (mobileMenu.classList.contains('hidden')) return;
-                
                 const isClickInsideMenu = mobileMenu.contains(event.target);
                 const isClickOnButton = menuButton.contains(event.target);
-                
                 if (!isClickInsideMenu && !isClickOnButton) {
                     mobileMenu.classList.add('hidden');
                     menuButton.setAttribute('aria-expanded', 'false');
@@ -1000,7 +984,6 @@
                 if (win && btn && win.style.display === 'block') {
                     const isClickInsideWindow = win.contains(event.target);
                     const isClickOnButton = btn.contains(event.target);
-                    
                     if (!isClickInsideWindow && !isClickOnButton) {
                         win.style.display = 'none';
                         btn.classList.remove('active');
@@ -1084,82 +1067,76 @@
             if (typeof gsap === 'undefined') return;
             gsap.registerPlugin(ScrollTrigger);
 
-            // 1) Hero intro timeline (on page load)
-            const heroTl = gsap.timeline({
-                defaults: { ease: "power2.out" }
-            });
+            // 1) Hero intro: strong entrance on load
+            const heroTl = gsap.timeline({ defaults: { ease: "power2.out" } });
 
             heroTl
-                .from(".hero-badge", {
-                    y: -20,
-                    opacity: 0,
-                    duration: 0.6
-                })
-                .from(".hero-title", {
-                    y: 30,
-                    opacity: 0,
-                    duration: 0.9
-                }, "-=0.2")
-                .from(".hero-subtitle", {
-                    y: 20,
-                    opacity: 0,
-                    duration: 0.8
-                }, "-=0.4")
-                .from(".hero-cta", {
-                    y: 20,
-                    opacity: 0,
-                    duration: 0.6,
-                    stagger: 0.15
-                }, "-=0.4");
-
-            // 2) Products grid scroll-reveal (stagger)
-            gsap.from(".product-card", {
-                scrollTrigger: {
-                    trigger: "#products",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse"
-                },
+              .from(".hero-title", {
+                opacity: 0,
+                y: 80,
+                scale: 0.9,
+                duration: 1.1
+              })
+              .from(".hero-subtitle", {
                 opacity: 0,
                 y: 40,
-                duration: 0.8,
-                stagger: 0.15,
-                ease: "power2.out"
-            });
-
-            // 3) About columns + contact buttons scroll + soft float
-            gsap.from("#about .about-col", {
-                scrollTrigger: {
-                    trigger: "#about",
-                    start: "top 80%",
-                    toggleActions: "play none none reverse"
-                },
+                duration: 0.8
+              }, "-=0.5")
+              .from(".hero-cta", {
                 opacity: 0,
                 y: 30,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: "power2.out"
+                duration: 0.7,
+                stagger: 0.2
+              }, "-=0.4");
+
+            // 2) Products: clear staggered reveal on scroll
+            gsap.from(".product-card", {
+              scrollTrigger: {
+                trigger: "#products",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+              },
+              opacity: 0,
+              y: 80,
+              scale: 0.9,
+              duration: 0.9,
+              stagger: 0.15,
+              ease: "power3.out"
             });
 
-            gsap.from(".section-title", {
-                scrollTrigger: {
-                    trigger: ".section-title",
-                    start: "top 90%",
-                    toggleActions: "play none none reverse"
-                },
-                opacity: 0,
-                y: 20,
-                duration: 0.6,
-                ease: "power2.out"
+            // 3) About columns: slide in from opposite sides
+            gsap.from("#about .about-col:first-child", {
+              scrollTrigger: {
+                trigger: "#about",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+              },
+              opacity: 0,
+              x: 80,
+              duration: 0.9,
+              ease: "power3.out"
             });
 
-            // Gentle floating loop for contact CTAs
+            gsap.from("#about .about-col:last-child", {
+              scrollTrigger: {
+                trigger: "#about",
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+              },
+              opacity: 0,
+              x: -80,
+              duration: 0.9,
+              ease: "power3.out"
+            });
+
+            // 4) Contact buttons: continuous gentle float
             gsap.to(".contact-cta", {
-                y: -4,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-                duration: 1.6,
-                stagger: 0.3
+              y: -6,
+              repeat: -1,
+              yoyo: true,
+              ease: "sine.inOut",
+              duration: 1.6,
+              stagger: 0.3
             });
         });
     </script>
