@@ -35,9 +35,9 @@
         
         .hero-gradient {
             background: linear-gradient(135deg, 
-                rgba(124, 45, 18, 0.9) 0%,
-                rgba(30, 41, 59, 0.95) 50%,
-                rgba(15, 23, 42, 1) 100%
+                rgba(124, 45, 18, 0.9) 0%,    /* orange-900 with opacity */
+                rgba(30, 41, 59, 0.95) 50%,   /* slate-800 */
+                rgba(15, 23, 42, 1) 100%      /* slate-950 */
             );
         }
         
@@ -238,6 +238,7 @@
             }
         }
         
+        /* Warm color accents */
         .text-warm {
             color: #f97316;
         }
@@ -245,7 +246,7 @@
         .bg-warm-gradient {
             background: linear-gradient(135deg, #c2410c 0%, #9a3412 50%, #7c2d12 100%);
         }
-
+        
         /* Mobile Styles */
         @media (max-width: 768px) {
             #eyesite-assistant {
@@ -309,7 +310,7 @@
             }
         }
 
-        /* --- ACCESSIBILITY WIDGET STYLES --- */
+        /* --- NEW ACCESSIBILITY WIDGET STYLES --- */
         #acc-widget-container {
             position: fixed;
             z-index: 10000;
@@ -317,15 +318,17 @@
             direction: rtl;
         }
 
+        /* Mobile Default: Bottom Right */
         #acc-widget-container {
             bottom: 20px;
             right: 20px;
         }
 
+        /* Desktop Override: Top Right (Below Header) */
         @media (min-width: 1024px) {
             #acc-widget-container {
                 bottom: auto;
-                top: 110px;
+                top: 110px; /* Offset to not cover logo in sticky header */
                 right: 20px;
             }
         }
@@ -333,7 +336,7 @@
         .acc-toggle-btn {
             width: 50px;
             height: 50px;
-            background: #2563eb;
+            background: #2563eb; /* Accessible Blue */
             color: white;
             border-radius: 50%;
             display: flex;
@@ -357,10 +360,11 @@
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            display: none;
+            display: none; /* Hidden by default */
             border: 1px solid #e2e8f0;
         }
 
+        /* Mobile Panel Positioning */
         @media (max-width: 1023px) {
             .acc-panel {
                 bottom: 70px;
@@ -368,10 +372,11 @@
             }
         }
 
+        /* Desktop Panel Positioning */
         @media (min-width: 1024px) {
             .acc-panel {
                 top: 0;
-                right: 65px;
+                right: 65px; /* Slides out to the left of the button */
             }
         }
 
@@ -414,6 +419,7 @@
             margin-bottom: 5px;
         }
 
+        /* Accessibility Override Classes */
         .acc-grayscale {
             filter: grayscale(100%) !important;
         }
@@ -430,6 +436,7 @@
             filter: invert(100%);
         }
         
+        /* Re-invert media so they look normal */
         .acc-invert img, .acc-invert video, .acc-invert .acc-toggle-btn {
             filter: invert(100%);
         }
@@ -445,7 +452,7 @@
 
         .acc-underline-links a {
             text-decoration: underline !important;
-            text-decoration-thickness: 2px !Important;
+            text-decoration-thickness: 2px !important;
             text-underline-offset: 4px !important;
         }
 
@@ -470,10 +477,10 @@
         דלג לתוכן הראשי
     </a>
 
-    <!-- Header / Nav -->
+    <!-- Landmark: Banner -->
     <header role="banner" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo section -->
+            <!-- Logo section (LEFT side) -->
             <div class="flex items-center gap-3">
                 <img src="ai-muse-logo.png" alt="AI Muse Logo" class="h-12 w-auto rounded-md bg-slate-900/50 border border-white/10 p-1">
                 <div class="flex flex-col">
@@ -482,7 +489,7 @@
                 </div>
             </div>
             
-            <!-- Desktop Navigation -->
+            <!-- Desktop Navigation (RIGHT side) -->
             <div class="hidden md:flex items-center gap-4 text-sm">
                 <a href="index.html" class="text-blue-400 border-b-2 border-blue-400 pb-1">דף הבית</a>
                 <a href="eyesite.html" class="text-orange-400 hover:text-orange-300 hover:border-b-2 hover:border-orange-300 hover:pb-1">EyeSite</a>
@@ -494,67 +501,68 @@
                 <a href="disclaimer.html" class="text-gray-400 hover:text-white">מדיניות פרטיות ונגישות</a>
             </div>
         
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
-            <a href="index.html" class="block py-3 text-blue-400 border-b border-slate-800">
-                <i class="fas fa-home text-blue-400 mr-3"></i>דף הבית
-            </a>
-            <a href="eyesite.html" class="block py-3 text-orange-400 hover:text-orange-300 border-b border-slate-800">
-                <i class="fas fa-shield-alt text-orange-400 mr-3"></i>EyeSite
-            </a>
-            <a href="checkin-sheriff.html" class="block py-3 text-purple-400 hover:text-purple-300 border-b border-slate-800">
-                <i class="fas fa-file-contract text-purple-400 mr-3"></i>Check-in Sheriff
-            </a>
-            <a href="logistics-sheriff.html" class="block py-3 text-yellow-400 hover:text-yellow-300 border-b border-slate-800">
-                <i class="fas fa-truck-loading text-yellow-400 mr-3"></i>Logistics Sheriff
-            </a>
-            <a href="car-sheriff.html" class="block py-3 text-green-400 hover:text-green-300 border-b border-slate-800">
-                <i class="fas fa-car text-green-400 mr-3"></i>Car-Sheriff
-            </a>
-            <a href="accessibility-sheriff.html" class="block py-3 text-red-400 hover:text-red-300 border-b border-slate-800">
-                <i class="fas fa-universal-access text-red-400 mr-3"></i>שריף נגישות
-            </a>
-            <a href="city.html" class="block py-3 text-cyan-400 hover:text-cyan-300 border-b border-slate-800">
-                <i class="fas fa-city text-cyan-400 mr-3"></i>פלטפורמה עירונית
-            </a>
-            <a href="disclaimer.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-                <i class="fas fa-shield-alt mr-3"></i>מדיניות פרטיות ונגישות
-            </a>
-        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </div>
+    
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
+        <a href="index.html" class="block py-3 text-blue-400 border-b border-slate-800">
+            <i class="fas fa-home text-blue-400 mr-3"></i>דף הבית
+        </a>
+        <a href="eyesite.html" class="block py-3 text-orange-400 hover:text-orange-300 border-b border-slate-800">
+            <i class="fas fa-shield-alt text-orange-400 mr-3"></i>EyeSite
+        </a>
+        <a href="checkin-sheriff.html" class="block py-3 text-purple-400 hover:text-purple-300 border-b border-slate-800">
+            <i class="fas fa-file-contract text-purple-400 mr-3"></i>Check-in Sheriff
+        </a>
+        <a href="logistics-sheriff.html" class="block py-3 text-yellow-400 hover:text-yellow-300 border-b border-slate-800">
+            <i class="fas fa-truck-loading text-yellow-400 mr-3"></i>Logistics Sheriff
+        </a>
+        <a href="car-sheriff.html" class="block py-3 text-green-400 hover:text-green-300 border-b border-slate-800">
+            <i class="fas fa-car text-green-400 mr-3"></i>Car-Sheriff
+        </a>
+        <a href="accessibility-sheriff.html" class="block py-3 text-red-400 hover:text-red-300 border-b border-slate-800">
+            <i class="fas fa-universal-access text-red-400 mr-3"></i>שריף נגישות
+        </a>
+        <a href="city.html" class="block py-3 text-cyan-400 hover:text-cyan-300 border-b border-slate-800">
+            <i class="fas fa-city text-cyan-400 mr-3"></i>פלטפורמה עירונית
+        </a>
+        <a href="disclaimer.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+            <i class="fas fa-shield-alt mr-3"></i>מדיניות פרטיות ונגישות
+        </a>
+    </div>
+</nav>
     </header>
 
-    <!-- Main Content -->
+    <!-- Landmark: Main Content -->
     <main id="main-content">
         <!-- Hero Section -->
         <section class="hero-gradient min-h-[70vh] flex items-center justify-center text-center relative px-4" aria-label="כותרת ראשית">
-            <div class="max-w-6xl mx-auto pt-16 hero-section">
-                <div class="inline-flex items-center gap-2 border border-orange-500/30 bg-orange-900/30 backdrop-blur rounded-full pr-2 pl-4 py-1 mb-8 hero-badge">
+            <div class="max-w-6xl mx-auto pt-16">
+                <div class="inline-flex items-center gap-2 border border-orange-500/30 bg-orange-900/30 backdrop-blur rounded-full pr-2 pl-4 py-1 mb-8">
                     <i class="fas fa-brain text-orange-400 text-xs" aria-hidden="true"></i>
                     <span class="text-orange-400 font-bold text-xs tracking-widest">SMART LIVING 2026</span>
                 </div>
                 
-                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight hero-title">
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
                     יצירת חיים בטוחים יותר
                     <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-l from-orange-400 to-amber-300">באמצעות טכנולוגיות קצה וראייה ממוחשבת</span>
                 </h1>
                 
-                <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed hero-subtitle">
+                <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
                     AI Muse AI מפתחת כלים מבוססי לימוד מכונה וראייה ממוחשבת לפתרון אתגרים בטיחותיים, רגולטוריים וניהוליים עבור עסקים
                 </p>
                 
                 <div class="flex flex-col md:flex-row gap-6 justify-center items-center mt-12">
-                    <a href="#products" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-full transition-all shadow-lg shadow-orange-900/50 hover:shadow-xl hover:shadow-orange-900/50 hero-cta">
+                    <a href="#products" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-full transition-all shadow-lg shadow-orange-900/50 hover:shadow-xl hover:shadow-orange-900/50">
                         <i class="fas fa-rocket mr-2" aria-hidden="true"></i>
                         גלו את הכלים שלנו
                     </a>
-                    <a href="#about" class="border-2 border-orange-500 text-orange-400 hover:bg-orange-500/10 hover:text-orange-300 font-bold py-4 px-8 rounded-full transition-all hero-cta">
+                    <a href="#about" class="border-2 border-orange-500 text-orange-400 hover:bg-orange-500/10 hover:text-orange-300 font-bold py-4 px-8 rounded-full transition-all">
                         <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
                         מה זה AI Muse AI?
                     </a>
@@ -566,32 +574,33 @@
         <section id="products" class="py-24 section-warm">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-black text-white mb-4 section-title">המוצרים שלנו</h2>
+                    <h2 class="text-4xl font-black text-white mb-4">המוצרים שלנו</h2>
                     <p class="text-gray-400 max-w-2xl mx-auto text-lg">כלי ניהול, בטיחות ומס המבוססים על טכנולוגיות ראיית מכונה מתקדמות</p>
                     <div class="w-32 h-1 bg-gradient-to-l from-orange-500 to-amber-500 mx-auto mt-6 rounded-full"></div>
                 </div>
 
                 <div class="product-grid">
-                    <!-- EyeSite - FLAGSHIP SaaS -->
-                    <a href="eyesite.html" class="flagship-card product-card p-8 rounded-2xl group block">
-                        <div class="flagship-badge">
-                            <i class="fas fa-crown mr-2" aria-hidden="true"></i>
-                            מוצר הדגל
-                        </div>
-                        <div class="h-20 mb-6 flex items-center justify-center">
-                            <i class="fas fa-shield-alt text-5xl text-orange-500 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4 text-white text-center">EyeSite</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed text-center mb-6">
-                            מערכת ניהול סיכונים מבוססת וידאו לאתרי בנייה. הופך 60 שניות של סיור באתר לדוח בטיחות מקצועי בהתאם לתקנות 2026. הגנה על נושאי משרה.
-                        </p>
-                        <div class="flex justify-center">
-                            <span class="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm font-bold transition-colors">
-                                לגלות את הטכנולוגיה
-                                <i class="fas fa-arrow-left text-xs" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                    </a>
+                    
+                  <!-- EyeSite - FLAGSHIP SaaS -->
+<a href="eyesite.html" class="flagship-card product-card p-8 rounded-2xl group block">
+    <div class="flagship-badge">
+        <i class="fas fa-crown mr-2" aria-hidden="true"></i>
+        מוצר הדגל
+    </div>
+    <div class="h-20 mb-6 flex items-center justify-center">
+        <i class="fas fa-shield-alt text-5xl text-orange-500 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
+    </div>
+    <h3 class="text-2xl font-bold mb-4 text-white text-center">EyeSite</h3>
+    <p class="text-gray-400 text-sm leading-relaxed text-center mb-6">
+        מערכת ניהול סיכונים מבוססת וידאו לאתרי בנייה. הופך 60 שניות של סיור באתר לדוח בטיחות מקצועי בהתאם לתקנות 2026. הגנה על נושאי משרה.
+    </p>
+    <div class="flex justify-center">
+        <span class="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm font-bold transition-colors">
+            לגלות את הטכנולוגיה
+            <i class="fas fa-arrow-left text-xs" aria-hidden="true"></i>
+        </span>
+    </div>
+</a>
 
                     <!-- Car Sheriff -->
                     <a href="car-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-green-500 hover:border-green-400 hover:bg-slate-800/50 transition-all duration-300 group text-green-500">
@@ -677,6 +686,7 @@
                             </span>
                         </div>
                     </a>
+
                 </div>
             </div>
         </section>
@@ -685,13 +695,13 @@
         <section id="about" class="py-24 section-dark border-t border-slate-800">
             <div class="max-w-5xl mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-black text-white mb-4 section-title">על AI Muse AI</h2>
+                    <h2 class="text-4xl font-black text-white mb-4">על AI Muse AI</h2>
                     <p class="text-gray-400 max-w-2xl mx-auto text-lg">מעבדות נתונים אורבניות</p>
                     <div class="w-24 h-1 bg-gradient-to-l from-orange-500 to-amber-500 mx-auto mt-6 rounded-full"></div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-12 items-start">
-                    <div class="about-col">
+                    <div>
                         <h3 class="text-2xl font-bold text-orange-400 mb-6">AI Muse AI Urban Data Labs</h3>
                         <p class="text-gray-300 leading-relaxed mb-6 text-lg">
                             AI Muse AI היא HUB טכנולוגי המתמחה בפיתוח פתרונות B2B מבוססי בינה מלאכותית וראייה ממוחשבת 
@@ -704,7 +714,7 @@
                             נמסר ישירות ללקוח.
                         </p>
                         
-                        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700">
+                        <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 mt-8">
                             <h4 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
                                 <i class="fas fa-lightbulb text-orange-400" aria-hidden="true"></i>
                                 למה קוראים לזה "שריף"?
@@ -717,7 +727,7 @@
                         </div>
                     </div>
                     
-                    <div class="space-y-6 about-col">
+                    <div class="space-y-6">
                         <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700">
                             <div class="flex items-start gap-4 mb-4">
                                 <div class="bg-orange-900/30 text-orange-400 p-3 rounded-xl flex-shrink-0">
@@ -773,16 +783,16 @@
         <!-- Contact CTA -->
         <section class="py-24 bg-gradient-to-b from-slate-900 to-black border-t border-slate-800">
             <div class="max-w-4xl mx-auto px-6 text-center">
-                 <h2 class="text-3xl font-bold text-white mb-6 section-title">רוצים לדעת יותר? שואלים שאלה?</h2>
+                 <h2 class="text-3xl font-bold text-white mb-6">רוצים לדעת יותר? שואלים שאלה?</h2>
                  <p class="text-gray-400 leading-relaxed text-lg mb-12 max-w-2xl mx-auto">
                      יש לכם רעיון לכלי שיכול לעזור לעסק שלכם? רוצים לשתף פעולה? או סתם רוצים לומר שלום?
                  </p>
                  <div class="mt-8 flex flex-col md:flex-row gap-6 justify-center items-center">
-                     <a href="https://wa.me/972503040523" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-green-900/50 hover:shadow-xl hover:shadow-green-900/50 contact-cta" aria-label="שלח הודעה בוואטסאפ (יפתח בחלון חדש)">
+                     <a href="https://wa.me/972503040523" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-green-900/50 hover:shadow-xl hover:shadow-green-900/50" aria-label="שלח הודעה בוואטסאפ (יפתח בחלון חדש)">
                         <i class="fab fa-whatsapp text-2xl ml-3" aria-hidden="true"></i>
                         דבר איתנו בוואטסאפ
                     </a>
-                     <a href="tel:0503040523" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-orange-900/50 hover:shadow-xl hover:shadow-orange-900/50 contact-cta" aria-label="התקשר אלינו">
+                     <a href="tel:0503040523" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-full transition shadow-lg shadow-orange-900/50 hover:shadow-xl hover:shadow-orange-900/50" aria-label="התקשר אלינו">
                         <i class="fas fa-phone text-xl ml-3" aria-hidden="true"></i>
                         050-3040523
                     </a>
@@ -798,7 +808,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Landmark: Contentinfo -->
     <footer role="contentinfo" class="border-t border-gray-800 py-12 text-center text-gray-500 text-sm bg-slate-950">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
@@ -850,6 +860,7 @@
             <span class="assistant-icon">🎤</span>
         </button>
 
+        <!-- EMBEDDED AI ASSISTANT WINDOW -->
         <div id="eyesite-window">
             <div class="window-header">
                 <span>EyeSite Voice Assistant</span>
@@ -864,12 +875,14 @@
         </div>
     </div>
 
-    <!-- Accessibility Widget -->
+    <!-- NEW ELABORATED ACCESSIBILITY WIDGET -->
     <div id="acc-widget-container">
+        <!-- Toggle Button -->
         <div id="acc-toggle" class="acc-toggle-btn" role="button" aria-label="תפריט נגישות" tabindex="0">
             <i class="fas fa-universal-access text-2xl"></i>
         </div>
 
+        <!-- Detailed Panel -->
         <div id="acc-panel" class="acc-panel">
             <div class="flex justify-between items-center mb-4 border-b border-gray-200 pb-2">
                 <h3 class="font-bold text-slate-800 text-lg">כלי נגישות</h3>
@@ -877,6 +890,7 @@
             </div>
             
             <div class="acc-grid">
+                <!-- Text Size -->
                 <button class="acc-option-btn" onclick="toggleAccessibility('text-large')">
                     <i class="fas fa-font"></i>
                     <span>הגדל טקסט</span>
@@ -886,6 +900,7 @@
                     <span>טקסט ענק</span>
                 </button>
 
+                <!-- Contrast -->
                 <button class="acc-option-btn" onclick="toggleAccessibility('grayscale')">
                     <i class="fas fa-adjust"></i>
                     <span>גווני אפור</span>
@@ -895,6 +910,7 @@
                     <span>ניגודיות גבוהה</span>
                 </button>
 
+                <!-- Colors -->
                 <button class="acc-option-btn" onclick="toggleAccessibility('invert')">
                     <i class="fas fa-moon"></i>
                     <span>ניגודיות הפוכה</span>
@@ -904,6 +920,7 @@
                     <span>רקע בהיר</span>
                 </button>
 
+                <!-- Elements -->
                 <button class="acc-option-btn" onclick="toggleAccessibility('underline-links')">
                     <i class="fas fa-link"></i>
                     <span>הדגשת קישורים</span>
@@ -916,11 +933,6 @@
         </div>
     </div>
 
-    <!-- GSAP (core + ScrollTrigger) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-    <!-- Site Logic + GSAP Animations -->
     <script>
         // Mobile menu functionality
         const menuButton = document.getElementById('mobile-menu-button');
@@ -933,10 +945,13 @@
                 mobileMenu.classList.toggle('hidden');
             });
             
+            // Close mobile menu when clicking outside
             document.addEventListener('click', function(event) {
                 if (mobileMenu.classList.contains('hidden')) return;
+                
                 const isClickInsideMenu = mobileMenu.contains(event.target);
                 const isClickOnButton = menuButton.contains(event.target);
+                
                 if (!isClickInsideMenu && !isClickOnButton) {
                     mobileMenu.classList.add('hidden');
                     menuButton.setAttribute('aria-expanded', 'false');
@@ -951,6 +966,7 @@
             const closeBtn = document.getElementById('close-window');
             const talkLabel = document.getElementById('talk-label');
 
+            // Show label on hover
             if (btn && talkLabel) {
                 btn.addEventListener('mouseenter', () => {
                     talkLabel.style.display = 'block';
@@ -963,6 +979,7 @@
                 });
             }
 
+            // Toggle window
             if (btn && win) {
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -972,6 +989,7 @@
                 });
             }
 
+            // Close window
             if (closeBtn && win && btn) {
                 closeBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -980,10 +998,12 @@
                 });
             }
 
+            // Close window when clicking outside
             document.addEventListener('click', function(event) {
                 if (win && btn && win.style.display === 'block') {
                     const isClickInsideWindow = win.contains(event.target);
                     const isClickOnButton = btn.contains(event.target);
+                    
                     if (!isClickInsideWindow && !isClickOnButton) {
                         win.style.display = 'none';
                         btn.classList.remove('active');
@@ -992,12 +1012,14 @@
             });
         });
 
-        // Accessibility widget logic
+        // --- NEW ACCESSIBILITY WIDGET LOGIC ---
         const accToggle = document.getElementById('acc-toggle');
         const accPanel = document.getElementById('acc-panel');
         const accReset = document.getElementById('acc-reset');
+        const body = document.body;
         const html = document.documentElement;
 
+        // Open/Close Panel
         accToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             const isOpen = accPanel.style.display === 'block';
@@ -1005,6 +1027,7 @@
             accToggle.classList.toggle('active', !isOpen);
         });
 
+        // Close Panel when clicking outside
         document.addEventListener('click', (e) => {
             if (accPanel.style.display === 'block' && !accPanel.contains(e.target) && !accToggle.contains(e.target)) {
                 accPanel.style.display = 'none';
@@ -1012,25 +1035,31 @@
             }
         });
 
+        // Toggle Feature Function
         function toggleAccessibility(featureClass) {
             const className = 'acc-' + featureClass;
             
+            // Handle exclusive groups (Text Size)
             if (featureClass === 'text-large' || featureClass === 'text-xlarge') {
                 if (html.classList.contains(className)) {
-                    html.classList.remove(className);
+                    html.classList.remove(className); // Toggle off
                 } else {
-                    html.classList.remove('acc-text-large', 'acc-text-xlarge');
-                    html.classList.add(className);
+                    html.classList.remove('acc-text-large', 'acc-text-xlarge'); // Clear others
+                    html.classList.add(className); // Set new
                 }
             }
+            // Handle exclusive groups (Contrast/Color)
             else if (['grayscale', 'high-contrast', 'invert', 'light-bg'].includes(featureClass)) {
                 if (html.classList.contains(className)) {
                     html.classList.remove(className);
                 } else {
+                    // Optional: You can choose to clear other color modes or let them stack. 
+                    // Usually clearing conflicting modes is better.
                     html.classList.remove('acc-grayscale', 'acc-high-contrast', 'acc-invert', 'acc-light-bg');
                     html.classList.add(className);
                 }
             }
+            // Toggle others normally
             else {
                 html.classList.toggle(className);
             }
@@ -1038,6 +1067,7 @@
             updateButtonStates();
         }
 
+        // Reset All
         accReset.addEventListener('click', () => {
             html.classList.remove(
                 'acc-text-large', 'acc-text-xlarge',
@@ -1047,6 +1077,7 @@
             updateButtonStates();
         });
 
+        // Update Visual State of Buttons in Panel
         function updateButtonStates() {
             const buttons = accPanel.querySelectorAll('.acc-option-btn');
             buttons.forEach(btn => {
@@ -1061,84 +1092,6 @@
                 }
             });
         }
-
-        // --- GSAP Animations ---
-        document.addEventListener('DOMContentLoaded', function () {
-            if (typeof gsap === 'undefined') return;
-            gsap.registerPlugin(ScrollTrigger);
-
-            // 1) Hero intro: strong entrance on load
-            const heroTl = gsap.timeline({ defaults: { ease: "power2.out" } });
-
-            heroTl
-              .from(".hero-title", {
-                opacity: 0,
-                y: 80,
-                scale: 0.9,
-                duration: 1.1
-              })
-              .from(".hero-subtitle", {
-                opacity: 0,
-                y: 40,
-                duration: 0.8
-              }, "-=0.5")
-              .from(".hero-cta", {
-                opacity: 0,
-                y: 30,
-                duration: 0.7,
-                stagger: 0.2
-              }, "-=0.4");
-
-            // 2) Products: clear staggered reveal on scroll
-            gsap.from(".product-card", {
-              scrollTrigger: {
-                trigger: "#products",
-                start: "top 80%",
-                toggleActions: "play none none reverse"
-              },
-              opacity: 0,
-              y: 80,
-              scale: 0.9,
-              duration: 0.9,
-              stagger: 0.15,
-              ease: "power3.out"
-            });
-
-            // 3) About columns: slide in from opposite sides
-            gsap.from("#about .about-col:first-child", {
-              scrollTrigger: {
-                trigger: "#about",
-                start: "top 80%",
-                toggleActions: "play none none reverse"
-              },
-              opacity: 0,
-              x: 80,
-              duration: 0.9,
-              ease: "power3.out"
-            });
-
-            gsap.from("#about .about-col:last-child", {
-              scrollTrigger: {
-                trigger: "#about",
-                start: "top 80%",
-                toggleActions: "play none none reverse"
-              },
-              opacity: 0,
-              x: -80,
-              duration: 0.9,
-              ease: "power3.out"
-            });
-
-            // 4) Contact buttons: continuous gentle float
-            gsap.to(".contact-cta", {
-              y: -6,
-              repeat: -1,
-              yoyo: true,
-              ease: "sine.inOut",
-              duration: 1.6,
-              stagger: 0.3
-            });
-        });
     </script>
 </body>
 </html>
