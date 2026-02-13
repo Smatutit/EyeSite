@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Sheriff - AI Muse AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Heebo', sans-serif; 
+            transition: filter 0.3s ease, background 0.3s ease;
+        }
+        
+        /* --- ACCESSIBILITY WIDGET STYLES (כמו בדוגמה) --- */
+        #acc-widget-container {
+            position: fixed;
+            z-index: 10000;
+            font-family: 'Heebo', sans-serif;
+            direction: rtl;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        @media (min-width: 1024px) {
+            #acc-widget-container {
+                bottom: auto;
+                top: 110px;
+                right: 20px;
+            }
+        }
+
+        .acc-toggle-btn {
+            width: 50px;
+            height: 50px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            cursor: pointer;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .acc-toggle-btn:hover, .acc-toggle-btn.active {
+            transform: scale(1.1);
+            background: #1d4ed8;
+        }
+
+        .acc-panel {
+            position: absolute;
+            background: white;
+            width: 300px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: none;
+            border: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 1023px) {
+            .acc-panel {
+                bottom: 70px;
+                right: 0;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .acc-panel {
+                top: 0;
+                right: 65px;
+            }
+        }
+
+        .acc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .acc-option-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+            color: #334155;
+            transition: all 0.2s;
+            text-align: center;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .acc-option-btn:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .acc-option-btn.active-opt {
+            background: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+
+        .acc-option-btn i {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        /* Accessibility Override Classes */
+        .acc-grayscale { filter: grayscale(100%) !important; }
+        .acc-high-contrast * { background-color: #000 !important; color: #fff !important; border-color: #fff !important; background-image: none !important; box-shadow: none !important; }
+        .acc-invert { filter: invert(100%); }
+        .acc-invert img, .acc-invert video, .acc-invert .acc-toggle-btn { filter: invert(100%); }
+        .acc-light-bg body { background: #f8fafc !important; }
+        .acc-light-bg *:not(.acc-toggle-btn):not(.acc-option-btn):not(i) { color: #000 !important; background-color: #fff !important; }
+        .acc-underline-links a { text-decoration: underline !important; text-decoration-thickness: 2px !important; text-underline-offset: 4px !important; }
+        .acc-readable-font * { font-family: Arial, Helvetica, sans-serif !important; letter-spacing: 0.05em !important; }
+        .acc-text-large { font-size: 120% !important; }
+        .acc-text-xlarge { font-size: 140% !important; }
+    </style>
+</head>
+<body class="bg-slate-950 text-white">
+
+<nav class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Logo section -->
+        <div class="flex items-center gap-3">
+            <img src="ai-muse-logo.png" alt="AI Muse Logo" class="h-10 w-auto rounded-md bg-slate-900/50 border border-white/10">
+            <div class="flex flex-col">
+                <span class="text-xl font-black tracking-tight text-white leading-none">AI Muse AI</span>
+                <span class="text-[0.65rem] text-blue-400 font-bold tracking-widest uppercase">URBAN DATA LABS</span>
+            </div>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-4 text-sm">
+            <a href="index.html" class="text-blue-400 hover:text-blue-300 hover:border-b-2 hover:border-blue-300 hover:pb-1">דף הבית</a>
+            <a href="eyesite.html" class="text-orange-400 hover:text-orange-300 hover:border-b-2 hover:border-orange-300 hover:pb-1">EyeSite</a>
+            <a href="checkin-sheriff.html" class="text-purple-400 hover:text-purple-300 hover:border-b-2 hover:border-purple-300 hover:pb-1">Check-in Sheriff</a>
+            <a href="import-sheriff.html" class="text-yellow-400 border-b-2 border-yellow-400 pb-1">Import Sheriff</a>
+            <a href="car-sheriff.html" class="text-green-400 hover:text-green-300 hover:border-b-2 hover:border-green-300 hover:pb-1">Car-Sheriff</a>
+            <a href="accessibility-sheriff.html" class="text-red-400 hover:text-red-300 hover:border-b-2 hover:border-red-300 hover:pb-1">שריף נגישות</a>
+            <a href="city.html" class="text-cyan-400 hover:text-cyan-300 hover:border-b-2 hover:border-cyan-300 hover:pb-1">פלטפורמה עירונית</a>
+            <a href="disclaimer.html" class="text-gray-400 hover:text-white">מדיניות פרטיות ונגישות</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
+        <a href="index.html" class="block py-3 text-blue-400 border-b border-slate-800"><i class="fas fa-home text-blue-400 mr-3"></i>דף הבית</a>
+        <a href="eyesite.html" class="block py-3 text-orange-400 hover:text-orange-300 border-b border-slate-800"><i class="fas fa-shield-alt text-orange-400 mr-3"></i>EyeSite</a>
+        <a href="checkin-sheriff.html" class="block py-3 text-purple-400 hover:text-purple-300 border-b border-slate-800"><i class="fas fa-file-contract text-purple-400 mr-3"></i>Check-in Sheriff</a>
+        <a href="import-sheriff.html" class="block py-3 text-yellow-400 border-b border-slate-800"><i class="fas fa-file-import text-yellow-400 mr-3"></i>Import Sheriff</a>
+        <a href="car-sheriff.html" class="block py-3 text-green-400 hover:text-green-300 border-b border-slate-800"><i class="fas fa-car text-green-400 mr-3"></i>Car-Sheriff</a>
+        <a href="accessibility-sheriff.html" class="block py-3 text-red-400 border-b border-slate-800"><i class="fas fa-universal-access text-red-400 mr-3"></i>שריף נגישות</a>
+        <a href="city.html" class="block py-3 text-cyan-400 hover:text-cyan-300 border-b border-slate-800"><i class="fas fa-city text-cyan-400 mr-3"></i>פלטפורמה עירונית</a>
+        <a href="disclaimer.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800"><i class="fas fa-shield-alt mr-3"></i>מדיניות פרטיות ונגישות</a>
+    </div>
+</nav>
+
+<!-- Header Section -->
+<div class="bg-gradient-to-b from-slate-900 to-slate-950 py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="inline-flex items-center gap-2 border border-yellow-500/30 bg-yellow-900/30 backdrop-blur rounded-full pr-2 pl-4 py-1 mb-6">
+            <i class="fas fa-file-import text-yellow-400 text-xs"></i>
+            <span class="text-yellow-400 font-bold text-xs tracking-widest">B2B - רגולציה וסימון מוצרים</span>
+        </div>
+        <h1 class="text-5xl font-black text-white mb-6">Import Sheriff</h1>
+        <p class="text-xl text-gray-300">
+            פתרון AI לציות לרגולציית המזון החדשה (2025/26) בישראל
+        </p>
+    </div>
+</div>
+
+<div class="bg-slate-900 py-24">
+    <div class="max-w-5xl mx-auto px-6">
+
+        <!-- הקדמה ראשונית (כמו ב-Accessibility Sheriff) -->
+        <div class="mb-16 text-center">
+            <h2 class="text-4xl font-bold text-white mb-8">מאתגר ביורוקרטי לתהליך אוטומטי ומיידי</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                שריף היבואנים הוא פתרון AI מתקדם שהופך את תהליך הציות לרגולציית המזון החדשה (2025/26) בישראל 
+                מאתגר ביורוקרטי לתהליך אוטומטי ומיידי. המערכת מנתחת תוויות של מוצרים מחו"ל, מאתרת חריגות 
+                בתקן 1145 ומפיקה דוח תאימות מקיף הכולל נוסח מדבקה בעברית שמוכן להדפסה עם אלרגנים מודגשים כחוק.
+                זהו כלי 'Due Diligence' (אמצעים ראויים) המאפשר ליבואנים למנוע ריקולים ועיכובים במכס תוך הבטחת בטיחות הצרכן.
+            </p>
+        </div>
+
+        <!-- שלושת עמודי התווך המרכזיים (The Key Pillars) -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center border-b border-yellow-500/30 pb-4">עמודי התווך המרכזיים</h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-yellow-900/20 border border-yellow-500/30 p-6 rounded-xl text-center">
+                    <i class="fas fa-camera-retro text-yellow-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">פענוח רגולטורי ויזואלי</h3>
+                    <p class="text-gray-300 text-sm">הפיכת תמונה של מוצר למידע מובנה המושווה אוטומטית לתקנים הישראליים והאירופאיים המעודכנים (כמו תקנה 1169/2011).</p>
+                </div>
+                
+                <div class="bg-yellow-900/20 border border-yellow-500/30 p-6 rounded-xl text-center">
+                    <i class="fas fa-tag text-yellow-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">ייצור תוצר פיזי</h3>
+                    <p class="text-gray-300 text-sm">לא רק "ייעוץ", אלא אספקת נספח מדבקה מוכן לדפוס הכולל תרגום מדויק, סימון תזונתי לרפורמה החדשה ואזהרות חובה.</p>
+                </div>
+                
+                <div class="bg-yellow-900/20 border border-yellow-500/30 p-6 rounded-xl text-center">
+                    <i class="fas fa-gavel text-yellow-400 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">הגנה משפטית ליבואן</h3>
+                    <p class="text-gray-300 text-sm">יצירת תיעוד מקצועי המוכיח שהיבואן נקט באמצעים הנדרשים (Due Diligence) לבדיקת המוצר לפני שיווקו, בדומה למודל ה-Check-In בעולמות הנדל"ן.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- START: PDF Preview Section (בדיוק באותו מקום כמו ב-Accessibility Sheriff) -->
+        <div class="mb-20 bg-gradient-to-r from-slate-800/50 to-slate-900/50 p-10 rounded-2xl border border-slate-700/50 text-center">
+            <h2 class="text-4xl font-bold text-white mb-10">📋 הצגת דוגמה לדוח המקצועי</h2>
+            
+            <div class="max-w-4xl mx-auto mb-12 p-6 bg-white rounded-2xl shadow-2xl">
+                <!-- יש להחליף את התמונה בתצוגה מקדימה אמיתית -->
+                <img src="import-report-preview.jpg" 
+                     alt="תצוגה מקדימה לדוח Import Sheriff - ניתוח תווית וסימון מוצר" 
+                     class="w-full h-auto rounded-lg border-4 border-gray-100">
+                <p class="text-gray-600 text-sm mt-3">תצוגה מקדימה של ניתוח התווית ופענוח רכיבים</p>
+            </div>
+
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                צפו בדוח המלא הכולל נוסח מדבקה מוכן להדפסה, זיהוי אלרגנים מודגשים כחוק, והפניות מלאות לתקן 1145.
+            </p>
+            
+            <a href="Import-Sheriff-Report.pdf" 
+               target="_blank"
+               class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 text-lg">
+                <i class="fas fa-external-link-alt"></i>
+                פתח את הדוח המלא (PDF)
+            </a>
+        </div>
+        <!-- END: PDF Preview Section -->
+
+        <!-- סקציית דיוק טכני הנדסי -->
+        <div class="mb-20">
+            <h2 class="text-4xl font-bold text-white mb-8 text-center">דיוק טכני הנדסי</h2>
+            
+            <div class="bg-slate-800/50 border border-yellow-500/30 p-8 rounded-2xl">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-4">פרמטרים מדויקים</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            המערכת מתייחסת לפרמטרים הנדסיים כמו <span class="text-yellow-300 font-bold">גודל גופן מינימלי (1.2 מ"מ)</span> 
+                            וחישובי סף ל"סמלים אדומים". זוהי לא סריקה גנרית, אלא כלי ביקורת ייעודי המבין את הדקויות 
+                            של הדרישה הרגולטורית הישראלית.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold text-green-400 mb-4">Due Diligence</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            הדוח מהווה תיעוד מקצועי של מצב סימון המוצר במועד הבדיקה, ומעיד על נקיטת "אמצעים ראויים" 
+                            של היבואן לבדיקת תאימות המוצר לחוק הגנת הצרכן ולתקנות בריאות הציבור.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- איך זה עובד (4 שלבים) -->
+        <div class="mb-20">
+            <h2 class="text-4xl font-bold text-white mb-12 text-center">תהליך העבודה</h2>
+            
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-yellow-900/20 border border-yellow-500/30 p-6 rounded-2xl text-center">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-yellow-600 text-white font-bold text-2xl mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-bold text-white mb-3">צילום תווית</h3>
+                    <p class="text-gray-300 text-sm">שלח תמונה ברורה של המוצר והתווית המקורית</p>
+                </div>
+                
+                <div class="bg-yellow-900/20 border border-yellow-500/30 p-6 rounded-2xl text-center">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-yellow-600 text-white font-bold text-2xl mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-bold text-white mb-3">פענוח AI</h3>
+                    <p class="text-gray-300 text-sm">המערכת מנתחת רכיבים, אלרגנים וערכים תזונתיים</p>
+                </div>
+                
+                <div class="bg-yellow-900/20 border border-yellow-500/30 p-6 rounded-2xl text-center">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-yellow-600 text-white font-bold text-2xl mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-bold text-white mb-3">השוואה לתקן</h3>
+                    <p class="text-gray-300 text-sm">זיהוי אוטומטי של חריגות מול ת"י 1145 ותקנות האיחוד</p>
+                </div>
+                
+                <div class="bg-yellow-900/20 border border-yellow-500/30 p-6 rounded-2xl text-center">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-yellow-600 text-white font-bold text-2xl mx-auto mb-4">4</div>
+                    <h3 class="text-xl font-bold text-white mb-3">קבלת דוח + מדבקה</h3>
+                    <p class="text-gray-300 text-sm">דוח Due Diligence מלא + נוסח מדבקה מוכן להדפסה</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- מאחורי הקלעים -->
+        <div class="mb-20 bg-slate-800/30 p-8 rounded-2xl border border-slate-700/50">
+            <h2 class="text-3xl font-bold text-white mb-6 text-center">מאחורי הקלעים</h2>
+            <p class="text-gray-300 text-center text-lg leading-relaxed">
+                <span class="text-yellow-400 font-bold">Import Sheriff</span> פועל על מערכת <span class="text-orange-400 font-bold">EyeSite</span> — 
+                טכנולוגיית ראייה וניתוח חכמה מבית <span class="text-blue-400 font-bold">AI Muse</span>,
+                המשלבת מומחיות רגולטורית עם עיבוד תמונה מתקדם לזיהוי תוויות, רכיבים והצלבות מול מאגרי מידע.
+                <br><br>
+                <span class="text-yellow-300">שירות B2B בלבד:</span> השירות מיועד ליבואנים, משווקים ורשתות קמעונאיות 
+                הזקוקות לוודא עמידה בדרישות הרגולציה החדשה בטרם שיווק מוצרים בישראל.
+            </p>
+        </div>
+
+        <!-- הצהרה משפטית (כמו בדוגמה) -->
+        <div class="mb-16 bg-slate-800/50 p-8 rounded-2xl border border-slate-700/50">
+            <h3 class="text-2xl font-bold text-white mb-4 text-center">הצהרה משפטית</h3>
+            <p class="text-gray-400 text-sm leading-relaxed text-center">
+                Import Sheriff נועד לספק בדיקת Due Diligence מקצועית ותיעוד מצב סימון מוצרים במועד הבדיקה, על סמך המידע שנמסר. 
+                אין לראות בדוח זה חוות דעת משפטית מחייבת או תחליף לבדיקת עורך דין מוסמך. הדוח מעיד על נקיטת "אמצעים ראויים" 
+                של היבואן לבדיקת תאימות המוצר לחוק הגנת הצרכן ותקנות בריאות הציבור.
+            </p>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gradient-to-r from-yellow-900/20 to-yellow-900/10 border border-yellow-500/30 p-12 rounded-2xl text-center">
+            <h2 class="text-4xl font-bold text-white mb-4">מוכנים להפוך רגולציה לאוטומטית?</h2>
+            <p class="text-xl text-gray-300 mb-8">
+                שירות B2B מקצועי ליבואנים ולמשווקים
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/972503040523" target="_blank" class="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full transition">
+                    <i class="fab fa-whatsapp"></i> צרו קשר בוואטסאפ
+                </a>
+                <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-slate-700 hover:bg-slate-600 text-white font-bold py-4 px-8 rounded-full transition">
+                    <i class="fas fa-home"></i> בחזרה לאתר הראשי
+                </a>
+            </div>
+            <p class="text-gray-300 text-sm mt-6">
+                מספר הטלפון: <span class="font-bold text-yellow-300">050-304-0523</span>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<footer class="border-t border-gray-800 py-12 text-center text-gray-500 text-xs bg-slate-950">
+    <p class="mb-2">Import Sheriff © 2025 | פיתוח: AI Muse Urban Data Labs</p>
+    <p>Zero-Data Architecture | No tracking | No storage</p>
+    <div class="mt-6">
+        <a href="disclaimer.html" class="text-blue-400 hover:text-blue-300 transition font-medium">
+            מדיניות פרטיות והצהרת נגישות
+        </a>
+    </div>
+</footer>
+
+<!-- ACCESSIBILITY WIDGET (כמו בדוגמה) -->
+<div id="acc-widget-container">
+    <div id="acc-toggle" class="acc-toggle-btn" role="button" aria-label="תפריט נגישות" tabindex="0">
+        <i class="fas fa-universal-access text-2xl"></i>
+    </div>
+    <div id="acc-panel" class="acc-panel">
+        <div class="flex justify-between items-center mb-4 border-b border-gray-200 pb-2">
+            <h3 class="font-bold text-slate-800 text-lg">כלי נגישות</h3>
+            <button id="acc-reset" class="text-xs text-red-500 hover:text-red-700 font-bold">אפס הכל</button>
+        </div>
+        <div class="acc-grid">
+            <button class="acc-option-btn" onclick="toggleAccessibility('text-large')"><i class="fas fa-font"></i><span>הגדל טקסט</span></button>
+            <button class="acc-option-btn" onclick="toggleAccessibility('text-xlarge')"><i class="fas fa-text-height"></i><span>טקסט ענק</span></button>
+            <button class="acc-option-btn" onclick="toggleAccessibility('grayscale')"><i class="fas fa-adjust"></i><span>גווני אפור</span></button>
+            <button class="acc-option-btn" onclick="toggleAccessibility('high-contrast')"><i class="fas fa-low-vision"></i><span>ניגודיות גבוהה</span></button>
+            <button class="acc-option-btn" onclick="toggleAccessibility('invert')"><i class="fas fa-moon"></i><span>ניגודיות הפוכה</span></button>
+            <button class="acc-option-btn" onclick="toggleAccessibility('light-bg')"><i class="fas fa-sun"></i><span>רקע בהיר</span></button>
+            <button class="acc-option-btn" onclick="toggleAccessibility('underline-links')"><i class="fas fa-link"></i><span>הדגשת קישורים</span></button>
+            <button class="acc-option-btn" onclick="toggleAccessibility('readable-font')"><i class="fas fa-paragraph"></i><span>גופן קריא</span></button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+
+    // Accessibility Widget Logic
+    const accToggle = document.getElementById('acc-toggle');
+    const accPanel = document.getElementById('acc-panel');
+    const accReset = document.getElementById('acc-reset');
+    const html = document.documentElement;
+
+    accToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = accPanel.style.display === 'block';
+        accPanel.style.display = isOpen ? 'none' : 'block';
+        accToggle.classList.toggle('active', !isOpen);
+    });
+
+    document.addEventListener('click', (e) => {
+        if (accPanel.style.display === 'block' && !accPanel.contains(e.target) && !accToggle.contains(e.target)) {
+            accPanel.style.display = 'none';
+            accToggle.classList.remove('active');
+        }
+    });
+
+    function toggleAccessibility(featureClass) {
+        const className = 'acc-' + featureClass;
+        
+        if (featureClass === 'text-large' || featureClass === 'text-xlarge') {
+            if (html.classList.contains(className)) {
+                html.classList.remove(className);
+            } else {
+                html.classList.remove('acc-text-large', 'acc-text-xlarge');
+                html.classList.add(className);
+            }
+        }
+        else if (['grayscale', 'high-contrast', 'invert', 'light-bg'].includes(featureClass)) {
+            if (html.classList.contains(className)) {
+                html.classList.remove(className);
+            } else {
+                html.classList.remove('acc-grayscale', 'acc-high-contrast', 'acc-invert', 'acc-light-bg');
+                html.classList.add(className);
+            }
+        }
+        else {
+            html.classList.toggle(className);
+        }
+        updateButtonStates();
+    }
+
+    accReset.addEventListener('click', () => {
+        html.classList.remove(
+            'acc-text-large', 'acc-text-xlarge',
+            'acc-grayscale', 'acc-high-contrast', 'acc-invert', 'acc-light-bg',
+            'acc-underline-links', 'acc-readable-font'
+        );
+        updateButtonStates();
+    });
+
+    function updateButtonStates() {
+        const buttons = accPanel.querySelectorAll('.acc-option-btn');
+        buttons.forEach(btn => {
+            const onclickText = btn.getAttribute('onclick');
+            const match = onclickText.match(/'([^']+)'/);
+            if (match) {
+                const feature = match[1];
+                const className = 'acc-' + feature;
+                if (html.classList.contains(className)) {
+                    btn.classList.add('active-opt');
+                } else {
+                    btn.classList.remove('active-opt');
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
