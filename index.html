@@ -35,9 +35,9 @@
         
         .hero-gradient {
             background: linear-gradient(135deg, 
-                rgba(124, 45, 18, 0.9) 0%,    /* orange-900 with opacity */
-                rgba(30, 41, 59, 0.95) 50%,   /* slate-800 */
-                rgba(15, 23, 42, 1) 100%      /* slate-950 */
+                rgba(124, 45, 18, 0.9) 0%,
+                rgba(30, 41, 59, 0.95) 50%,
+                rgba(15, 23, 42, 1) 100%
             );
         }
         
@@ -310,25 +310,20 @@
             }
         }
 
-        /* --- NEW ACCESSIBILITY WIDGET STYLES --- */
+        /* --- ACCESSIBILITY WIDGET STYLES --- */
         #acc-widget-container {
             position: fixed;
             z-index: 10000;
             font-family: 'Heebo', sans-serif;
             direction: rtl;
-        }
-
-        /* Mobile Default: Bottom Right */
-        #acc-widget-container {
             bottom: 20px;
             right: 20px;
         }
 
-        /* Desktop Override: Top Right (Below Header) */
         @media (min-width: 1024px) {
             #acc-widget-container {
                 bottom: auto;
-                top: 110px; /* Offset to not cover logo in sticky header */
+                top: 110px;
                 right: 20px;
             }
         }
@@ -336,7 +331,7 @@
         .acc-toggle-btn {
             width: 50px;
             height: 50px;
-            background: #2563eb; /* Accessible Blue */
+            background: #2563eb;
             color: white;
             border-radius: 50%;
             display: flex;
@@ -360,11 +355,10 @@
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            display: none; /* Hidden by default */
+            display: none;
             border: 1px solid #e2e8f0;
         }
 
-        /* Mobile Panel Positioning */
         @media (max-width: 1023px) {
             .acc-panel {
                 bottom: 70px;
@@ -372,11 +366,10 @@
             }
         }
 
-        /* Desktop Panel Positioning */
         @media (min-width: 1024px) {
             .acc-panel {
                 top: 0;
-                right: 65px; /* Slides out to the left of the button */
+                right: 65px;
             }
         }
 
@@ -420,54 +413,16 @@
         }
 
         /* Accessibility Override Classes */
-        .acc-grayscale {
-            filter: grayscale(100%) !important;
-        }
-        
-        .acc-high-contrast * {
-            background-color: #000 !important;
-            color: #fff !important;
-            border-color: #fff !important;
-            background-image: none !important;
-            box-shadow: none !important;
-        }
-
-        .acc-invert {
-            filter: invert(100%);
-        }
-        
-        /* Re-invert media so they look normal */
-        .acc-invert img, .acc-invert video, .acc-invert .acc-toggle-btn {
-            filter: invert(100%);
-        }
-
-        .acc-light-bg body {
-            background: #f8fafc !important;
-        }
-        
-        .acc-light-bg *:not(.acc-toggle-btn):not(.acc-option-btn):not(i) {
-            color: #000 !important;
-            background-color: #fff !important;
-        }
-
-        .acc-underline-links a {
-            text-decoration: underline !important;
-            text-decoration-thickness: 2px !important;
-            text-underline-offset: 4px !important;
-        }
-
-        .acc-readable-font * {
-            font-family: Arial, Helvetica, sans-serif !important;
-            letter-spacing: 0.05em !important;
-        }
-
-        .acc-text-large {
-            font-size: 120% !important;
-        }
-
-        .acc-text-xlarge {
-            font-size: 140% !important;
-        }
+        .acc-grayscale { filter: grayscale(100%) !important; }
+        .acc-high-contrast * { background-color: #000 !important; color: #fff !important; border-color: #fff !important; background-image: none !important; box-shadow: none !important; }
+        .acc-invert { filter: invert(100%); }
+        .acc-invert img, .acc-invert video, .acc-invert .acc-toggle-btn { filter: invert(100%); }
+        .acc-light-bg body { background: #f8fafc !important; }
+        .acc-light-bg *:not(.acc-toggle-btn):not(.acc-option-btn):not(i) { color: #000 !important; background-color: #fff !important; }
+        .acc-underline-links a { text-decoration: underline !important; text-decoration-thickness: 2px !important; text-underline-offset: 4px !important; }
+        .acc-readable-font * { font-family: Arial, Helvetica, sans-serif !important; letter-spacing: 0.05em !important; }
+        .acc-text-large { font-size: 120% !important; }
+        .acc-text-xlarge { font-size: 140% !important; }
     </style>
 </head>
 <body class="text-white leading-relaxed">
@@ -480,7 +435,7 @@
     <!-- Landmark: Banner -->
     <header role="banner" class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo section (LEFT side) -->
+            <!-- Logo section -->
             <div class="flex items-center gap-3">
                 <img src="ai-muse-logo.png" alt="AI Muse Logo" class="h-12 w-auto rounded-md bg-slate-900/50 border border-white/10 p-1">
                 <div class="flex flex-col">
@@ -489,52 +444,51 @@
                 </div>
             </div>
             
-            <!-- Desktop Navigation (RIGHT side) -->
+            <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-4 text-sm">
                 <a href="index.html" class="text-blue-400 border-b-2 border-blue-400 pb-1">דף הבית</a>
                 <a href="eyesite.html" class="text-orange-400 hover:text-orange-300 hover:border-b-2 hover:border-orange-300 hover:pb-1">EyeSite</a>
                 <a href="checkin-sheriff.html" class="text-purple-400 hover:text-purple-300 hover:border-b-2 hover:border-purple-300 hover:pb-1">Check-in Sheriff</a>
-                <a href="logistics-sheriff.html" class="text-yellow-400 hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300 hover:pb-1">Logistics Sheriff</a>
+                <a href="import-sheriff.html" class="text-yellow-400 hover:text-yellow-300 hover:border-b-2 hover:border-yellow-300 hover:pb-1">Import Sheriff</a>
                 <a href="car-sheriff.html" class="text-green-400 hover:text-green-300 hover:border-b-2 hover:border-green-300 hover:pb-1">Car-Sheriff</a>
                 <a href="accessibility-sheriff.html" class="text-red-400 hover:text-red-300 hover:border-b-2 hover:border-red-300 hover:pb-1">שריף נגישות</a>
                 <a href="city.html" class="text-cyan-400 hover:text-cyan-300 hover:border-b-2 hover:border-cyan-300 hover:pb-1">פלטפורמה עירונית</a>
                 <a href="disclaimer.html" class="text-gray-400 hover:text-white">מדיניות פרטיות ונגישות</a>
             </div>
         
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
-            <i class="fas fa-bars text-xl"></i>
-        </button>
-    </div>
-    
-    <!-- Mobile Menu (Hidden by default) -->
-    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
-        <a href="index.html" class="block py-3 text-blue-400 border-b border-slate-800">
-            <i class="fas fa-home text-blue-400 mr-3"></i>דף הבית
-        </a>
-        <a href="eyesite.html" class="block py-3 text-orange-400 hover:text-orange-300 border-b border-slate-800">
-            <i class="fas fa-shield-alt text-orange-400 mr-3"></i>EyeSite
-        </a>
-        <a href="checkin-sheriff.html" class="block py-3 text-purple-400 hover:text-purple-300 border-b border-slate-800">
-            <i class="fas fa-file-contract text-purple-400 mr-3"></i>Check-in Sheriff
-        </a>
-        <a href="logistics-sheriff.html" class="block py-3 text-yellow-400 hover:text-yellow-300 border-b border-slate-800">
-            <i class="fas fa-truck-loading text-yellow-400 mr-3"></i>Logistics Sheriff
-        </a>
-        <a href="car-sheriff.html" class="block py-3 text-green-400 hover:text-green-300 border-b border-slate-800">
-            <i class="fas fa-car text-green-400 mr-3"></i>Car-Sheriff
-        </a>
-        <a href="accessibility-sheriff.html" class="block py-3 text-red-400 hover:text-red-300 border-b border-slate-800">
-            <i class="fas fa-universal-access text-red-400 mr-3"></i>שריף נגישות
-        </a>
-        <a href="city.html" class="block py-3 text-cyan-400 hover:text-cyan-300 border-b border-slate-800">
-            <i class="fas fa-city text-cyan-400 mr-3"></i>פלטפורמה עירונית
-        </a>
-        <a href="disclaimer.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
-            <i class="fas fa-shield-alt mr-3"></i>מדיניות פרטיות ונגישות
-        </a>
-    </div>
-</nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-slate-950 border-t border-white/10 px-6 py-4">
+            <a href="index.html" class="block py-3 text-blue-400 border-b border-slate-800">
+                <i class="fas fa-home text-blue-400 mr-3"></i>דף הבית
+            </a>
+            <a href="eyesite.html" class="block py-3 text-orange-400 hover:text-orange-300 border-b border-slate-800">
+                <i class="fas fa-shield-alt text-orange-400 mr-3"></i>EyeSite
+            </a>
+            <a href="checkin-sheriff.html" class="block py-3 text-purple-400 hover:text-purple-300 border-b border-slate-800">
+                <i class="fas fa-file-contract text-purple-400 mr-3"></i>Check-in Sheriff
+            </a>
+            <a href="import-sheriff.html" class="block py-3 text-yellow-400 hover:text-yellow-300 border-b border-slate-800">
+                <i class="fas fa-file-import text-yellow-400 mr-3"></i>Import Sheriff
+            </a>
+            <a href="car-sheriff.html" class="block py-3 text-green-400 hover:text-green-300 border-b border-slate-800">
+                <i class="fas fa-car text-green-400 mr-3"></i>Car-Sheriff
+            </a>
+            <a href="accessibility-sheriff.html" class="block py-3 text-red-400 hover:text-red-300 border-b border-slate-800">
+                <i class="fas fa-universal-access text-red-400 mr-3"></i>שריף נגישות
+            </a>
+            <a href="city.html" class="block py-3 text-cyan-400 hover:text-cyan-300 border-b border-slate-800">
+                <i class="fas fa-city text-cyan-400 mr-3"></i>פלטפורמה עירונית
+            </a>
+            <a href="disclaimer.html" class="block py-3 text-gray-400 hover:text-white border-b border-slate-800">
+                <i class="fas fa-shield-alt mr-3"></i>מדיניות פרטיות ונגישות
+            </a>
+        </div>
     </header>
 
     <!-- Landmark: Main Content -->
@@ -581,26 +535,26 @@
 
                 <div class="product-grid">
                     
-                  <!-- EyeSite - FLAGSHIP SaaS -->
-<a href="eyesite.html" class="flagship-card product-card p-8 rounded-2xl group block">
-    <div class="flagship-badge">
-        <i class="fas fa-crown mr-2" aria-hidden="true"></i>
-        מוצר הדגל
-    </div>
-    <div class="h-20 mb-6 flex items-center justify-center">
-        <i class="fas fa-shield-alt text-5xl text-orange-500 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
-    </div>
-    <h3 class="text-2xl font-bold mb-4 text-white text-center">EyeSite</h3>
-    <p class="text-gray-400 text-sm leading-relaxed text-center mb-6">
-        מערכת ניהול סיכונים מבוססת וידאו לאתרי בנייה. הופך 60 שניות של סיור באתר לדוח בטיחות מקצועי בהתאם לתקנות 2026. הגנה על נושאי משרה.
-    </p>
-    <div class="flex justify-center">
-        <span class="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm font-bold transition-colors">
-            לגלות את הטכנולוגיה
-            <i class="fas fa-arrow-left text-xs" aria-hidden="true"></i>
-        </span>
-    </div>
-</a>
+                    <!-- EyeSite - FLAGSHIP SaaS -->
+                    <a href="eyesite.html" class="flagship-card product-card p-8 rounded-2xl group block">
+                        <div class="flagship-badge">
+                            <i class="fas fa-crown mr-2" aria-hidden="true"></i>
+                            מוצר הדגל
+                        </div>
+                        <div class="h-20 mb-6 flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-5xl text-orange-500 group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-white text-center">EyeSite</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed text-center mb-6">
+                            מערכת ניהול סיכונים מבוססת וידאו לאתרי בנייה. הופך 60 שניות של סיור באתר לדוח בטיחות מקצועי בהתאם לתקנות 2026. הגנה על נושאי משרה.
+                        </p>
+                        <div class="flex justify-center">
+                            <span class="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 text-sm font-bold transition-colors">
+                                לגלות את הטכנולוגיה
+                                <i class="fas fa-arrow-left text-xs" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </a>
 
                     <!-- Car Sheriff -->
                     <a href="car-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-green-500 hover:border-green-400 hover:bg-slate-800/50 transition-all duration-300 group text-green-500">
@@ -636,18 +590,18 @@
                         </div>
                     </a>
 
-                    <!-- Logistics Sheriff -->
-                    <a href="logistics-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-yellow-500 hover:border-yellow-400 hover:bg-slate-800/50 transition-all duration-300 group text-yellow-500">
+                    <!-- Import Sheriff (החלף את Logistics Sheriff) -->
+                    <a href="import-sheriff.html" class="product-card block bg-slate-800/30 p-8 rounded-2xl border-2 border-yellow-500 hover:border-yellow-400 hover:bg-slate-800/50 transition-all duration-300 group text-yellow-500">
                         <div class="h-20 mb-6 flex items-center justify-center">
-                            <i class="fas fa-truck-loading text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
+                            <i class="fas fa-file-import text-5xl group-hover:scale-110 transition duration-300" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-white text-center">Logistics Sheriff</h3>
+                        <h3 class="text-2xl font-bold mb-4 text-white text-center">Import Sheriff</h3>
                         <p class="text-gray-400 text-sm leading-relaxed text-center mb-6">
-                            שירות B2B לחברות הובלה, שילוח ומשלוחים: תיעוד ויזואלי מדויק של מטענים, הגנה מתועדת מול תביעות נזקים. דוחות PDF חתומים בזמן.
+                            שירות B2B ליבואנים ומשווקים: בדיקת סימון מוצרים לפי ת״י 1145, Due Diligence לרגולציית המזון החדשה (2025/26). כולל נוסח מדבקה מוכן לדפוס.
                         </p>
                         <div class="flex justify-center">
                             <span class="inline-flex items-center gap-2 text-yellow-400 text-sm font-bold">
-                                הגנה על מטענים
+                                בדיקת תקינות ליבוא
                                 <i class="fas fa-arrow-left text-xs" aria-hidden="true"></i>
                             </span>
                         </div>
@@ -825,7 +779,7 @@
                     <a href="eyesite.html" class="text-gray-400 hover:text-orange-300 transition-colors">EyeSite</a>
                     <a href="car-sheriff.html" class="text-gray-400 hover:text-green-300 transition-colors">Car Sheriff</a>
                     <a href="checkin-sheriff.html" class="text-gray-400 hover:text-purple-300 transition-colors">Check-in Sheriff</a>
-                    <a href="logistics-sheriff.html" class="text-gray-400 hover:text-yellow-300 transition-colors">Logistics Sheriff</a>
+                    <a href="import-sheriff.html" class="text-gray-400 hover:text-yellow-300 transition-colors">Import Sheriff</a>
                     <a href="accessibility-sheriff.html" class="text-gray-400 hover:text-red-300 transition-colors">Accessibility Sheriff</a>
                     <a href="city.html" class="text-gray-400 hover:text-cyan-300 transition-colors">פלטפורמה עירונית</a>
                     <a href="disclaimer.html" class="text-gray-400 hover:text-blue-300 transition-colors">מדיניות ונגישות</a>
@@ -875,60 +829,25 @@
         </div>
     </div>
 
-    <!-- NEW ELABORATED ACCESSIBILITY WIDGET -->
+    <!-- Accessibility Widget -->
     <div id="acc-widget-container">
-        <!-- Toggle Button -->
         <div id="acc-toggle" class="acc-toggle-btn" role="button" aria-label="תפריט נגישות" tabindex="0">
             <i class="fas fa-universal-access text-2xl"></i>
         </div>
-
-        <!-- Detailed Panel -->
         <div id="acc-panel" class="acc-panel">
             <div class="flex justify-between items-center mb-4 border-b border-gray-200 pb-2">
                 <h3 class="font-bold text-slate-800 text-lg">כלי נגישות</h3>
                 <button id="acc-reset" class="text-xs text-red-500 hover:text-red-700 font-bold">אפס הכל</button>
             </div>
-            
             <div class="acc-grid">
-                <!-- Text Size -->
-                <button class="acc-option-btn" onclick="toggleAccessibility('text-large')">
-                    <i class="fas fa-font"></i>
-                    <span>הגדל טקסט</span>
-                </button>
-                <button class="acc-option-btn" onclick="toggleAccessibility('text-xlarge')">
-                    <i class="fas fa-text-height"></i>
-                    <span>טקסט ענק</span>
-                </button>
-
-                <!-- Contrast -->
-                <button class="acc-option-btn" onclick="toggleAccessibility('grayscale')">
-                    <i class="fas fa-adjust"></i>
-                    <span>גווני אפור</span>
-                </button>
-                <button class="acc-option-btn" onclick="toggleAccessibility('high-contrast')">
-                    <i class="fas fa-low-vision"></i>
-                    <span>ניגודיות גבוהה</span>
-                </button>
-
-                <!-- Colors -->
-                <button class="acc-option-btn" onclick="toggleAccessibility('invert')">
-                    <i class="fas fa-moon"></i>
-                    <span>ניגודיות הפוכה</span>
-                </button>
-                <button class="acc-option-btn" onclick="toggleAccessibility('light-bg')">
-                    <i class="fas fa-sun"></i>
-                    <span>רקע בהיר</span>
-                </button>
-
-                <!-- Elements -->
-                <button class="acc-option-btn" onclick="toggleAccessibility('underline-links')">
-                    <i class="fas fa-link"></i>
-                    <span>הדגשת קישורים</span>
-                </button>
-                <button class="acc-option-btn" onclick="toggleAccessibility('readable-font')">
-                    <i class="fas fa-paragraph"></i>
-                    <span>גופן קריא</span>
-                </button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('text-large')"><i class="fas fa-font"></i><span>הגדל טקסט</span></button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('text-xlarge')"><i class="fas fa-text-height"></i><span>טקסט ענק</span></button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('grayscale')"><i class="fas fa-adjust"></i><span>גווני אפור</span></button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('high-contrast')"><i class="fas fa-low-vision"></i><span>ניגודיות גבוהה</span></button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('invert')"><i class="fas fa-moon"></i><span>ניגודיות הפוכה</span></button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('light-bg')"><i class="fas fa-sun"></i><span>רקע בהיר</span></button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('underline-links')"><i class="fas fa-link"></i><span>הדגשת קישורים</span></button>
+                <button class="acc-option-btn" onclick="toggleAccessibility('readable-font')"><i class="fas fa-paragraph"></i><span>גופן קריא</span></button>
             </div>
         </div>
     </div>
@@ -945,7 +864,6 @@
                 mobileMenu.classList.toggle('hidden');
             });
             
-            // Close mobile menu when clicking outside
             document.addEventListener('click', function(event) {
                 if (mobileMenu.classList.contains('hidden')) return;
                 
@@ -966,7 +884,6 @@
             const closeBtn = document.getElementById('close-window');
             const talkLabel = document.getElementById('talk-label');
 
-            // Show label on hover
             if (btn && talkLabel) {
                 btn.addEventListener('mouseenter', () => {
                     talkLabel.style.display = 'block';
@@ -979,7 +896,6 @@
                 });
             }
 
-            // Toggle window
             if (btn && win) {
                 btn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -989,7 +905,6 @@
                 });
             }
 
-            // Close window
             if (closeBtn && win && btn) {
                 closeBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -998,7 +913,6 @@
                 });
             }
 
-            // Close window when clicking outside
             document.addEventListener('click', function(event) {
                 if (win && btn && win.style.display === 'block') {
                     const isClickInsideWindow = win.contains(event.target);
@@ -1012,14 +926,12 @@
             });
         });
 
-        // --- NEW ACCESSIBILITY WIDGET LOGIC ---
+        // Accessibility Widget Logic
         const accToggle = document.getElementById('acc-toggle');
         const accPanel = document.getElementById('acc-panel');
         const accReset = document.getElementById('acc-reset');
-        const body = document.body;
         const html = document.documentElement;
 
-        // Open/Close Panel
         accToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             const isOpen = accPanel.style.display === 'block';
@@ -1027,7 +939,6 @@
             accToggle.classList.toggle('active', !isOpen);
         });
 
-        // Close Panel when clicking outside
         document.addEventListener('click', (e) => {
             if (accPanel.style.display === 'block' && !accPanel.contains(e.target) && !accToggle.contains(e.target)) {
                 accPanel.style.display = 'none';
@@ -1035,39 +946,31 @@
             }
         });
 
-        // Toggle Feature Function
         function toggleAccessibility(featureClass) {
             const className = 'acc-' + featureClass;
             
-            // Handle exclusive groups (Text Size)
             if (featureClass === 'text-large' || featureClass === 'text-xlarge') {
                 if (html.classList.contains(className)) {
-                    html.classList.remove(className); // Toggle off
+                    html.classList.remove(className);
                 } else {
-                    html.classList.remove('acc-text-large', 'acc-text-xlarge'); // Clear others
-                    html.classList.add(className); // Set new
+                    html.classList.remove('acc-text-large', 'acc-text-xlarge');
+                    html.classList.add(className);
                 }
             }
-            // Handle exclusive groups (Contrast/Color)
             else if (['grayscale', 'high-contrast', 'invert', 'light-bg'].includes(featureClass)) {
                 if (html.classList.contains(className)) {
                     html.classList.remove(className);
                 } else {
-                    // Optional: You can choose to clear other color modes or let them stack. 
-                    // Usually clearing conflicting modes is better.
                     html.classList.remove('acc-grayscale', 'acc-high-contrast', 'acc-invert', 'acc-light-bg');
                     html.classList.add(className);
                 }
             }
-            // Toggle others normally
             else {
                 html.classList.toggle(className);
             }
-            
             updateButtonStates();
         }
 
-        // Reset All
         accReset.addEventListener('click', () => {
             html.classList.remove(
                 'acc-text-large', 'acc-text-xlarge',
@@ -1077,18 +980,19 @@
             updateButtonStates();
         });
 
-        // Update Visual State of Buttons in Panel
         function updateButtonStates() {
             const buttons = accPanel.querySelectorAll('.acc-option-btn');
             buttons.forEach(btn => {
                 const onclickText = btn.getAttribute('onclick');
-                const feature = onclickText.match(/'([^']+)'/)[1];
-                const className = 'acc-' + feature;
-                
-                if (html.classList.contains(className)) {
-                    btn.classList.add('active-opt');
-                } else {
-                    btn.classList.remove('active-opt');
+                const match = onclickText.match(/'([^']+)'/);
+                if (match) {
+                    const feature = match[1];
+                    const className = 'acc-' + feature;
+                    if (html.classList.contains(className)) {
+                        btn.classList.add('active-opt');
+                    } else {
+                        btn.classList.remove('active-opt');
+                    }
                 }
             });
         }
