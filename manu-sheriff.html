@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שריף מסעדות | Manu Sheriff – ייעוץ תפריט מקצועי | AI Muse AI</title>
+    <meta name="description" content="30 שנה, 13 עסקים בבעלותי, ניהול אזור ארומה ת״א. ניתוח תפריט אמיתי: בינה אנושית + AI. דוח ראשון ללא עלות, המשך ב-250 ₪.">
+    
+    <!-- Tailwind + Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Heebo', sans-serif;
+            background: #fef9f0;
+            color: #2c2b28;
+        }
+        .text-gold { color: #b8860b; }
+        .border-gold { border-color: #d4af37; }
+        .bg-gold-soft { background-color: #faf3e0; }
+        .btn-gold {
+            background-color: #c49a2b;
+            transition: all 0.2s ease;
+        }
+        .btn-gold:hover {
+            background-color: #a07e20;
+            transform: translateY(-2px);
+        }
+        .card-shadow {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 100;
+            background-color: #25D366;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            background-color: #128C7E;
+        }
+        @media (max-width: 640px) {
+            .whatsapp-float { width: 48px; height: 48px; bottom: 16px; left: 16px; }
+        }
+        .preview-image {
+            border: 1px solid #e2dcd0;
+            border-radius: 1rem;
+            transition: transform 0.2s;
+        }
+        .preview-image:hover { transform: scale(1.01); }
+    </style>
+</head>
+<body>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/972503040523?text=היי%20יורם,%20אני%20מעוניין%20בייעוץ%20תפריט" 
+   target="_blank" class="whatsapp-float" aria-label="שלח הודעה בוואטסאפ">
+    <i class="fab fa-whatsapp text-3xl text-white"></i>
+</a>
+
+<!-- Navigation (matches AI Muse site style, includes "שריף מסעדות" as active) -->
+<nav class="sticky top-0 z-50 border-b border-amber-200/60 bg-white/90 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <img src="ai-muse-logo.png" alt="AI Muse Logo" class="h-10 w-auto rounded-md bg-amber-50 border border-amber-200 p-1" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f3ede3/b8860b?text=AI'">
+            <div class="flex flex-col">
+                <span class="text-xl font-black tracking-tight text-stone-800 leading-none">AI Muse AI</span>
+                <span class="text-[0.6rem] text-amber-700 font-bold tracking-widest uppercase">URBAN DATA LABS</span>
+            </div>
+        </div>
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-5 text-sm font-medium">
+            <a href="index.html" class="text-stone-600 hover:text-amber-700 hover:border-b-2 hover:border-amber-400 pb-1">דף הבית</a>
+            <a href="eyesite.html" class="text-stone-600 hover:text-amber-700">EyeSite</a>
+            <a href="checkin-sheriff.html" class="text-stone-600 hover:text-amber-700">Check-in Sheriff</a>
+            <a href="import-sheriff.html" class="text-stone-600 hover:text-amber-700">Import Sheriff</a>
+            <a href="car-sheriff.html" class="text-stone-600 hover:text-amber-700">Car-Sheriff</a>
+            <a href="accessibility-sheriff.html" class="text-stone-600 hover:text-amber-700">שריף נגישות</a>
+            <a href="city.html" class="text-stone-600 hover:text-amber-700">פלטפורמה עירונית</a>
+            <a href="manu-sheriff.html" class="text-amber-800 border-b-2 border-amber-500 pb-1 font-bold">שריף מסעדות</a>
+            <a href="disclaimer.html" class="text-stone-500 hover:text-stone-700">מדיניות</a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-stone-600 hover:text-amber-700">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-white border-t border-amber-100 px-6 py-4 shadow-md z-50">
+        <a href="index.html" class="block py-3 text-stone-700 border-b border-amber-100">דף הבית</a>
+        <a href="eyesite.html" class="block py-3 text-stone-700 border-b border-amber-100">EyeSite</a>
+        <a href="checkin-sheriff.html" class="block py-3 text-stone-700 border-b border-amber-100">Check-in Sheriff</a>
+        <a href="import-sheriff.html" class="block py-3 text-stone-700 border-b border-amber-100">Import Sheriff</a>
+        <a href="car-sheriff.html" class="block py-3 text-stone-700 border-b border-amber-100">Car-Sheriff</a>
+        <a href="accessibility-sheriff.html" class="block py-3 text-stone-700 border-b border-amber-100">שריף נגישות</a>
+        <a href="city.html" class="block py-3 text-stone-700 border-b border-amber-100">פלטפורמה עירונית</a>
+        <a href="manu-sheriff.html" class="block py-3 text-amber-800 font-bold">שריף מסעדות</a>
+        <a href="disclaimer.html" class="block py-3 text-stone-500">מדיניות פרטיות</a>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-amber-50 via-white to-stone-50 py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="inline-flex items-center gap-2 bg-white/70 border border-amber-200 rounded-full pr-3 pl-5 py-1.5 mb-6 shadow-sm">
+                <i class="fas fa-utensils text-amber-600 text-sm"></i>
+                <span class="text-amber-800 font-bold text-xs tracking-wider">MANU SHERIFF · 30 שנה בשטח</span>
+            </div>
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-black leading-tight text-stone-800 mb-5">
+                    <span class="block">שריף מסעדות</span>
+                    <span class="text-amber-700 text-3xl md:text-4xl">| Manu Sheriff</span>
+                </h1>
+                <p class="text-xl text-stone-600 mb-8 leading-relaxed max-w-2xl">
+                    לא עוד פגישות סרק או "אסטרטגיה" מנופחת.  
+                    <strong class="text-stone-800">שולחים תפריט + פרטים → מקבלים עמוד ראשון של דוח מקצועי תוך 24 שעות ללא עלות.</strong>  
+                    רוצים המשך? 250 ₪ בלבד, והניתוח המלא בידכם.
+                </p>
+                <div class="flex flex-wrap gap-5 items-center">
+                    <a href="#form-section" class="btn-gold text-white font-bold py-3 px-8 rounded-full shadow-md flex items-center gap-2 transition">
+                        <i class="fas fa-clipboard-list"></i> מלאו שאלון → התחילו בחינם
+                    </a>
+                    <a href="#process" class="border border-amber-300 text-amber-800 hover:bg-amber-50 py-3 px-7 rounded-full transition">איך זה עובד?</a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-14 pt-6 border-t border-amber-200/60">
+                    <div><span class="text-3xl font-black text-amber-700">30+</span><p class="text-stone-500 text-sm">שנות ניסיון בשטח</p></div>
+                    <div><span class="text-3xl font-black text-amber-700">13</span><p class="text-stone-500 text-sm">עסקים בבעלותי</p></div>
+                    <div><span class="text-3xl font-black text-amber-700">28</span><p class="text-stone-500 text-sm">סניפי ארומה – ניהול אזור</p></div>
+                    <div><span class="text-3xl font-black text-amber-700">₪250</span><p class="text-stone-500 text-sm">מחיר הדוח המלא</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain section – softer tone -->
+    <section class="py-16 bg-white border-y border-amber-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center gap-2 text-amber-600 text-sm font-bold mb-4"><i class="fas fa-comment-dots"></i> <span>מה שחשוב לדעת</span></div>
+            <h2 class="text-3xl md:text-4xl font-black text-stone-800 mb-6">ייעוץ תפריט – לאן הוא הלך?</h2>
+            <div class="bg-amber-50/80 border-r-4 border-amber-500 p-6 rounded-xl mb-10 shadow-sm">
+                <p class="text-xl text-stone-700 italic">"הרבה פגישות, הרבה מילים יפות – אבל בסוף התפריט לא באמת נפתח. מקבלים בעיקר תיאוריות, בלי תובנות שעושות כסף."</p>
+                <p class="text-amber-700 mt-3 font-bold">— יורם כהן, 30 שנה בתעשייה</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="flex gap-4 bg-stone-50 p-5 rounded-xl border border-amber-100"><i class="fas fa-hourglass-half text-amber-600 text-xl"></i><div><strong class="block text-stone-800">פגישות אינסופיות של "היכרות"</strong> שעה על הרקע שלהם, שעה על מתודולוגיה – התפריט עדיין לא קיבל מענה.</div></div>
+                <div class="flex gap-4 bg-stone-50 p-5 rounded-xl border border-amber-100"><i class="fas fa-file-signature text-amber-600 text-xl"></i><div><strong class="block text-stone-800">שאלונים ארוכים ומייגעים</strong> 40 שאלות ואחר כך שבועיים המתנה – במקום תוצאות מיידיות.</div></div>
+                <div class="flex gap-4 bg-stone-50 p-5 rounded-xl border border-amber-100"><i class="fas fa-quote-right text-amber-600 text-xl"></i><div><strong class="block text-stone-800">המלצות כלליות</strong> "תכיר את הלקוח", "תשפר שירות" – רעיונות שכל אחד יכול למצוא באינטרנט.</div></div>
+                <div class="flex gap-4 bg-stone-50 p-5 rounded-xl border border-amber-100"><i class="fas fa-coins text-amber-600 text-xl"></i><div><strong class="block text-stone-800">תמחור בלתי נגיש</strong> אלפי שקלים לייעוץ ראשוני – בעוד שאצלנו מתחילים ללא עלות.</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About section – exact updated story -->
+    <section class="py-20 bg-gold-soft">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center gap-2 text-amber-700 text-sm font-bold mb-4"><i class="fas fa-user-check"></i> <span>מי עומד מאחורי הביקורת</span></div>
+            <h2 class="text-3xl md:text-4xl font-black text-stone-800 mb-6">יורם כהן – ניסיון אמיתי, לא תואר בבינה מלאכותית</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-5 text-stone-700 leading-relaxed">
+                    <p>לא למדתי ייעוץ בקורסים של סוף שבוע. ניהלתי, הפסדתי, קמתי, שיקמתי. <strong class="text-stone-900">הייתי בעלים של 13 מקומות בילוי</strong> – ברים, מועדונים, בתי קפה. אחד מהם נפגע בפיגוע, נהרס כליל – שיקמתי אותו מאפס והמשכתי להפעיל.</p>
+                    <p>הקמתי מתחם ענק עם <strong class="text-stone-900">שלוש רחבות מקבילות</strong> ובשיא כ-3,000 איש בערב אחד. שימשתי בעבר כמפיק ראשי של ימי הסטודנט בירושלים, מפיק במוזיאון ישראל ובאוניברסיטה העברית. הייתי <strong class="text-stone-900">מנהל אזור ארומה תל-אביב</strong> משך שנתיים, בהן הייתי אחראי על טיב השירות, המוצר, האחידות ופילוסופיית הרשת הטובה בארץ.</p>
+                    <p>בעבר ברחוק יותר עסקתי במכירת נדל״ן למגורים כמו גם מסחרי ונותרתי מעודכן בתחום גם היום. בשנים האחרונות ייעצתי למספר רב של מקומות, אולם התחום עובר שינוי מהותי – והשירות הזה הוא העתיד של תחום הייעוץ: מעבר מכלים מסורתיים לשיתוף פעולה בין בינה חכמה ויידע אנושי יחד. גם במקרה הזה אני משלב 30 שנות זיעה אמיתית עם יצירת מידע רב ערך באמצעות בינה מלאכותית שמשלימה אותי ואינה מסוגלת להחליף את הניסיון שאני מביא – תוך שכל בדיקה שאני עורך, גם באופן דיגיטלי, עוברת את העין המקצועית שלי.</p>
+                    <div class="bg-white/70 p-5 rounded-xl border border-amber-200 mt-3">
+                        <p class="text-amber-800 text-sm"><i class="fas fa-handshake ml-2"></i> <strong>אפשר גם להזמין שיחה או פגישה אישית</strong> – במידה ויש צורך בחריש עמוק, ניהול משבר או זמנים קשים. אני כאן גם מעבר לדוח.</p>
+                    </div>
+                </div>
+                <div class="bg-white/60 p-6 rounded-2xl border border-amber-200 shadow-sm space-y-5">
+                    <div class="flex gap-3 items-start"><i class="fas fa-crown text-amber-600 text-xl mt-1"></i><div><strong class="text-stone-800">13 עסקים בבעלותי המלאה</strong><p class="text-stone-600 text-sm">ברים, מועדונים, בתי קפה – כולל שיקום לאחר פיגוע</p></div></div>
+                    <div class="flex gap-3 items-start"><i class="fas fa-chalkboard-user text-amber-600 text-xl mt-1"></i><div><strong class="text-stone-800">הפקה מוסדית: מוזיאון ישראל, האוניברסיטה העברית</strong><p class="text-stone-600 text-sm">ניהול אירועי ענק, לוגיסטיקה בלחץ</p></div></div>
+                    <div class="flex gap-3 items-start"><i class="fas fa-chart-line text-amber-600 text-xl mt-1"></i><div><strong class="text-stone-800">עשור בנדל"ן + כלי ציות חכמים</strong><p class="text-stone-600 text-sm">פתרונות לחברות בנייה, יבואנים, נגישות – אותה מתודולוגיה עכשיו לתפריט שלך</p></div></div>
+                    <div class="flex gap-3 items-start"><i class="fas fa-microchip text-amber-600 text-xl mt-1"></i><div><strong class="text-stone-800">AI + אינטואיציה אנושית</strong><p class="text-stone-600 text-sm">הכלי "שריף מסעדות" מנתח, אבל הפסקול והתיקונים הסופיים – שלי.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section (4 steps) -->
+    <section id="process" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <span class="text-amber-600 text-sm font-bold"><i class="fas fa-chalkboard"></i> התהליך הפשוט</span>
+            <h2 class="text-3xl md:text-4xl font-black text-stone-800 mt-2 mb-12">ארבעה שלבים – שקופים, הוגנים</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-amber-50/70 p-6 rounded-2xl border border-amber-200 card-shadow"><span class="text-4xl font-black text-amber-600">1</span><h3 class="font-bold text-stone-800 mt-2">שליחת שאלון</h3><p class="text-stone-600 text-sm">טופס מקוון קצר + תמונת תפריט (חובה)</p></div>
+                <div class="bg-amber-50/70 p-6 rounded-2xl border border-amber-200 card-shadow"><span class="text-4xl font-black text-amber-600">2</span><h3 class="font-bold text-stone-800 mt-2">מקבלים עמוד ראשון</h3><p class="text-stone-600 text-sm">תוך 24 שעות – דוגמה אמיתית מהניתוח, ללא עלות</p></div>
+                <div class="bg-amber-50/70 p-6 rounded-2xl border border-amber-200 card-shadow"><span class="text-4xl font-black text-amber-600">3</span><h3 class="font-bold text-stone-800 mt-2">מחליטים אם להמשיך</h3><p class="text-stone-600 text-sm">רוצים את הדוח המלא? משלמים 250 ₪ בכל אמצעי שנוח לכם</p></div>
+                <div class="bg-amber-50/70 p-6 rounded-2xl border border-amber-200 card-shadow"><span class="text-4xl font-black text-amber-600">4</span><h3 class="font-bold text-stone-800 mt-2">דוח מלא + בונוס</h3><p class="text-stone-600 text-sm">מקבלים ניתוח מעמיק + הספר "The Cafe Blueprint" במתנה</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Report Preview (image + PDF link) -->
+    <section class="py-20 bg-gold-soft border-y border-amber-200">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <span class="text-amber-700 text-sm font-bold"><i class="fas fa-eye"></i> הצצה לדוח המקצועי</span>
+            <h2 class="text-3xl md:text-4xl font-black text-stone-800 mt-2 mb-4">כך נראה הדוח שתקבלו</h2>
+            <p class="text-stone-600 mb-8 max-w-2xl mx-auto">עמוד ראשון לדוגמה – תוכן אמיתי מהמערכת. את הדוח המלא תוכלו לראות לאחר התשלום (250 ₪).</p>
+            <div class="bg-white rounded-2xl border border-amber-200 overflow-hidden shadow-md">
+                <div class="p-4 bg-amber-50 border-b border-amber-100 flex justify-between items-center">
+                    <span class="text-amber-800 font-mono text-sm">📄 שריף מסעדות – ביקורת תפריט (עמוד ראשון)</span>
+                    <span class="text-stone-500 text-xs">תצוגה מקדימה</span>
+                </div>
+                <div class="p-6">
+                    <img src="manu.jpg" alt="תצוגה מקדימה של דוח שריף מסעדות" class="preview-image w-full max-h-[500px] object-contain mx-auto rounded-lg border border-amber-200 shadow-sm" onerror="this.onerror=null;this.src='https://placehold.co/800x600/fef3e2/b8860b?text=MANU+SHERIFF+preview'">
+                    <div class="mt-6 text-center">
+                        <a href="menu.pdf" target="_blank" class="inline-flex items-center gap-2 bg-stone-800 hover:bg-stone-700 text-white font-bold py-3 px-8 rounded-full transition shadow-md">
+                            <i class="fas fa-file-pdf"></i> פתח/י את הדוח המלא (PDF לדוגמה)
+                        </a>
+                        <p class="text-stone-500 text-xs mt-3">* לחיצה תפתח קובץ PDF לדוגמה – מייצג את סגנון הדוח המלא שתקבלו.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section + Tally Link -->
+    <section id="form-section" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 rounded-full px-5 py-1.5 mb-5"><i class="fas fa-edit"></i> <span class="text-sm font-bold">שאלון מקצועי</span></div>
+            <h2 class="text-3xl font-black text-stone-800 mb-4">מלאו פרטים – נתחיל בניתוח ללא עלות</h2>
+            <p class="text-stone-600 mb-8 max-w-2xl mx-auto">השאלון כולל את השאלות החיוניות להבנת העסק שלכם. אין צורך בתשלום מראש – אתם מקבלים עמוד ראשון של הדוח, ורק אם תרצו את ההמשך – 250 ₪.</p>
+            
+            <!-- List of form fields for transparency -->
+            <div class="bg-amber-50/60 p-6 rounded-2xl border border-amber-200 text-right mb-10 text-stone-700">
+                <h3 class="font-bold text-stone-800 text-lg mb-3"><i class="fas fa-list-ul text-amber-600 ml-2"></i> מה השאלון כולל?</h3>
+                <div class="grid md:grid-cols-2 gap-3 text-sm">
+                    <div>• שם העסק ומיקום</div>
+                    <div>• כמה זמן העסק פעיל?</div>
+                    <div>• כמה מקומות ישיבה?</div>
+                    <div>• מספר עובדים במשמרת שיא</div>
+                    <div>• קהל יעד עיקרי (משפחות, עובדים, בליינים...)</div>
+                    <div>• מטרה מרכזית כרגע (רווחיות/יעילות/גיוס)</div>
+                    <div>• 3 המנות הנמכרות ביותר</div>
+                    <div>• העלאת קובץ: צילום תפריט (חובה)</div>
+                    <div>• העלאת קבצים: סרטון/תמונות מטבח וחלל (מומלץ)</div>
+                    <div>• הערות נוספות</div>
+                </div>
+            </div>
+            
+            <!-- External Tally form link (placeholder) -->
+            <a href="https://tally.so/r/menu-sheriff-form" target="_blank" class="btn-gold text-white text-lg font-bold py-4 px-12 rounded-full inline-flex items-center gap-3 shadow-lg transition">
+                <i class="fas fa-external-link-alt"></i> מעבר לשאלון (טופס חיצוני)
+            </a>
+            <p class="text-stone-500 text-sm mt-5">הטופס מאובטח, כל הקבצים נשלחים ישירות אליי. אחרי קבלת הטופס – אשלח לכם את עמוד הדוח הראשון תוך 24 שעות.</p>
+            
+            <div class="mt-12 p-6 bg-stone-50 rounded-xl border border-amber-100 text-right">
+                <p class="text-stone-800 font-bold mb-2"><i class="fas fa-credit-card text-amber-600 ml-2"></i> תשלום – איך שנוח לכם</p>
+                <p class="text-stone-600">רק אם תחליטו לרכוש את הדוח המלא (250 ₪), תקבלו קישור לתשלום מאובטח ב: <strong>PayPal, פייבוקס, העברה בנקאית, ביט</strong> – לפי בחירתכם. אין התחייבות מראש.</p>
+                <p class="text-stone-500 text-sm mt-3">* העמוד הראשון מגיע בחינם, ללא כרטיס אשראי.</p>
+            </div>
+            
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="https://wa.me/972503040523?text=היי%20יורם,%20יש%20לי%20שאלה%20לגבי%20ייעוץ%20תפריט" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full font-bold transition"><i class="fab fa-whatsapp"></i> שאלה? וואטסאפ</a>
+                <a href="mailto:cafe@aimuseai.com" class="inline-flex items-center gap-2 border border-amber-400 text-amber-800 hover:bg-amber-50 px-6 py-3 rounded-full font-bold transition"><i class="fas fa-envelope"></i> cafe@aimuseai.com</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Book Bonus Reminder -->
+    <section class="py-12 bg-amber-50/40 border-t border-amber-100">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="flex flex-wrap justify-center items-center gap-6">
+                <i class="fas fa-gift text-amber-600 text-4xl"></i>
+                <p class="text-stone-700 text-lg">📘 כל לקוח שמזמין את הדוח המלא מקבל <strong class="text-amber-800">ספר "The Cafe Blueprint" (PDF)</strong> – 7 פרקים של תובנות מניסיון של 30 שנה.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-amber-200 py-10 text-center text-stone-500 text-sm bg-stone-50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2"><span class="font-bold text-stone-700">AI Muse AI Urban Data Labs</span></div>
+            <div class="flex gap-5 flex-wrap">
+                <a href="index.html" class="hover:text-amber-700">דף הבית</a>
+                <a href="disclaimer.html" class="hover:text-amber-700">מדיניות פרטיות</a>
+                <a href="mailto:cafe@aimuseai.com" class="hover:text-amber-700">cafe@aimuseai.com</a>
+            </div>
+        </div>
+        <p class="mt-6 text-xs">© 2026 יורם כהן – שריף מסעדות | Manu Sheriff. ניתוח תפריט חכם, 30 שנה בשטח.</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(menuBtn && mobileMenu){
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        document.addEventListener('click', (e) => {
+            if(!mobileMenu.classList.contains('hidden') && !menuBtn.contains(e.target) && !mobileMenu.contains(e.target))
+                mobileMenu.classList.add('hidden');
+        });
+    }
+    // simple fade-in for cards
+    const fadeItems = document.querySelectorAll('.bg-amber-50\\/70, .flex.gap-4.bg-stone-50');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.style.opacity = '1'; });
+    }, {threshold:0.1});
+    fadeItems.forEach(el => { el.style.opacity = '0'; el.style.transition = 'opacity 0.5s'; observer.observe(el); });
+</script>
+</body>
+</html>
