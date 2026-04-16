@@ -4,24 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>יורם כהן | שריף מסעדות – ייעוץ תפריט ורווחיות מסעדות</title>
-    <meta name="description" content="30 שנות ניסיון אמיתי. 13 עסקים. ארומה תל-אביב. אבחון תפריט ורווחיות מסעדה תוך 24 שעות – מ-590 ₪. ייעוץ מסעדות ישראל.">
+    <meta name="description" content="התפריט שלך מפסיד לך כסף. אבחון תפריט מקצועי תוך 24 שעות מ-590 ₪. 30 שנות ניסיון. מתחילים בחינם.">
     <meta name="keywords" content="ייעוץ מסעדות, אבחון תפריט, רווחיות מסעדה, menu engineering, יורם כהן, שריף מסעדות, ייעוץ קפה, תמחור תפריט">
-    <meta property="og:title" content="יורם כהן | שריף מסעדות – ייעוץ תפריט ורווחיות">
-    <meta property="og:description" content="30 שנה בשטח. 13 עסקים. ביקורת תפריט מקצועית מ-590 ₪ בלבד.">
+    <meta property="og:title" content="שריף מסעדות – אבחון תפריט ורווחיות תוך 24 שעות">
+    <meta property="og:description" content="התפריט שלך מפסיד לך כסף. אבחון מקצועי מ-590 ₪. מתחילים בחינם.">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://aimuseai.com/menu-sheriff.html">
-
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "שריף מסעדות – יורם כהן",
-      "description": "ייעוץ תפריט ורווחיות מסעדות, 30 שנות ניסיון",
-      "url": "https://aimuseai.com/menu-sheriff.html",
-      "telephone": "+972503040523",
-      "areaServed": "IL",
-      "priceRange": "₪₪"
-    }
+    {"@context":"https://schema.org","@type":"LocalBusiness","name":"שריף מסעדות – יורם כהן","description":"ייעוץ תפריט ורווחיות מסעדות, 30 שנות ניסיון","url":"https://aimuseai.com/menu-sheriff.html","telephone":"+972503040523","areaServed":"IL","priceRange":"₪₪"}
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -29,113 +19,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --gold: #b8860b;
-            --gold-light: #d4a017;
-            --dark: #1a1714;
-            --cream: #fdf8f0;
-        }
-        * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Heebo', sans-serif; background: var(--cream); color: #2c2b28; overflow-x: hidden; }
+        body { font-family: 'Heebo', sans-serif; background: #fef9f0; color: #2c2b28; margin: 0; padding: 0; overflow-x: hidden; }
 
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-        }
-        @keyframes slideRight {
-            from { opacity: 0; transform: translateX(-30px); }
-            to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes counterUp {
-            from { opacity: 0; transform: translateY(20px) scale(0.8); }
-            to   { opacity: 1; transform: translateY(0) scale(1); }
-        }
+        /* ANIMATIONS */
         @keyframes shimmer {
             0%   { background-position: -200% center; }
-            100% { background-position: 200% center; }
+            100% { background-position:  200% center; }
         }
-        @keyframes pulse-border {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(184,134,11,0.4); }
-            50%       { box-shadow: 0 0 0 12px rgba(184,134,11,0); }
+        @keyframes pulse-glow {
+            0%,100% { box-shadow: 0 4px 20px rgba(184,134,11,0.35); }
+            50%      { box-shadow: 0 4px 32px rgba(184,134,11,0.65); }
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50%       { transform: translateY(-8px); }
+        @keyframes float-wa {
+            0%,100% { transform: translateY(0); }
+            50%      { transform: translateY(-6px); }
         }
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(40px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
-        }
-        .reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        .delay-4 { transition-delay: 0.4s; }
-        .delay-5 { transition-delay: 0.5s; }
-
-        /* ===== HERO ===== */
-        .hero-bg {
-            background: linear-gradient(135deg, #0f0c08 0%, #1e1710 40%, #2a1f0e 70%, #1a1408 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 70% 50%, rgba(184,134,11,0.12) 0%, transparent 60%),
-                        radial-gradient(ellipse at 20% 80%, rgba(212,160,23,0.08) 0%, transparent 50%);
-        }
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(184,134,11,0.6), transparent);
-        }
-        .gold-line {
-            width: 60px; height: 3px;
-            background: linear-gradient(90deg, var(--gold), var(--gold-light));
-            border-radius: 2px;
-        }
-        .hero-stat {
-            border-right: 2px solid rgba(184,134,11,0.4);
-            padding-right: 1.5rem;
-        }
-        .hero-stat:last-child { border-right: none; }
-
-        /* ===== SHIMMER TEXT ===== */
         .shimmer-text {
-            background: linear-gradient(90deg, #b8860b 0%, #f0c040 40%, #b8860b 60%, #d4a017 100%);
+            background: linear-gradient(90deg,#b8860b 0%,#f0c040 40%,#b8860b 60%,#d4a017 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -143,730 +44,508 @@
             animation: shimmer 3s linear infinite;
         }
 
-        /* ===== BUTTONS ===== */
-        .btn-primary {
-            background: linear-gradient(135deg, #b8860b, #d4a017);
-            color: #fff;
-            font-weight: 800;
-            border-radius: 50px;
-            padding: 1rem 2.5rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(184,134,11,0.35);
-            animation: pulse-border 2.5s infinite;
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(184,134,11,0.5);
-            background: linear-gradient(135deg, #d4a017, #f0c040);
-        }
-        .btn-secondary {
-            border: 2px solid #b8860b;
-            color: #b8860b;
-            font-weight: 700;
-            border-radius: 50px;
-            padding: 0.85rem 2rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            background: transparent;
-        }
-        .btn-secondary:hover {
-            background: rgba(184,134,11,0.1);
-            transform: translateY(-2px);
-        }
+        /* SCROLL REVEAL */
+        .reveal { opacity:0; transform:translateY(30px); transition: opacity .65s ease, transform .65s ease; }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+        .d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s}
 
-        /* ===== CARDS ===== */
+        /* BUTTONS */
+        .btn-gold {
+            background: linear-gradient(135deg,#b8860b,#d4a017);
+            color:#fff; font-weight:800; border-radius:50px;
+            padding:.9rem 2rem; display:inline-flex; align-items:center; gap:.5rem;
+            text-decoration:none; font-size:1rem; border:none; cursor:pointer;
+            animation: pulse-glow 2.5s infinite;
+            transition: transform .25s ease, box-shadow .25s ease;
+            white-space: nowrap;
+        }
+        .btn-gold:hover { transform:translateY(-2px); }
+        .btn-outline {
+            border:2px solid #b8860b; color:#b8860b; font-weight:700;
+            border-radius:50px; padding:.8rem 1.8rem;
+            display:inline-flex; align-items:center; gap:.5rem;
+            text-decoration:none; font-size:.95rem; background:transparent;
+            transition: all .25s ease; white-space:nowrap;
+        }
+        .btn-outline:hover { background:rgba(184,134,11,.1); transform:translateY(-2px); }
+
+        /* CARDS */
+        .card {
+            background:#fff; border-radius:16px;
+            border:1px solid #e8d9b0;
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+        }
+        .card:hover { transform:translateY(-4px); box-shadow:0 12px 30px rgba(184,134,11,.1); border-color:#b8860b; }
+
         .tier-card {
-            background: #fff;
-            border-radius: 24px;
-            border: 2px solid #e8d9b0;
-            transition: all 0.35s ease;
-            position: relative;
-            overflow: hidden;
+            background:#fff; border-radius:20px;
+            border:2px solid #e8d9b0; position:relative; overflow:hidden;
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
         }
-        .tier-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #b8860b, #d4a017);
-            transform: scaleX(0);
-            transition: transform 0.35s ease;
+        .tier-card::after {
+            content:''; position:absolute; top:0; left:0; right:0; height:4px;
+            background:linear-gradient(90deg,#b8860b,#d4a017);
+            transform:scaleX(0); transition:transform .3s ease;
         }
-        .tier-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(184,134,11,0.15);
-            border-color: #b8860b;
-        }
-        .tier-card:hover::before { transform: scaleX(1); }
+        .tier-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(184,134,11,.15); border-color:#b8860b; }
+        .tier-card:hover::after { transform:scaleX(1); }
+        .tier-card.featured { border-color:#b8860b; }
+        .tier-card.featured::after { transform:scaleX(1); }
 
-        .tier-card.featured {
-            border-color: #b8860b;
-            background: linear-gradient(160deg, #fff 60%, #fdf4e0);
-            box-shadow: 0 10px 40px rgba(184,134,11,0.12);
+        /* WHATSAPP */
+        .wa-float {
+            position:fixed; bottom:20px; left:20px; z-index:100;
+            background:#25D366; border-radius:50%; width:56px; height:56px;
+            display:flex; align-items:center; justify-content:center;
+            box-shadow:0 4px 16px rgba(37,211,102,.45);
+            animation: float-wa 3s ease-in-out infinite;
+            transition: background .2s;
         }
-        .tier-card.featured::before { transform: scaleX(1); }
+        .wa-float:hover { background:#128C7E; animation:none; transform:scale(1.08); }
 
-        .badge-featured {
-            background: linear-gradient(135deg, #b8860b, #d4a017);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 800;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            letter-spacing: 0.08em;
+        /* SECTION LABEL */
+        .sec-label {
+            display:inline-flex; align-items:center; gap:.4rem;
+            font-size:.7rem; font-weight:800; letter-spacing:.12em;
+            color:#b8860b; text-transform:uppercase; margin-bottom:.5rem;
         }
+        .gold-bar { width:50px; height:3px; background:linear-gradient(90deg,#b8860b,#d4a017); border-radius:2px; }
 
-        .module-card {
-            background: #fff;
-            border-radius: 16px;
-            border: 1px solid #e8d9b0;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
+        /* HERO */
+        .hero-dark {
+            background: linear-gradient(135deg,#0f0c08 0%,#1e1710 50%,#2a1f0e 100%);
+            position:relative; overflow:hidden;
         }
-        .module-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(184,134,11,0.1);
-            border-color: #b8860b;
+        .hero-dark::before {
+            content:''; position:absolute; inset:0; pointer-events:none;
+            background: radial-gradient(ellipse at 80% 40%, rgba(184,134,11,.1) 0%, transparent 55%);
         }
 
-        .stat-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(184,134,11,0.25);
-            border-radius: 16px;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        .stat-card:hover {
-            background: rgba(184,134,11,0.08);
-            border-color: rgba(184,134,11,0.5);
-            transform: translateY(-4px);
+        /* STEP NUMBERS */
+        .step-num {
+            width:2rem; height:2rem; border-radius:50%; flex-shrink:0;
+            background:linear-gradient(135deg,#b8860b,#d4a017);
+            color:#fff; font-weight:900; font-size:.85rem;
+            display:flex; align-items:center; justify-content:center;
         }
 
-        /* ===== TIMELINE ===== */
-        .timeline-step {
-            position: relative;
-            padding-right: 3rem;
-        }
-        .timeline-step::before {
-            content: attr(data-num);
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 2.2rem;
-            height: 2.2rem;
-            background: linear-gradient(135deg, #b8860b, #d4a017);
-            color: white;
-            font-weight: 900;
-            font-size: 0.9rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-        }
-        .timeline-step::after {
-            content: '';
-            position: absolute;
-            right: 1.05rem;
-            top: 2.2rem;
-            bottom: -1rem;
-            width: 2px;
-            background: linear-gradient(to bottom, #b8860b, transparent);
-        }
-        .timeline-step:last-child::after { display: none; }
+        /* QUOTE */
+        .quote { border-right:4px solid #b8860b; padding-right:1.25rem; font-style:italic; }
 
-        /* ===== SECTION DIVIDER ===== */
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 0.12em;
-            color: #b8860b;
-            text-transform: uppercase;
-            margin-bottom: 0.75rem;
-        }
-        .section-label::before, .section-label::after {
-            content: '';
-            display: block;
-            width: 24px;
-            height: 1px;
-            background: #b8860b;
+        /* MOBILE FIXES */
+        @media (max-width:640px) {
+            .wa-float { width:48px; height:48px; bottom:14px; left:14px; }
+            .btn-gold, .btn-outline { font-size:.9rem; padding:.8rem 1.4rem; }
         }
 
-        /* ===== QUOTE BLOCK ===== */
-        .quote-block {
-            border-right: 4px solid #b8860b;
-            padding-right: 1.5rem;
-            font-style: italic;
-            color: #3a3530;
-        }
-
-        /* ===== FLOATING WA ===== */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 24px;
-            left: 24px;
-            z-index: 100;
-            background: #25D366;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-            transition: all 0.3s ease;
-            animation: float 3s ease-in-out infinite;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1) !important;
-            background: #128C7E;
-            animation: none;
-        }
-
-        /* ===== NAV ===== */
-        nav {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        /* ===== MOBILE ===== */
-        @media (max-width: 640px) {
-            .hero-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-            .whatsapp-float { width: 50px; height: 50px; bottom: 16px; left: 16px; }
-            .btn-primary { font-size: 1rem; padding: 0.9rem 1.8rem; }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * { animation: none !important; transition-duration: 0.01ms !important; }
-            .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion:reduce) {
+            * { animation:none !important; transition-duration:.01ms !important; }
+            .reveal { opacity:1; transform:none; }
         }
     </style>
 </head>
 <body>
 
-<!-- ===== WHATSAPP FLOAT ===== -->
-<a href="https://wa.me/972503040523?text=היי%20יורם,%20אני%20מעוניין%20בייעוץ%20למסעדה%20שלי" target="_blank" class="whatsapp-float" aria-label="וואטסאפ">
-    <i class="fab fa-whatsapp text-3xl text-white"></i>
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/972503040523?text=היי%20יורם,%20אני%20מעוניין%20בייעוץ%20למסעדה%20שלי" target="_blank" class="wa-float" aria-label="וואטסאפ">
+    <i class="fab fa-whatsapp text-2xl text-white"></i>
 </a>
 
-<!-- ===== NAV ===== -->
-<nav class="sticky top-0 z-50 border-b border-amber-200/60 shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <img src="ai-muse-logo.png" alt="AI Muse Logo" class="h-10 w-auto rounded-md bg-amber-50 border border-amber-200 p-1" onerror="this.onerror=null;this.src='https://placehold.co/40x40/f3ede3/b8860b?text=AI'">
-            <div class="flex flex-col">
-                <span class="text-xl font-black tracking-tight text-stone-800 leading-none">AI Muse AI</span>
-                <span class="text-[0.6rem] text-amber-700 font-bold tracking-widest uppercase">URBAN DATA LABS</span>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 border-b border-amber-200 bg-white/95 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <img src="ai-muse-logo.png" alt="AI Muse Logo" class="h-9 w-auto rounded bg-amber-50 border border-amber-200 p-1" onerror="this.onerror=null;this.src='https://placehold.co/36x36/f3ede3/b8860b?text=AI'">
+            <div>
+                <div class="text-lg font-black text-stone-800 leading-none">AI Muse AI</div>
+                <div class="text-[.55rem] text-amber-700 font-bold tracking-widest uppercase">URBAN DATA LABS</div>
             </div>
         </div>
-        <div class="hidden md:flex items-center gap-5 text-sm font-medium">
-            <a href="index.html" class="text-stone-600 hover:text-amber-700 transition-colors pb-1 hover:border-b-2 hover:border-amber-400">דף הבית</a>
-            <a href="eyesite.html" class="text-orange-500 hover:text-orange-400 transition-colors pb-1 hover:border-b-2 hover:border-orange-400">EyeSite</a>
-            <a href="checkin-sheriff.html" class="text-purple-500 hover:text-purple-400 transition-colors pb-1 hover:border-b-2 hover:border-purple-400">Check-in Sheriff</a>
-            <a href="import-sheriff.html" class="text-yellow-600 hover:text-yellow-500 transition-colors pb-1 hover:border-b-2 hover:border-yellow-500">Import Sheriff</a>
-            <a href="car-sheriff.html" class="text-green-600 hover:text-green-500 transition-colors pb-1 hover:border-b-2 hover:border-green-500">Car-Sheriff</a>
-            <a href="accessibility-sheriff.html" class="text-red-600 hover:text-red-500 transition-colors pb-1 hover:border-b-2 hover:border-red-500">שריף נגישות</a>
-            <a href="city.html" class="text-cyan-600 hover:text-cyan-500 transition-colors pb-1 hover:border-b-2 hover:border-cyan-500">פלטפורמה עירונית</a>
-            <a href="menu-sheriff.html" class="text-amber-700 border-b-2 border-amber-500 pb-1 font-bold">שריף מסעדות</a>
+        <div class="hidden md:flex items-center gap-4 text-sm font-medium">
+            <a href="index.html" class="text-stone-600 hover:text-amber-700 transition-colors">דף הבית</a>
+            <a href="eyesite.html" class="text-orange-500 hover:text-orange-400 transition-colors">EyeSite</a>
+            <a href="checkin-sheriff.html" class="text-purple-500 hover:text-purple-400 transition-colors">Check-in Sheriff</a>
+            <a href="import-sheriff.html" class="text-yellow-600 hover:text-yellow-500 transition-colors">Import Sheriff</a>
+            <a href="car-sheriff.html" class="text-green-600 hover:text-green-500 transition-colors">Car-Sheriff</a>
+            <a href="accessibility-sheriff.html" class="text-red-600 hover:text-red-500 transition-colors">שריף נגישות</a>
+            <a href="city.html" class="text-cyan-600 hover:text-cyan-500 transition-colors">פלטפורמה עירונית</a>
+            <a href="menu-sheriff.html" class="text-amber-700 border-b-2 border-amber-500 font-bold pb-0.5">שריף מסעדות</a>
             <a href="disclaimer.html" class="text-stone-500 hover:text-stone-700 transition-colors">מדיניות</a>
         </div>
-        <button id="mobile-menu-button" class="md:hidden text-stone-600 hover:text-amber-700 p-2 rounded-lg" aria-label="תפריט">
-            <i class="fas fa-bars text-xl"></i>
-        </button>
+        <button id="mob-btn" class="md:hidden text-stone-600 p-2" aria-label="תפריט"><i class="fas fa-bars text-lg"></i></button>
     </div>
-    <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-white border-t border-amber-100 px-6 py-4 shadow-lg z-50">
-        <a href="index.html" class="block py-3 text-stone-700 border-b border-amber-100 hover:text-amber-700">דף הבית</a>
-        <a href="eyesite.html" class="block py-3 text-orange-600 border-b border-amber-100">EyeSite</a>
-        <a href="checkin-sheriff.html" class="block py-3 text-purple-600 border-b border-amber-100">Check-in Sheriff</a>
-        <a href="import-sheriff.html" class="block py-3 text-yellow-700 border-b border-amber-100">Import Sheriff</a>
-        <a href="car-sheriff.html" class="block py-3 text-green-700 border-b border-amber-100">Car-Sheriff</a>
-        <a href="accessibility-sheriff.html" class="block py-3 text-red-700 border-b border-amber-100">שריף נגישות</a>
-        <a href="city.html" class="block py-3 text-cyan-700 border-b border-amber-100">פלטפורמה עירונית</a>
-        <a href="menu-sheriff.html" class="block py-3 text-amber-800 font-bold border-b border-amber-100">שריף מסעדות</a>
-        <a href="disclaimer.html" class="block py-3 text-stone-500">מדיניות פרטיות</a>
+    <div id="mob-menu" class="md:hidden hidden bg-white border-t border-amber-100 px-4 py-3 shadow-md">
+        <a href="index.html" class="block py-2.5 text-stone-700 border-b border-amber-100">דף הבית</a>
+        <a href="eyesite.html" class="block py-2.5 text-orange-600 border-b border-amber-100">EyeSite</a>
+        <a href="checkin-sheriff.html" class="block py-2.5 text-purple-600 border-b border-amber-100">Check-in Sheriff</a>
+        <a href="import-sheriff.html" class="block py-2.5 text-yellow-700 border-b border-amber-100">Import Sheriff</a>
+        <a href="car-sheriff.html" class="block py-2.5 text-green-700 border-b border-amber-100">Car-Sheriff</a>
+        <a href="accessibility-sheriff.html" class="block py-2.5 text-red-700 border-b border-amber-100">שריף נגישות</a>
+        <a href="city.html" class="block py-2.5 text-cyan-700 border-b border-amber-100">פלטפורמה עירונית</a>
+        <a href="menu-sheriff.html" class="block py-2.5 text-amber-800 font-bold border-b border-amber-100">שריף מסעדות</a>
+        <a href="disclaimer.html" class="block py-2.5 text-stone-500">מדיניות פרטיות</a>
     </div>
 </nav>
 
 <main>
 
-<!-- ===== SECTION 1: HERO – AUTHORITY ABOVE THE FOLD ===== -->
-<section class="hero-bg py-24 md:py-36 relative">
-    <div class="max-w-6xl mx-auto px-6 relative z-10">
-
-        <!-- eyebrow -->
-        <div class="section-label reveal" style="color: rgba(184,134,11,0.9);">
-            <span>ייעוץ מסעדות · ישראל</span>
+<!-- ==================== -->
+<!-- 1. HERO – הכאב שלהם -->
+<!-- ==================== -->
+<section class="hero-dark py-20 md:py-32">
+    <div class="max-w-4xl mx-auto px-4 relative z-10">
+        <div class="sec-label reveal" style="color:rgba(184,134,11,.85);">
+            <span>שריף מסעדות · ייעוץ תפריט</span>
         </div>
-
-        <!-- main headline -->
-        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight text-white mb-6 reveal delay-1">
-            לא בינה מלאכותית.<br>
-            <span class="shimmer-text">30 שנה.</span>
+        <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-4 reveal d1">
+            התפריט שלכם<br>
+            <span class="shimmer-text">מפסיד לכם כסף.</span>
         </h1>
-
-        <p class="text-xl md:text-2xl text-stone-300 mb-10 max-w-2xl leading-relaxed reveal delay-2">
-            בעל עסקים, מנהל אזור, מנטור. יורם כהן מביא שלושה עשורים של ניסיון אמיתי לתפריט שלך — ומגיש תוצאות תוך 24 שעות.
+        <p class="text-lg md:text-xl text-stone-300 mb-3 reveal d2 max-w-2xl">
+            לא בגלל המנות. לא בגלל השף.<br>
+            בגלל איך שהתפריט בנוי, מתומחר, ומוצג.
         </p>
-
-        <!-- CTA pair -->
-        <div class="flex flex-wrap gap-4 mb-16 reveal delay-3">
-            <a href="#pricing" class="btn-primary">
-                <i class="fas fa-arrow-down"></i> לראות את המסלולים
-            </a>
-            <a href="https://wa.me/972503040523?text=היי%20יורם,%20אני%20מעוניין%20בייעוץ" target="_blank" class="btn-secondary" style="color:#d4a017; border-color:#d4a017;">
-                <i class="fab fa-whatsapp"></i> שיחת ייעוץ קצרה
-            </a>
+        <p class="text-stone-400 mb-8 reveal d3 max-w-xl">
+            אבחון מקצועי תוך 24 שעות. עמוד ראשון – בחינם, ללא כרטיס אשראי.
+        </p>
+        <div class="flex flex-wrap gap-3 reveal d4">
+            <a href="#pricing" class="btn-gold"><i class="fas fa-arrow-down"></i> לראות את המסלולים</a>
+            <a href="https://tally.so/r/LZYq4l" target="_blank" class="btn-outline" style="color:#d4a017;border-color:#d4a017;"><i class="fas fa-clipboard-list"></i> מתחילים בחינם</a>
         </div>
-
-        <!-- stats strip -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 hero-stats-grid reveal delay-4">
-            <div class="stat-card">
-                <div class="text-4xl font-black shimmer-text mb-1">30+</div>
-                <div class="text-stone-400 text-sm">שנות ניסיון בשטח</div>
+        <!-- mini stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-12 reveal d4">
+            <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,.05);border:1px solid rgba(184,134,11,.2);">
+                <div class="text-3xl font-black shimmer-text">30+</div>
+                <div class="text-stone-400 text-xs mt-1">שנות ניסיון</div>
             </div>
-            <div class="stat-card">
-                <div class="text-4xl font-black shimmer-text mb-1">13</div>
-                <div class="text-stone-400 text-sm">עסקים בבעלותי</div>
+            <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,.05);border:1px solid rgba(184,134,11,.2);">
+                <div class="text-3xl font-black shimmer-text">13</div>
+                <div class="text-stone-400 text-xs mt-1">עסקים בבעלותי</div>
             </div>
-            <div class="stat-card">
-                <div class="text-4xl font-black shimmer-text mb-1">100</div>
-                <div class="text-stone-400 text-sm">משכורות בחודש בשיא</div>
+            <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,.05);border:1px solid rgba(184,134,11,.2);">
+                <div class="text-3xl font-black shimmer-text">28</div>
+                <div class="text-stone-400 text-xs mt-1">סניפי ארומה ת"א</div>
             </div>
-            <div class="stat-card">
-                <div class="text-4xl font-black shimmer-text mb-1">3,000</div>
-                <div class="text-stone-400 text-sm">מבלים בלילה אחד</div>
+            <div class="text-center p-4 rounded-xl" style="background:rgba(255,255,255,.05);border:1px solid rgba(184,134,11,.2);">
+                <div class="text-3xl font-black shimmer-text">24h</div>
+                <div class="text-stone-400 text-xs mt-1">עד לקבלת אבחון</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== SECTION 2: AUTHORITY / BIO ===== -->
-<section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="section-label reveal"><span>מי עומד מאחורי הביקורת</span></div>
-        <h2 class="text-4xl md:text-5xl font-black text-stone-800 mb-4 reveal delay-1">
-            יורם כהן – האדם שמאחורי הדוח
+<!-- ========================== -->
+<!-- 2. הבעיה – למה ייעוץ רגיל לא עובד -->
+<!-- ========================== -->
+<section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="sec-label reveal"><span>הבעיה</span></div>
+        <h2 class="text-3xl md:text-4xl font-black text-stone-800 mb-3 reveal d1">
+            יועץ "רגיל" לוקח 8,000 ₪.<br>ומה מקבלים?
         </h2>
-        <div class="gold-line mb-10 reveal delay-2"></div>
-
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-            <div class="space-y-6 text-stone-700 text-lg leading-relaxed reveal-left">
-
-                <p>לא למדתי ניהול מסעדות בקורס. <strong class="text-stone-900">תכננתי, בניתי ופתחתי בעצמי.</strong> כתבתי תפריטים, הבאתי קבלנים, קניתי ציוד, גייסתי, לימדתי שירות, מיניתי מנהלים – ויצרתי מערכות שעובדות לבד.</p>
-
-                <p>בשיא הפעלתי <strong class="text-stone-900">13 עסקים במקביל</strong> – מסעדות, ברים, קפה, בירושלים ובמערב הוליווד. העסקתי 100 עובדים בשיא. הייתי בכל מקום, כל יום.</p>
-
-                <p>שימשתי כ<strong class="text-stone-900">מנהל אזור ארומה תל-אביב</strong> – הרשת שנחשבת לאחת המוצלחות בישראל. תחת ניהולי: הקמת מחלקת לקוח סמוי, ביקורות איכות שוטפות, הכשרת זכיינים, שמירה על אחידות המוצר ב-28 סניפים.</p>
-
-                <p>גם הייתי <strong class="text-stone-900">מפיק ראשי</strong> של ימי הסטודנט בירושלים – עד 24,000 איש ביממה אחת, שני אתרים, עשרות מופעים. הפקות במוזיאון ישראל, בבצלאל, ואירועים עם יצירות מקוריות של פיקסו ביניהן.</p>
-
-                <div class="quote-block mt-2">
-                    <p class="text-xl">"ראיתי כל כישלון אפשרי. ויצאתי מכולם. זה מה שמביא לך ערך."</p>
-                    <p class="text-amber-700 font-bold text-sm mt-2">— יורם כהן</p>
-                </div>
+        <p class="text-stone-500 mb-8 reveal d2">שיחות היכרות, שאלונים אינסופיים, המלצות כלליות – והתפריט נשאר אותו דבר.</p>
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="card p-5 reveal d1">
+                <i class="fas fa-hourglass-half text-amber-600 text-xl mb-2"></i>
+                <h3 class="font-bold text-stone-800 mb-1">פגישות אינסופיות</h3>
+                <p class="text-stone-500 text-sm">שעה על הרקע שלהם, שעה על מתודולוגיה – והתפריט עדיין לא קיבל מענה.</p>
             </div>
-
-            <div class="space-y-4 reveal-right delay-2">
-                <div class="tier-card p-6">
-                    <div class="flex gap-4 items-start">
-                        <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-utensils text-amber-700"></i>
-                        </div>
-                        <div>
-                            <strong class="text-stone-800 block mb-1">ברים ומסעדות בירושלים</strong>
-                            <p class="text-stone-500 text-sm">איזבל, בורגר-הילי, קפה מומנט + שבעה שותפויות נוספות</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tier-card p-6">
-                    <div class="flex gap-4 items-start">
-                        <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-music text-amber-700"></i>
-                        </div>
-                        <div>
-                            <strong class="text-stone-800 block mb-1">מועדון האומן 1 – רחוב האומן</strong>
-                            <p class="text-stone-500 text-sm">3,000 מבלים בערב, שלוש רחבות מקבילות, שותפות וניהול</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tier-card p-6">
-                    <div class="flex gap-4 items-start">
-                        <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-star text-amber-700"></i>
-                        </div>
-                        <div>
-                            <strong class="text-stone-800 block mb-1">ארומה תל-אביב – מנהל אזור</strong>
-                            <p class="text-stone-500 text-sm">28 סניפים, לקוח סמוי, ביקורות איכות, הכשרות, אחידות מוצר</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tier-card p-6">
-                    <div class="flex gap-4 items-start">
-                        <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-globe text-amber-700"></i>
-                        </div>
-                        <div>
-                            <strong class="text-stone-800 block mb-1">מערב הוליווד + יער אשתאול</strong>
-                            <p class="text-stone-500 text-sm">שני עסקים ב-Robertson Ave, WeHo + חוות תבלינים ובית קפה ביישוב</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="tier-card p-6">
-                    <div class="flex gap-4 items-start">
-                        <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-building text-amber-700"></i>
-                        </div>
-                        <div>
-                            <strong class="text-stone-800 block mb-1">עשור בנדל"ן מסחרי</strong>
-                            <p class="text-stone-500 text-sm">מיקום, שווי שוק, מסחרי ולמגורים – עדיין מעודכן בשוק</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="card p-5 reveal d2">
+                <i class="fas fa-file-signature text-amber-600 text-xl mb-2"></i>
+                <h3 class="font-bold text-stone-800 mb-1">שאלונים מייגעים</h3>
+                <p class="text-stone-500 text-sm">40 שאלות לפני שאמרו שלום – ואחר כך שבועיים המתנה לתוצאה.</p>
+            </div>
+            <div class="card p-5 reveal d3">
+                <i class="fas fa-quote-right text-amber-600 text-xl mb-2"></i>
+                <h3 class="font-bold text-stone-800 mb-1">המלצות שגוגל נתן בחינם</h3>
+                <p class="text-stone-500 text-sm">"תכיר את הלקוח", "תשפר שירות" – אחרי שנה של ייעוץ בתשלום.</p>
+            </div>
+            <div class="card p-5 reveal d4">
+                <i class="fas fa-coins text-amber-600 text-xl mb-2"></i>
+                <h3 class="font-bold text-stone-800 mb-1">תמחור בלתי הגיוני</h3>
+                <p class="text-stone-500 text-sm">אלפי שקלים לייעוץ ראשוני שלא מגיע לרצפה. אני עובד אחרת.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== SECTION 3: THE PROBLEM ===== -->
-<section class="py-20" style="background: linear-gradient(135deg, #1a1714 0%, #2a1f0e 100%);">
-    <div class="max-w-5xl mx-auto px-6">
-        <div class="section-label reveal" style="color: rgba(184,134,11,0.9);"><span>האמת הלא נוחה</span></div>
-        <h2 class="text-4xl md:text-5xl font-black text-white mb-4 reveal delay-1">
-            יועץ "רגיל" לוקח ממך 8,000 ₪.<br>
-            <span class="shimmer-text">ומה אתה מקבל בחזרה?</span>
-        </h2>
-        <p class="text-stone-400 text-lg mb-12 reveal delay-2">שיחות "היכרות". שאלוני ענק. המתנה. מצגת כללית. והתפריט שלך עדיין אותו דבר.</p>
-
-        <div class="grid md:grid-cols-2 gap-5">
-            <div class="reveal delay-1" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(184,134,11,0.2); border-radius: 16px; padding: 1.5rem;">
-                <i class="fas fa-hourglass-half text-amber-600 text-2xl mb-3"></i>
-                <h3 class="text-white font-bold mb-2">פגישות אינסופיות</h3>
-                <p class="text-stone-400 text-sm">שעה על הרקע שלהם, שעה על מתודולוגיה – וה-תפריט עדיין לא קיבל מענה.</p>
-            </div>
-            <div class="reveal delay-2" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(184,134,11,0.2); border-radius: 16px; padding: 1.5rem;">
-                <i class="fas fa-file-signature text-amber-600 text-2xl mb-3"></i>
-                <h3 class="text-white font-bold mb-2">שאלונים מייגעים</h3>
-                <p class="text-stone-400 text-sm">40 שאלות לפני שאמרו "שלום" – ואחר כך שבועיים המתנה לתוצאה.</p>
-            </div>
-            <div class="reveal delay-3" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(184,134,11,0.2); border-radius: 16px; padding: 1.5rem;">
-                <i class="fas fa-quote-right text-amber-600 text-2xl mb-3"></i>
-                <h3 class="text-white font-bold mb-2">המלצות שגוגל נתן בחינם</h3>
-                <p class="text-stone-400 text-sm">"תכיר את הלקוח", "תשפר שירות" – אחרי שנה של ייעוץ בתשלום.</p>
-            </div>
-            <div class="reveal delay-4" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(184,134,11,0.2); border-radius: 16px; padding: 1.5rem;">
-                <i class="fas fa-coins text-amber-600 text-2xl mb-3"></i>
-                <h3 class="text-white font-bold mb-2">תמחור בלתי הגיוני</h3>
-                <p class="text-stone-400 text-sm">אלפי שקלים לייעוץ ראשוני שלא מגיע לקרקע. אני עובד אחרת.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== SECTION 4: THE METHOD ===== -->
-<section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="section-label reveal"><span>המתודה שלי</span></div>
-        <h2 class="text-4xl md:text-5xl font-black text-stone-800 mb-4 reveal delay-1">אבחון שריף הרווח</h2>
-        <p class="text-stone-500 text-lg mb-12 max-w-2xl reveal delay-2">6 מודולים מקצועיים. תוצאות ב-24 שעות. תוכנית פעולה לרבעון.</p>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <div class="module-card reveal delay-1">
-                <i class="fas fa-chart-pie text-amber-600 text-3xl mb-4"></i>
-                <h3 class="font-bold text-xl text-stone-800 mb-2">הנדסת תפריט</h3>
+<!-- ====================== -->
+<!-- 3. מה מקבלים + תהליך  -->
+<!-- ====================== -->
+<section class="py-16" style="background:#fdf4e0;">
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="sec-label reveal"><span>מה מקבלים</span></div>
+        <h2 class="text-3xl md:text-4xl font-black text-stone-800 mb-2 reveal d1">אבחון שריף הרווח</h2>
+        <p class="text-stone-500 mb-10 reveal d2">6 מודולים. תוצאות ב-24 שעות. תוכנית פעולה לרבעון.</p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
+            <div class="card p-5 reveal d1">
+                <i class="fas fa-chart-pie text-amber-600 text-2xl mb-3"></i>
+                <h3 class="font-bold text-stone-800 mb-1">הנדסת תפריט</h3>
                 <p class="text-stone-500 text-sm">מטריצת כוכבים/כלבי עבודה/חידות – איפה הכסף תקוע, מה לזרוק, מה לקדם.</p>
             </div>
-            <div class="module-card reveal delay-2">
-                <i class="fas fa-tag text-amber-600 text-3xl mb-4"></i>
-                <h3 class="font-bold text-xl text-stone-800 mb-2">תמחור פסיכולוגי</h3>
+            <div class="card p-5 reveal d2">
+                <i class="fas fa-tag text-amber-600 text-2xl mb-3"></i>
+                <h3 class="font-bold text-stone-800 mb-1">תמחור פסיכולוגי</h3>
                 <p class="text-stone-500 text-sm">טכניקות שמעלות סל ממוצע בלי שהלקוח ירגיש.</p>
             </div>
-            <div class="module-card reveal delay-3">
-                <i class="fas fa-fill-drip text-amber-600 text-3xl mb-4"></i>
-                <h3 class="font-bold text-xl text-stone-800 mb-2">איתור דליפות רווח</h3>
-                <p class="text-stone-500 text-sm">עלויות סמויות, בזבוזים, פריטים שמורידים רווחיות – מה שלא ראית עד היום.</p>
+            <div class="card p-5 reveal d3">
+                <i class="fas fa-fill-drip text-amber-600 text-2xl mb-3"></i>
+                <h3 class="font-bold text-stone-800 mb-1">איתור דליפות רווח</h3>
+                <p class="text-stone-500 text-sm">עלויות סמויות, בזבוזים, פריטים שמורידים רווחיות – מה שלא ראיתם עד היום.</p>
             </div>
-            <div class="module-card reveal delay-1">
-                <i class="fas fa-utensils text-amber-600 text-3xl mb-4"></i>
-                <h3 class="font-bold text-xl text-stone-800 mb-2">יעילות מטבח</h3>
+            <div class="card p-5 reveal d1">
+                <i class="fas fa-utensils text-amber-600 text-2xl mb-3"></i>
+                <h3 class="font-bold text-stone-800 mb-1">יעילות מטבח</h3>
                 <p class="text-stone-500 text-sm">זרימת עבודה, ארגונומיה, צמצום זמני הכנה והקטנת בזבוזים.</p>
             </div>
-            <div class="module-card reveal delay-2">
-                <i class="fas fa-chart-line text-amber-600 text-3xl mb-4"></i>
-                <h3 class="font-bold text-xl text-stone-800 mb-2">מפת מכירות נלוות</h3>
+            <div class="card p-5 reveal d2">
+                <i class="fas fa-chart-line text-amber-600 text-2xl mb-3"></i>
+                <h3 class="font-bold text-stone-800 mb-1">מפת מכירות נלוות</h3>
                 <p class="text-stone-500 text-sm">חבילות, מיקום אסטרטגי בתפריט, הצעות שמגדילות עסקה בלי מאמץ.</p>
             </div>
-            <div class="module-card reveal delay-3">
-                <i class="fas fa-calendar-week text-amber-600 text-3xl mb-4"></i>
-                <h3 class="font-bold text-xl text-stone-800 mb-2">תוכנית 30-60-90 יום</h3>
+            <div class="card p-5 reveal d3">
+                <i class="fas fa-calendar-week text-amber-600 text-2xl mb-3"></i>
+                <h3 class="font-bold text-stone-800 mb-1">תוכנית 30-60-90 יום</h3>
                 <p class="text-stone-500 text-sm">מה לשנות השבוע, מה לחודש, מה לרבעון. ברור. מסודר. ישים.</p>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- ===== SECTION 5: HOW IT WORKS ===== -->
-<section class="py-20" style="background: #fdf4e0;">
-    <div class="max-w-4xl mx-auto px-6">
-        <div class="section-label reveal"><span>תהליך העבודה</span></div>
-        <h2 class="text-4xl font-black text-stone-800 mb-12 reveal delay-1">איך זה עובד – ארבעה שלבים</h2>
-
-        <div class="space-y-10">
-            <div class="timeline-step reveal delay-1" data-num="1">
-                <div class="mr-2">
-                    <h3 class="font-bold text-xl text-stone-800 mb-1">שולחים שאלון + תפריט</h3>
-                    <p class="text-stone-600">טופס קצר של ~10 שאלות + תמונת תפריט (חובה) + תמונות/סרטון מטבח (מומלץ). 5 דקות בסך הכל.</p>
-                </div>
+        <!-- תהליך -->
+        <div class="gold-bar mb-6 reveal"></div>
+        <h3 class="text-2xl font-black text-stone-800 mb-8 reveal d1">איך זה עובד – ארבעה שלבים</h3>
+        <div class="space-y-6 max-w-2xl">
+            <div class="flex gap-4 reveal d1">
+                <div class="step-num">1</div>
+                <div><strong class="text-stone-800">שולחים שאלון + תפריט</strong><p class="text-stone-500 text-sm mt-1">טופס קצר, ~10 שאלות + תמונת תפריט (חובה) + תמונות/סרטון מטבח (מומלץ). 5 דקות.</p></div>
             </div>
-            <div class="timeline-step reveal delay-2" data-num="2">
-                <div class="mr-2">
-                    <h3 class="font-bold text-xl text-stone-800 mb-1">מקבלים עמוד ראשון – בחינם</h3>
-                    <p class="text-stone-600">תוך 24 שעות שולח אליך עמוד ראשון מהאבחון האמיתי שלך. ללא תשלום. ללא כרטיס אשראי. רק כדי שתראה שאני רציני.</p>
-                </div>
+            <div class="flex gap-4 reveal d2">
+                <div class="step-num">2</div>
+                <div><strong class="text-stone-800">מקבלים עמוד ראשון – בחינם</strong><p class="text-stone-500 text-sm mt-1">תוך 24 שעות. ללא תשלום. ללא כרטיס אשראי. רק כדי שתראו שאנחנו רציניים.</p></div>
             </div>
-            <div class="timeline-step reveal delay-3" data-num="3">
-                <div class="mr-2">
-                    <h3 class="font-bold text-xl text-stone-800 mb-1">בוחרים מסלול</h3>
-                    <p class="text-stone-600">ראית ערך? בוחרים את המסלול המתאים ומשלמים בנוח – ביט, פייבוקס, העברה בנקאית. לא ראית ערך? לא חייב כלום, שלום.</p>
-                </div>
+            <div class="flex gap-4 reveal d3">
+                <div class="step-num">3</div>
+                <div><strong class="text-stone-800">בוחרים מסלול</strong><p class="text-stone-500 text-sm mt-1">ראיתם ערך? בוחרים מסלול ומשלמים בנוח – ביט, פייבוקס, PayPal, העברה בנקאית. לא ראיתם ערך? לא חייבים כלום.</p></div>
             </div>
-            <div class="timeline-step reveal delay-4" data-num="4">
-                <div class="mr-2">
-                    <h3 class="font-bold text-xl text-stone-800 mb-1">מקבלים אבחון מלא + בונוס</h3>
-                    <p class="text-stone-600">6 מודולים + תוכנית פעולה + הספר "The Cafe Blueprint" (PDF) במתנה. ובמסלול המתקדם – אני מגיע אליך.</p>
-                </div>
+            <div class="flex gap-4 reveal d4">
+                <div class="step-num">4</div>
+                <div><strong class="text-stone-800">מקבלים אבחון מלא + בונוס</strong><p class="text-stone-500 text-sm mt-1">6 מודולים + תוכנית פעולה + הספר "The Cafe Blueprint" במתנה. ובמסלול המתקדם – אני מגיע אליכם.</p></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== SECTION 6: PRICING ===== -->
-<section id="pricing" class="py-24 bg-white">
-    <div class="max-w-5xl mx-auto px-6">
-        <div class="section-label reveal"><span>מסלולי שירות</span></div>
-        <h2 class="text-4xl md:text-5xl font-black text-stone-800 mb-4 reveal delay-1">בחרו את המסלול שלכם</h2>
-        <p class="text-stone-500 text-lg mb-12 reveal delay-2">שני מסלולים. שניהם מתחילים בעמוד ראשון בחינם.</p>
-
-        <div class="grid md:grid-cols-2 gap-8">
-
-            <!-- TIER 1 -->
-            <div class="tier-card featured p-8 reveal-left delay-1">
-                <div class="flex justify-between items-start mb-6">
-                    <div>
-                        <p class="text-amber-700 font-bold text-sm mb-1">מסלול A</p>
-                        <h3 class="text-2xl font-black text-stone-800">ביקורת + העיניים שלי</h3>
-                    </div>
-                    <span class="badge-featured">הפופולרי</span>
-                </div>
-
-                <div class="mb-8">
-                    <span class="text-5xl font-black text-stone-800">590</span>
-                    <span class="text-2xl text-amber-700 font-bold"> ₪</span>
-                    <p class="text-stone-400 text-sm mt-1">חד פעמי, כולל הכל</p>
-                </div>
-
-                <ul class="space-y-3 mb-8 text-stone-700">
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span>דוח אבחון מלא – 6 מודולים</span></li>
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span>עמוד ראשון בחינם לפני תשלום</span></li>
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span><strong>ביקורת אישית שלי על הדוח</strong> – בכתב, כ-30 דקות עבודה</span></li>
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span>תוכנית פעולה 30-60-90 יום</span></li>
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span>הספר "The Cafe Blueprint" במתנה</span></li>
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span>תוצאות תוך 24-48 שעות</span></li>
-                </ul>
-
-                <a href="https://tally.so/r/LZYq4l" target="_blank" class="btn-primary w-full justify-center">
-                    <i class="fas fa-clipboard-list"></i> מתחילים כאן
-                </a>
-                <p class="text-center text-stone-400 text-xs mt-3">העמוד הראשון – בחינם, ללא כרטיס אשראי</p>
-            </div>
-
-            <!-- TIER 2 -->
-            <div class="tier-card p-8 reveal-right delay-2">
-                <div class="mb-6">
-                    <p class="text-amber-700 font-bold text-sm mb-1">מסלול B</p>
-                    <h3 class="text-2xl font-black text-stone-800">ייעוץ מלא + ביקור בעסק</h3>
-                </div>
-
-                <div class="mb-8">
-                    <span class="text-5xl font-black text-stone-800">1,490</span>
-                    <span class="text-2xl text-amber-700 font-bold"> ₪</span>
-                    <p class="text-stone-400 text-sm mt-1">כולל ביקור פיזי</p>
-                </div>
-
-                <ul class="space-y-3 mb-8 text-stone-700">
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span>כל מה שיש במסלול A</span></li>
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span><strong>ביקור פיזי במקום</strong> – שעה שלמה</span></li>
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span>אני רואה את הצוות, המטבח, האווירה – לא רק תמונות</span></li>
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span>תוכנית פעולה מעמיקה ומותאמת אישית</span></li>
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span>המשך ליווי בוואטסאפ שבוע לאחר הביקור</span></li>
-                    <li class="flex gap-3 items-start"><i class="fas fa-check-circle text-amber-600 mt-1 flex-shrink-0"></i><span>אזור ת"א, ירושלים, המרכז (נסיעות מרוחקות בתיאום)</span></li>
-                </ul>
-
-                <a href="https://wa.me/972503040523?text=היי%20יורם,%20אני%20מעוניין%20במסלול%20הביקור%20המלא" target="_blank" class="btn-secondary w-full justify-center" style="color:#b8860b; border-color:#b8860b;">
-                    <i class="fab fa-whatsapp"></i> צרו קשר לתיאום ביקור
-                </a>
-                <p class="text-center text-stone-400 text-xs mt-3">* ניתן לשדרג ממסלול A לאחר קבלת הדוח</p>
-            </div>
-        </div>
-
-        <!-- pricing footnote -->
-        <div class="mt-10 text-center reveal">
-            <p class="text-stone-500 text-sm">יועץ "רגיל" לוקח 4,000–12,000 ₪ על שיחת ייעוץ ראשונה. <strong class="text-stone-700">אני מתחיל בחינם.</strong></p>
-        </div>
-    </div>
-</section>
-
-<!-- ===== SECTION 7: REPORT PREVIEW ===== -->
-<section class="py-20" style="background: #fdf4e0;">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <div class="section-label reveal justify-center"><span>הצצה לאבחון</span></div>
-        <h2 class="text-4xl font-black text-stone-800 mb-4 reveal delay-1">כך נראה הדוח</h2>
-        <p class="text-stone-600 mb-10 reveal delay-2">עמוד ראשון לדוגמה – ממש כך יראה האבחון שלך.</p>
-
-        <div class="bg-white rounded-2xl border border-amber-200 overflow-hidden shadow-xl reveal delay-3">
-            <div class="p-4 flex justify-between items-center" style="background: #2a1f0e;">
+<!-- ====================== -->
+<!-- 4. תצוגת דוח            -->
+<!-- ====================== -->
+<section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <div class="sec-label justify-center reveal"><span>הצצה לאבחון</span></div>
+        <h2 class="text-3xl font-black text-stone-800 mb-2 reveal d1">כך נראה הדוח</h2>
+        <p class="text-stone-500 mb-8 reveal d2">עמוד ראשון לדוגמה – ממש כך יראה האבחון שלכם.</p>
+        <div class="bg-white rounded-2xl border border-amber-200 overflow-hidden shadow-lg reveal d3">
+            <div class="px-4 py-3 flex justify-between items-center" style="background:#1e1710;">
                 <span class="text-amber-400 font-mono text-sm">📊 Sheriff Profit Report – Sample</span>
-                <span class="text-stone-500 text-xs">תצוגה מקדימה בלבד</span>
+                <span class="text-stone-500 text-xs">תצוגה מקדימה</span>
             </div>
-            <div class="p-6">
-                <img src="manu.jpg" alt="תצוגה מקדימה דוח שריף מסעדות" class="w-full max-h-[500px] object-contain mx-auto rounded-lg border border-amber-200 shadow-sm" onerror="this.onerror=null;this.src='https://placehold.co/800x600/fef3e2/b8860b?text=דוח+שריף+מסעדות'">
-                <div class="mt-6">
-                    <a href="menu.pdf" target="_blank" class="btn-primary mx-auto inline-flex">
-                        <i class="fas fa-file-pdf"></i> לפתיחת דוח לדוגמה (PDF)
-                    </a>
-                    <p class="text-stone-400 text-xs mt-3">* הדוח המלא כולל 5-6 עמודים מלאים ותוכנית פעולה</p>
+            <div class="p-5">
+                <img src="manu.jpg" alt="דוח שריף מסעדות לדוגמה" class="w-full max-h-96 object-contain mx-auto rounded-lg border border-amber-100" onerror="this.onerror=null;this.src='https://placehold.co/800x500/fef3e2/b8860b?text=דוח+שריף+מסעדות'">
+                <div class="mt-5">
+                    <a href="menu.pdf" target="_blank" class="btn-gold mx-auto inline-flex"><i class="fas fa-file-pdf"></i> פתיחת דוח לדוגמה (PDF)</a>
+                    <p class="text-stone-400 text-xs mt-2">* הדוח המלא כולל 5-6 עמודים + תוכנית פעולה</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== SECTION 8: CTA / FORM ===== -->
-<section id="form-section" class="py-24" style="background: linear-gradient(135deg, #1a1714 0%, #2a1f0e 100%);">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-        <div class="section-label reveal justify-center" style="color: rgba(184,134,11,0.9);"><span>מתחילים עכשיו</span></div>
-        <h2 class="text-4xl md:text-5xl font-black text-white mb-4 reveal delay-1">
+<!-- ======================== -->
+<!-- 5. מי אני – אחרי שהתעניינו -->
+<!-- ======================== -->
+<section class="py-16" style="background:#fdf4e0;">
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="sec-label reveal"><span>מי עומד מאחורי הדוח</span></div>
+        <h2 class="text-3xl md:text-4xl font-black text-stone-800 mb-2 reveal d1">יורם כהן – לא יועץ. בעלים.</h2>
+        <p class="text-stone-500 mb-8 reveal d2">לא למדתי ניהול מסעדות בקורס. תכננתי, בניתי ופתחתי בעצמי.</p>
+        <div class="grid md:grid-cols-2 gap-10 items-start">
+            <div class="space-y-4 text-stone-700 leading-relaxed reveal">
+                <p>בשיא הפעלתי <strong class="text-stone-900">13 עסקים במקביל</strong> – מסעדות, ברים וקפה בירושלים ובמערב הוליווד. כתבתי תפריטים, הבאתי קבלנים, קניתי ציוד, גייסתי ולימדתי שירות, מיניתי מנהלים. העסקתי 100 עובדים בשיא.</p>
+                <p>שימשתי כ<strong class="text-stone-900">מנהל אזור ארומה תל-אביב</strong> – הקמת מחלקת לקוח סמוי, ביקורות איכות שוטפות, הכשרת זכיינים ושמירה על אחידות המוצר ב-28 סניפים.</p>
+                <p>הייתי <strong class="text-stone-900">מפיק ראשי</strong> של ימי הסטודנט בירושלים – עד 24,000 איש ביממה אחת, שני אתרים מקבילים. הפקות במוזיאון ישראל, בבצלאל, אירועים עם יצירות פיקסו.</p>
+                <p>בנוסף, <strong class="text-stone-900">עשור בנדל"ן מסחרי</strong> – מיקום, שווי שוק, קמעונאות. הניסיון הזה מתורגם ישירות לייעוץ מסעדות.</p>
+                <div class="quote mt-2">
+                    <p class="text-lg">"ראיתי כל כישלון אפשרי. ויצאתי מכולם. זה מה שמביא לכם ערך."</p>
+                    <p class="text-amber-700 font-bold text-sm mt-2">— יורם כהן</p>
+                </div>
+            </div>
+            <div class="space-y-3 reveal d2">
+                <div class="card p-4 flex gap-3 items-start">
+                    <i class="fas fa-utensils text-amber-600 mt-1 flex-shrink-0"></i>
+                    <div><strong class="text-stone-800 block text-sm">ברים ומסעדות בירושלים</strong><p class="text-stone-500 text-xs">איזבל, בורגר-הילי, קפה מומנט + שבעה שותפויות נוספות</p></div>
+                </div>
+                <div class="card p-4 flex gap-3 items-start">
+                    <i class="fas fa-music text-amber-600 mt-1 flex-shrink-0"></i>
+                    <div><strong class="text-stone-800 block text-sm">מועדון האומן 1 – רחוב האומן</strong><p class="text-stone-500 text-xs">3,000 מבלים בערב, שלוש רחבות מקבילות</p></div>
+                </div>
+                <div class="card p-4 flex gap-3 items-start">
+                    <i class="fas fa-star text-amber-600 mt-1 flex-shrink-0"></i>
+                    <div><strong class="text-stone-800 block text-sm">ארומה תל-אביב – מנהל אזור</strong><p class="text-stone-500 text-xs">28 סניפים, לקוח סמוי, ביקורות איכות, הכשרות</p></div>
+                </div>
+                <div class="card p-4 flex gap-3 items-start">
+                    <i class="fas fa-globe text-amber-600 mt-1 flex-shrink-0"></i>
+                    <div><strong class="text-stone-800 block text-sm">מערב הוליווד + יער אשתאול</strong><p class="text-stone-500 text-xs">Robertson Ave, WeHo + חוות תבלינים ובית קפה</p></div>
+                </div>
+                <div class="card p-4 flex gap-3 items-start">
+                    <i class="fas fa-building text-amber-600 mt-1 flex-shrink-0"></i>
+                    <div><strong class="text-stone-800 block text-sm">עשור בנדל"ן מסחרי</strong><p class="text-stone-500 text-xs">מיקום, שווי שוק, מסחרי ולמגורים</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== -->
+<!-- 6. PRICING            -->
+<!-- ===================== -->
+<section id="pricing" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="sec-label reveal"><span>מסלולי שירות</span></div>
+        <h2 class="text-3xl md:text-4xl font-black text-stone-800 mb-2 reveal d1">בחרו את המסלול שלכם</h2>
+        <p class="text-stone-500 mb-10 reveal d2">שני מסלולים. שניהם מתחילים בעמוד ראשון בחינם.</p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- TIER A -->
+            <div class="tier-card featured p-7 reveal">
+                <div class="flex justify-between items-start mb-5">
+                    <div>
+                        <p class="text-amber-700 font-bold text-xs mb-1">מסלול A</p>
+                        <h3 class="text-xl font-black text-stone-800">ביקורת + העיניים שלי</h3>
+                    </div>
+                    <span style="background:linear-gradient(135deg,#b8860b,#d4a017);color:white;font-size:.65rem;font-weight:800;padding:.25rem .8rem;border-radius:20px;letter-spacing:.06em;">הפופולרי</span>
+                </div>
+                <div class="mb-6">
+                    <span class="text-4xl font-black text-stone-800">590</span>
+                    <span class="text-xl text-amber-700 font-bold"> ₪</span>
+                    <p class="text-stone-400 text-xs mt-1">חד פעמי, כולל הכל</p>
+                </div>
+                <ul class="space-y-2.5 mb-7 text-stone-700 text-sm">
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i>דוח אבחון מלא – 6 מודולים</li>
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i>עמוד ראשון בחינם לפני תשלום</li>
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i><span><strong>ביקורת אישית שלי על הדוח</strong> – בכתב</span></li>
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i>תוכנית פעולה 30-60-90 יום</li>
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i>הספר "The Cafe Blueprint" במתנה</li>
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i>תוצאות תוך 24-48 שעות</li>
+                </ul>
+                <a href="https://tally.so/r/LZYq4l" target="_blank" class="btn-gold w-full justify-center"><i class="fas fa-clipboard-list"></i> מתחילים כאן</a>
+                <p class="text-center text-stone-400 text-xs mt-2">עמוד ראשון בחינם – ללא כרטיס אשראי</p>
+            </div>
+
+            <!-- TIER B -->
+            <div class="tier-card p-7 reveal d2">
+                <div class="mb-5">
+                    <p class="text-amber-700 font-bold text-xs mb-1">מסלול B</p>
+                    <h3 class="text-xl font-black text-stone-800">ייעוץ מלא + ביקור בעסק</h3>
+                </div>
+                <div class="mb-6">
+                    <span class="text-4xl font-black text-stone-800">1,490</span>
+                    <span class="text-xl text-amber-700 font-bold"> ₪</span>
+                    <p class="text-stone-400 text-xs mt-1">כולל ביקור פיזי</p>
+                </div>
+                <ul class="space-y-2.5 mb-7 text-stone-700 text-sm">
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i>כל מה שיש במסלול A</li>
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i><strong>ביקור פיזי במקום – שעה שלמה</strong></li>
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i>רואה צוות, מטבח ואווירה – לא רק תמונות</li>
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i>תוכנית פעולה מעמיקה ומותאמת אישית</li>
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i>ליווי בוואטסאפ שבוע לאחר הביקור</li>
+                    <li class="flex gap-2 items-start"><i class="fas fa-check-circle text-amber-600 mt-0.5 flex-shrink-0"></i>ת"א, ירושלים, המרכז (נסיעות מרוחקות בתיאום)</li>
+                </ul>
+                <a href="https://wa.me/972503040523?text=היי%20יורם,%20אני%20מעוניין%20במסלול%20הביקור%20המלא" target="_blank" class="btn-outline w-full justify-center"><i class="fab fa-whatsapp"></i> תיאום ביקור בוואטסאפ</a>
+                <p class="text-center text-stone-400 text-xs mt-2">* ניתן לשדרג ממסלול A לאחר קבלת הדוח</p>
+            </div>
+        </div>
+        <p class="text-center text-stone-400 text-sm mt-8 reveal">יועץ "רגיל" לוקח 4,000–12,000 ₪ על שיחת ייעוץ ראשונה. <strong class="text-stone-600">אני מתחיל בחינם.</strong></p>
+    </div>
+</section>
+
+<!-- ===================== -->
+<!-- 7. CTA FINAL          -->
+<!-- ===================== -->
+<section class="py-20" style="background:linear-gradient(135deg,#0f0c08 0%,#2a1f0e 100%);">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-3 reveal">
             שלחו תפריט.<br>
             <span class="shimmer-text">קבלו עמוד ראשון בחינם.</span>
         </h2>
-        <p class="text-stone-400 text-lg mb-10 reveal delay-2">ללא כרטיס אשראי. ללא התחייבות. רק תפריט + 10 שאלות קצרות.</p>
-
-        <div class="reveal delay-3">
-            <a href="https://tally.so/r/LZYq4l" target="_blank" class="btn-primary text-xl px-14 py-5">
-                <i class="fas fa-external-link-alt"></i> מעבר לשאלון
-            </a>
+        <p class="text-stone-400 mb-8 reveal d1">ללא כרטיס אשראי. ללא התחייבות. 10 שאלות קצרות.</p>
+        <div class="reveal d2">
+            <a href="https://tally.so/r/LZYq4l" target="_blank" class="btn-gold text-lg px-10 py-4 mx-auto inline-flex"><i class="fas fa-external-link-alt"></i> מעבר לשאלון</a>
         </div>
-
-        <div class="grid md:grid-cols-2 gap-4 mt-12 text-right reveal delay-4">
-            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(184,134,11,0.2); border-radius: 16px; padding: 1.5rem;">
-                <p class="text-white font-bold mb-3"><i class="fas fa-list-ul text-amber-500 ml-2"></i> מה השאלון כולל</p>
-                <div class="grid grid-cols-2 gap-2 text-stone-400 text-sm">
-                    <span>• שם העסק ומיקום</span>
-                    <span>• כמה זמן פעיל?</span>
-                    <span>• מספר מקומות ישיבה</span>
-                    <span>• עובדים במשמרת שיא</span>
-                    <span>• קהל יעד עיקרי</span>
-                    <span>• מטרה עכשיו</span>
-                    <span>• 3 המנות הנמכרות</span>
-                    <span>• תמונת תפריט (חובה)</span>
-                    <span class="col-span-2">• סרטון/תמונות מטבח (מומלץ)</span>
-                </div>
-            </div>
-            <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(184,134,11,0.2); border-radius: 16px; padding: 1.5rem;">
-                <p class="text-white font-bold mb-3"><i class="fas fa-credit-card text-amber-500 ml-2"></i> אמצעי תשלום</p>
-                <p class="text-stone-400 text-sm mb-4">רק אחרי שראיתם את העמוד הראשון ובחרתם מסלול:</p>
-                <div class="flex flex-wrap gap-2">
-                    <span style="background: rgba(184,134,11,0.15); color: #d4a017; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">ביט</span>
-                    <span style="background: rgba(184,134,11,0.15); color: #d4a017; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">פייבוקס</span>
-                    <span style="background: rgba(184,134,11,0.15); color: #d4a017; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">PayPal</span>
-                    <span style="background: rgba(184,134,11,0.15); color: #d4a017; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">העברה בנקאית</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex flex-wrap justify-center gap-4 mt-10 reveal delay-5">
-            <a href="https://wa.me/972503040523" target="_blank" style="background:#25D366; color:white; font-weight:700; padding: 0.75rem 1.75rem; border-radius: 50px; display:inline-flex; align-items:center; gap:0.5rem; transition:all 0.3s; text-decoration:none;" onmouseover="this.style.background='#128C7E'" onmouseout="this.style.background='#25D366'">
+        <div class="flex flex-wrap justify-center gap-3 mt-8 reveal d3">
+            <a href="https://wa.me/972503040523" target="_blank" style="background:#25D366;color:white;font-weight:700;padding:.7rem 1.5rem;border-radius:50px;display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;transition:background .2s;" onmouseover="this.style.background='#128C7E'" onmouseout="this.style.background='#25D366'">
                 <i class="fab fa-whatsapp"></i> 050-3040523
             </a>
-            <a href="mailto:cafe@aimuseai.com" class="btn-secondary">
-                <i class="fas fa-envelope"></i> cafe@aimuseai.com
-            </a>
+            <a href="mailto:cafe@aimuseai.com" class="btn-outline" style="color:#d4a017;border-color:#d4a017;"><i class="fas fa-envelope"></i> cafe@aimuseai.com</a>
+        </div>
+        <!-- payment methods -->
+        <div class="mt-8 reveal d4" style="background:rgba(255,255,255,.05);border:1px solid rgba(184,134,11,.2);border-radius:16px;padding:1.25rem;">
+            <p class="text-stone-300 text-sm font-bold mb-3">אמצעי תשלום – רק אחרי שראיתם את העמוד הראשון ובחרתם מסלול:</p>
+            <div class="flex flex-wrap justify-center gap-2">
+                <span style="background:rgba(184,134,11,.15);color:#d4a017;padding:3px 12px;border-radius:20px;font-size:.8rem;font-weight:700;">ביט</span>
+                <span style="background:rgba(184,134,11,.15);color:#d4a017;padding:3px 12px;border-radius:20px;font-size:.8rem;font-weight:700;">פייבוקס</span>
+                <span style="background:rgba(184,134,11,.15);color:#d4a017;padding:3px 12px;border-radius:20px;font-size:.8rem;font-weight:700;">PayPal</span>
+                <span style="background:rgba(184,134,11,.15);color:#d4a017;padding:3px 12px;border-radius:20px;font-size:.8rem;font-weight:700;">העברה בנקאית</span>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ===== SECTION 9: BONUS ===== -->
-<section class="py-12 bg-white border-t border-amber-100">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <div class="inline-flex items-center gap-4 flex-wrap justify-center reveal">
-            <i class="fas fa-gift text-amber-600 text-4xl"></i>
-            <p class="text-stone-700 text-lg">כל אבחון מלא מגיע עם <strong class="text-amber-800">הספר "The Cafe Blueprint" (PDF)</strong> – 7 פרקים, 30 שנה של תובנות.</p>
-        </div>
+<!-- BONUS STRIP -->
+<section class="py-10 bg-white border-t border-amber-100">
+    <div class="max-w-4xl mx-auto px-4 text-center reveal">
+        <p class="text-stone-700 text-base">🎁 כל אבחון מלא מגיע עם <strong class="text-amber-800">הספר "The Cafe Blueprint" (PDF)</strong> – 7 פרקים, 30 שנה של תובנות.</p>
     </div>
 </section>
 
 </main>
 
-<!-- ===== FOOTER ===== -->
-<footer class="border-t border-amber-200 py-10 bg-stone-50">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
-            <div><span class="font-black text-stone-800 text-lg">AI Muse AI</span> <span class="text-stone-400 text-sm ml-2">Urban Data Labs</span></div>
-            <div class="flex gap-6 flex-wrap text-sm">
+<!-- FOOTER -->
+<footer class="border-t border-amber-200 py-8 bg-stone-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
+            <span class="font-black text-stone-800">AI Muse AI <span class="text-stone-400 font-normal text-sm">Urban Data Labs</span></span>
+            <div class="flex flex-wrap gap-5 text-sm">
                 <a href="index.html" class="text-stone-500 hover:text-amber-700 transition-colors">דף הבית</a>
                 <a href="disclaimer.html" class="text-stone-500 hover:text-amber-700 transition-colors">מדיניות פרטיות</a>
                 <a href="mailto:cafe@aimuseai.com" class="text-stone-500 hover:text-amber-700 transition-colors">cafe@aimuseai.com</a>
                 <a href="https://wa.me/972503040523" class="text-stone-500 hover:text-amber-700 transition-colors">050-3040523</a>
             </div>
         </div>
-        <div class="border-t border-amber-100 pt-6 text-center text-stone-400 text-xs">
+        <div class="border-t border-amber-100 pt-4 text-center text-stone-400 text-xs">
             © 2026 יורם כהן – שריף מסעדות | ייעוץ תפריט ורווחיות. 30 שנה בשטח, אדם אחד מאחורי הכל.
         </div>
     </div>
 </footer>
 
-<!-- ===== SCRIPTS ===== -->
 <script>
     // Mobile menu
-    const menuBtn = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if(menuBtn && mobileMenu){
-        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        document.addEventListener('click', (e) => {
-            if(!mobileMenu.classList.contains('hidden') && !menuBtn.contains(e.target) && !mobileMenu.contains(e.target))
-                mobileMenu.classList.add('hidden');
+    const mobBtn = document.getElementById('mob-btn');
+    const mobMenu = document.getElementById('mob-menu');
+    if(mobBtn && mobMenu){
+        mobBtn.addEventListener('click', () => mobMenu.classList.toggle('hidden'));
+        document.addEventListener('click', e => {
+            if(!mobMenu.classList.contains('hidden') && !mobBtn.contains(e.target) && !mobMenu.contains(e.target))
+                mobMenu.classList.add('hidden');
         });
     }
-
     // Scroll reveal
-    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => observer.observe(el));
-
-    // Smooth anchor scroll
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    // Smooth scroll anchors
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
-            const target = document.querySelector(a.getAttribute('href'));
-            if(target){ e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            const t = document.querySelector(a.getAttribute('href'));
+            if(t){ e.preventDefault(); t.scrollIntoView({ behavior:'smooth' }); }
         });
     });
 </script>
