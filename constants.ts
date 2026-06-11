@@ -1,7 +1,7 @@
 
 export const CONTACT_PHONE = "050-3040523";
 export const CONTACT_EMAIL = "aimuseaimuseai@gmail.com";
-export const WHATSAPP_LINK = "https://wa.me/972503040523";
+export const WHATSAPP_LINK = "https://wa.me/972549429434";
 export const BRAND_NAME = "EyeSite";
 
 export const COLORS = {
